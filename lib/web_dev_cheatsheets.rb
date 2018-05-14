@@ -1,7 +1,5 @@
 require "web_dev_cheatsheets/version"
 
-
-
 	class CLI_interface
 		def initialize
 			welcome
@@ -24,7 +22,7 @@ require "web_dev_cheatsheets/version"
 			puts "shortcuts and commands you will need as a developer.\n\n"
 			puts "\n\nPress any key to continue....."
 			any_key = gets
-			if any_key.include?("/n")
+			if any_key.include?("\n")
 				main_menu #why is this line not executing
 			end
 		end
