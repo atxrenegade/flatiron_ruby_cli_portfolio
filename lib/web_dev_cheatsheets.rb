@@ -37,6 +37,12 @@ require "web_dev_cheatsheets/version"
 			puts "8. Windows keyboard shortcuts\nX. EXIT\n"
 			puts "Please select the number for the command you would like to execute?"
 			input = gets.strip!
+			if input == "X" || "x"
+				exit
+			elsif input == "1"
+				Shortcut_of_the_Day.new
+			else
+				scaper(input)
 		end
 
 		def submenu_A
@@ -49,7 +55,9 @@ require "web_dev_cheatsheets/version"
 		end
 	end
 
-	class Scraper
+	class Scraper(selection)
+
+
 	end
 
 	class Shortcut_of_the_Day
