@@ -42,7 +42,7 @@ require "web_dev_cheatsheets/version"
 			elsif input == "1"
 				Shortcut_of_the_Day.new
 			else
-				scaper(input)
+				Scaper.new(input)
 			end
 		end
 
@@ -54,13 +54,14 @@ require "web_dev_cheatsheets/version"
 
 		def exit
 			puts "\n\nThanks for using the LAZY PROGRAMMERS shortcuts and cheatsheets!"
-			puts "\nSee you again soon!"
+			puts "See you again soon!"
 		end
 	end
 
-	class Scraper(selection)
-
-
+	class Scraper
+		def initialize(user_selection)
+			@user_selection = user_selection
+		end
 	end
 
 	class Shortcut_of_the_Day
