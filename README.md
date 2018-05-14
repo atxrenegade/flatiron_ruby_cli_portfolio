@@ -12,8 +12,9 @@ This gem currently includes references for the following:  Atom, Regex, Pry, Git
 atxrenegade
 
 ## Usage
+This GEM retrieves the MAIN MENU upon execution providing you with a list of shortcuts and cheatsheets you can access through this gem. Once you have selected which topic you would like to explore the internal menu offer the following commands: LIST-ALL, SEARCH, REVERSE-SEARCH, SHORTCUT-OF-THE-DAY, EXIT.
 
-TODO: Write usage instructions here
+The LIST-ALL command provides just that, a full list of shortcuts or commands for your chosen category.  The handy SEARCH feature allows you to retrieve individual commands and shortcuts quickly and easily,  and the  REVERSE-SEARCH feature allows you to check the result of specific key combinations.  As a bonus feature I’ve also included a SHORTCUT-OF-THE-DAY feature to familiarize noobs with a single randomly chosen shortcut to focus on adding to their toolbox. I do not to include an exhaustive list and instead have chosen but the most commonly used shortcuts and commands to facilitate ease of use.  EXIT takes you back to the MAIN MENU, where you can select a new category, or EXIT again to quit the cli gem entirely.
 
 ## Development
 
