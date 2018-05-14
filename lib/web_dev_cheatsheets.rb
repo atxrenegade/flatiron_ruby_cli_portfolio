@@ -43,6 +43,7 @@ require "web_dev_cheatsheets/version"
 				Shortcut_of_the_Day.new
 			else
 				scaper(input)
+			end
 		end
 
 		def submenu_A
