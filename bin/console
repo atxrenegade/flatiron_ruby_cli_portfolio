@@ -3,7 +3,3 @@
 require "bundler/setup"
 require "web_dev_cheatsheets"
 require "pry"
-Pry.start
-
-require "irb"
-IRB.start(__FILE__)
