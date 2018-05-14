@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["atxrenegade"]
   spec.email         = ["harleighabel@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "Cheatsheets and shorcuts tool for Web Developers"
+  spec.description   = "A quick CLI reference to shortcuts and cheetsheets from common web development tools"
+  spec.homepage      = "https://github.com/atxrenegade/flatiron_ruby_cli_portfolio"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
