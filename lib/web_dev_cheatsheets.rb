@@ -1,5 +1,7 @@
 require "web_dev_cheatsheets/version"
 
 module WebDevCheatsheets
-  # Your code goes here...
+  	def test_function
+		puts "Test passed!"
+	end
 end
