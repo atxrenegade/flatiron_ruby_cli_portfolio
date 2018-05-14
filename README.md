@@ -1,6 +1,6 @@
 # WebDevCheatsheets
 
-Welcome to Web Devs Shortcuts and Cheatsheets!
+Welcome to LAZY PROGRAMMER's Shortcuts and Cheatsheets!
 
 Shortcuts and Cheatsheets is a cli utility gem designed for as a quick reference to a web developer’s most commonly used tools. Think of it as a Swiss army knife for programmers and programming students. With so many languages, commands, shortcuts and tools to memorize, now you can access a quick digital reference without having shuffle through pages of cheatsheets, or drown in stack overflow posts.
 

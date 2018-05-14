@@ -4,12 +4,12 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "web_dev_cheatsheets/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "web_dev_cheatsheets"
+  spec.name          = "LAZY PROGRAMMER's shortcuts and cheatsheets"
   spec.version       = WebDevCheatsheets::VERSION
   spec.authors       = ["atxrenegade"]
   spec.email         = ["harleighabel@gmail.com"]
 
-  spec.summary       = "Cheatsheets and shorcuts tool for Web Developers"
+  spec.summary       = "LAZY PROGRAMMER'S Cheatsheets and shorcuts tool for Web Developers"
   spec.description   = "A quick CLI reference to shortcuts and cheetsheets from common web development tools"
   spec.homepage      = "https://github.com/atxrenegade/flatiron_ruby_cli_portfolio"
   spec.license       = "MIT"
