@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    web_dev_cheatsheets (0.1.0)
+    LAZY_PROGRAMMERs_shortcuts_and_cheatsheets (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -26,10 +26,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  LAZY_PROGRAMMERs_shortcuts_and_cheatsheets!
   bundler (~> 1.16)
   rake (~> 10.0)
   rspec (~> 3.0)
-  web_dev_cheatsheets!
 
 BUNDLED WITH
    1.16.1

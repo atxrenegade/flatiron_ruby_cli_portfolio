@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "web_dev_cheatsheets/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "LAZY PROGRAMMER's shortcuts and cheatsheets"
+  spec.name          = "LAZY_PROGRAMMERs_shortcuts_and_cheatsheets"
   spec.version       = WebDevCheatsheets::VERSION
   spec.authors       = ["atxrenegade"]
   spec.email         = ["harleighabel@gmail.com"]

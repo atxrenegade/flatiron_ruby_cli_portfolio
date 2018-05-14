@@ -1,3 +1,2 @@
 #!/usr/bin/env ruby
-require "web_dev_cheatsheets"
-test_function
+require "lib/web_dev_cheatsheets.rb"
