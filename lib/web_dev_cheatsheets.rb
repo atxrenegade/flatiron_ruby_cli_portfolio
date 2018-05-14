@@ -52,8 +52,8 @@ require "web_dev_cheatsheets/version"
 		end
 
 		def exit
-			puts "/n/nThanks for using the LAZY PROGRAMMERS shortcuts and cheatsheets!"
-			puts "/nSee you again soon!"
+			puts "\n\nThanks for using the LAZY PROGRAMMERS shortcuts and cheatsheets!"
+			puts "\nSee you again soon!"
 		end
 	end
 
@@ -63,6 +63,7 @@ require "web_dev_cheatsheets/version"
 	end
 
 	class Shortcut_of_the_Day
+
 	end
 
 	class Shortcuts
