@@ -52,6 +52,8 @@ require "web_dev_cheatsheets/version"
 		end
 
 		def exit
+			puts "/n/nThanks for using the LAZY PROGRAMMERS shortcuts and cheatsheets!"
+			puts "/nSee you again soon!"
 		end
 	end
 
