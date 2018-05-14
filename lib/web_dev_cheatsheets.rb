@@ -39,6 +39,26 @@ require "web_dev_cheatsheets/version"
 			puts "8. Windows keyboard shortcuts\nX. EXIT\n"
 			puts "Please select the number for the command you would like to execute?"
 			input = gets.strip!
-
 		end
+
+		def submenu_A
+		end
+
+		def submenu_B
+		end
+
+		def exit
+		end
+	end
+
+	class Scraper
+	end
+
+	class Shortcut_of_the_Day
+	end
+
+	class Shortcuts
+	end
+
+	class Commands
 	end
