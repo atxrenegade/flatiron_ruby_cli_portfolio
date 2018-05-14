@@ -1,2 +1,3 @@
 #!/usr/bin/env ruby
-require "lib/web_dev_cheatsheets.rb"
+require "bundler/setup"
+require "web_dev_cheatsheets"
