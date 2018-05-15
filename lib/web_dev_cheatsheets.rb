@@ -1,8 +1,11 @@
 require "web_dev_cheatsheets/version"
 
 	class CLI_interface
-		def initialize
-			welcome
+		attr_accessor :first_run
+
+		def initialize(first_run=true)
+			 first_run ? welcome : main_menu
+			 #correct program so that intro does not execute after first run through program
 		end
 
 		def welcome
@@ -43,7 +46,7 @@ require "web_dev_cheatsheets/version"
 			elsif input == "1"
 				daily_shortcut_greeting
 			else
-				Scraper.new(input)
+				Scraper.new(input.to_i)
 			end
 		end
 
@@ -59,16 +62,17 @@ require "web_dev_cheatsheets/version"
 			puts "  1. Mac/Linux\n  2. Windows\n  3. All of the Above\n"
 			puts "  MM. Main Menu\n  X. EXIT"
 			user_input = gets.strip!
+			user_input.to_f
 			case user_input
 			when "1"
 				puts "  You chose Mac/Linux!"
-				Scraper.new("1.1")
+				Scraper.new(1.1)
 			when "2"
 				puts "  You chose Windows!"
-				Scraper.new("1.2")
+				Scraper.new(1.2)
 			when "3"
 				puts "  You chose all of the above!"
-				Scraper.new("1.3")
+				Scraper.new(1.3)
 			when "MM"
 				main_menu
 			when "mm"
@@ -82,7 +86,7 @@ require "web_dev_cheatsheets/version"
 				puts "  Please try again\n\n"
 				daily_shortcut_submenu
 			end
-		end	
+		end
 
 		def exit
 			puts "\n  Thanks for using the LAZY PROGRAMMER's shortcuts and cheatsheets!"
@@ -93,13 +97,13 @@ require "web_dev_cheatsheets/version"
 	class Scraper
 		def initialize(user_selection)
 			case user_selection
-			when "1.1"
+			when 1.1
 				puts "  Im choosing a random category from Mac/Linux OS relevant shortcuts and\n"
 				puts "  and commands and scraping it for the random shortcut of the day!\n"
-			when "1.2"
+			when 1.2
 				puts "  Im choosing a random category from WINDOWS OS relevant shortcuts and\n"
 				puts "  and commands and scraping it for the random shortcut of the day!\n"
-			when "1.3"
+			when 1.3
 				puts "  Im choosing a random category from ALL OF THE ABOVE relevant shortcuts and\n"
 				puts "  and commands and scraping it for the random shortcut of the day!\n"
 			when 2
@@ -118,4 +122,6 @@ require "web_dev_cheatsheets/version"
 				puts "  Scraping Windows Keyboard SHORTCUTS!\n"
 			end
 		end
+		puts "\n\n"
+		CLI_interface.new(false)
 	end
