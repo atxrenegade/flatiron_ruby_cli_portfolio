@@ -6,6 +6,7 @@ require "web_dev_cheatsheets/version"
 		def initialize(first_run=true)
 			 first_run ? welcome : main_menu
 			 #correct program so that intro does not execute after first run through program
+
 		end
 
 		def welcome
@@ -24,7 +25,7 @@ require "web_dev_cheatsheets/version"
 			puts "  This program does not to include an exhaustive list of all\n"
 			puts "  available commands but focuses on the most commonly used\n"
 			puts "  shortcuts and commands you will need as a developer.\n\n"
-			puts "\n\n  Press any key to continue....."
+			puts "\n\n  Press the ENTER key to continue....."
 			any_key = gets
 			if any_key.include?("\n")
 				main_menu
