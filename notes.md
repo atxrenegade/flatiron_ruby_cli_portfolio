@@ -53,7 +53,7 @@ WOULD you like to EXIT or return to the main menu?
 MM. MAIN MENU
 X. EXIT
 
-> 1
+> MM
 
 *********************************
 **********  MAIN MENU  **********
