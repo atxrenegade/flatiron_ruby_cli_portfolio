@@ -42,7 +42,7 @@ require "web_dev_cheatsheets/version"
 			elsif input == "1"
 				daily_shortcut_greeting
 			else
-				Scaper.new(input)
+				Scraper.new(input)
 			end
 		end
 
@@ -97,6 +97,7 @@ require "web_dev_cheatsheets/version"
 	class Scraper
 		def initialize(user_selection)
 			@user_selection = user_selection
+			puts "Im in the scraper!"
 		end
 	end
 
