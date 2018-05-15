@@ -8,36 +8,36 @@ require "web_dev_cheatsheets/version"
 		def welcome
 			puts "\n\n\t\t\tWELCOME TO THE\n ******  LAZY PROGRAMMER's Shortcuts and Cheatsheets  ******\n\n"
 
-			puts "Shortcuts and Cheatsheets is a cli utility gem designed\n"
-			puts "as a quick reference to a web developer’s most commonly\n"
-			puts "used tools. Think of it as a Swiss army knife for web developers\n"
-			puts "and web dev students. With so many languages, commands, shortcuts\n"
-			puts "and tools to memorize, you can now access a quick digital\n"
-			puts "reference without having shuffle through pages of cheatsheets,\n"
-			puts "or drown in stack overflow posts.\n\n"
-			puts "Being familiar with shortcuts and important commands speeds up\n"
-			puts  "your workflow and increases your productivity as a programmer.\n"
-			puts "This program does not to include an exhaustive list of all\n"
-			puts "available commands but focuses on the most commonly used\n"
-			puts "shortcuts and commands you will need as a developer.\n\n"
-			puts "\n\nPress any key to continue....."
+			puts "  Shortcuts and Cheatsheets is a cli utility gem designed\n"
+			puts "  as a quick reference to a web developer’s most commonly\n"
+			puts "  used tools. Think of it as a Swiss army knife for web developers\n"
+			puts "  and web dev students. With so many languages, commands, shortcuts\n"
+			puts "  and tools to memorize, you can now access a quick digital\n"
+			puts "  reference without having shuffle through pages of cheatsheets,\n"
+			puts "  or drown in stack overflow posts.\n\n"
+			puts "  Being familiar with shortcuts and important commands speeds up\n"
+			puts "  your workflow and increases your productivity as a programmer.\n"
+			puts "  This program does not to include an exhaustive list of all\n"
+			puts "  available commands but focuses on the most commonly used\n"
+			puts "  shortcuts and commands you will need as a developer.\n\n"
+			puts "\n\n  Press any key to continue....."
 			any_key = gets
 			if any_key.include?("\n")
-				main_menu #why is this line not executing
+				main_menu 
 			end
 		end
 
 		def main_menu
-			puts"\n\n*********************************\n"
+			puts"\n*********************************\n"
 			puts "**********  MAIN MENU  **********\n"
 			puts "*********************************\n\n"
-			puts "1. Shortcut of the Day\n2. Github commands\n3. Atom shortcuts\n"
-			puts "4. Pry commands\n5. Bash/Shell (CLI for linux and UNIX)\n"
-			puts "6. COMMAND (CLI for windows)\n7. Mac OS keyboard shortcuts\n"
-			puts "8. Windows keyboard shortcuts\nX. EXIT\n"
-			puts "Please select the number for the command you would like to execute?"
+			puts "  1. Shortcut of the Day\n  2. Github COMMANDS \n  3. Atom SHORTCUTS\n"
+			puts "  4. Pry COMMANDS\n  5. Bash/Shell COMMANDS (CLI for linux and UNIX)\n"
+			puts "  6. COMMAND (CLI for windows)\n  7. Mac OS keyboard SHORTCUTS\n"
+			puts "  8. Windows keyboard SHORTCUTS\n  X. EXIT\n\n"
+			puts "  Please select the number for the command you would\n  like to execute?\n\t"
 			input = gets.strip!
-			if input == "X" || "x"
+			if input == "X" || input == "x"
 				exit
 			elsif input == "1"
 				Shortcut_of_the_Day.new
@@ -53,8 +53,8 @@ require "web_dev_cheatsheets/version"
 		end
 
 		def exit
-			puts "\n\nThanks for using the LAZY PROGRAMMERS shortcuts and cheatsheets!"
-			puts "See you again soon!"
+			puts "\n  Thanks for using the LAZY PROGRAMMER's shortcuts and cheatsheets!"
+			puts "  See you again soon!\n"
 		end
 	end
 
