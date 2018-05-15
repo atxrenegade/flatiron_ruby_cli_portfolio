@@ -6,6 +6,7 @@ require "web_dev_cheatsheets/version"
 		end
 
 		def welcome
+			#can this be in the executable and removed from the class since it's a one off?
 			puts "\n\n\t\t\tWELCOME TO THE\n ******  LAZY PROGRAMMER's Shortcuts and Cheatsheets  ******\n\n"
 
 			puts "  Shortcuts and Cheatsheets is a cli utility gem designed\n"
@@ -81,12 +82,7 @@ require "web_dev_cheatsheets/version"
 				puts "  Please try again\n\n"
 				daily_shortcut_submenu
 			end
-
-		def submenu_A
-		end
-
-		def submenu_B
-		end
+		end	
 
 		def exit
 			puts "\n  Thanks for using the LAZY PROGRAMMER's shortcuts and cheatsheets!"
@@ -96,16 +92,30 @@ require "web_dev_cheatsheets/version"
 
 	class Scraper
 		def initialize(user_selection)
-			@user_selection = user_selection
-			puts "Im in the scraper!"
+			case user_selection
+			when "1.1"
+				puts "  Im choosing a random category from Mac/Linux OS relevant shortcuts and\n"
+				puts "  and commands and scraping it for the random shortcut of the day!\n"
+			when "1.2"
+				puts "  Im choosing a random category from WINDOWS OS relevant shortcuts and\n"
+				puts "  and commands and scraping it for the random shortcut of the day!\n"
+			when "1.3"
+				puts "  Im choosing a random category from ALL OF THE ABOVE relevant shortcuts and\n"
+				puts "  and commands and scraping it for the random shortcut of the day!\n"
+			when 2
+				puts "  Scraping Github COMMANDS!\n"
+			when 3
+				puts "  Scraping Atom SHORTCUTS!\n"
+			when 4
+				puts "  Scraping Pry COMMANDS!\n"
+			when 5
+				puts "  Scraping Bash/Shell COMMANDS!\n"
+			when 6
+				puts "  Scraping COMMAND (CLI for WINDOWS!)\n"
+			when 7
+				puts "  Scraping Mac OS Keyboard SHORTCUTS!\n"
+			when 8
+				puts "  Scraping Windows Keyboard SHORTCUTS!\n"
+			end
 		end
 	end
-
-
-
-	class Shortcuts
-	end
-
-	class Commands
-	end
-end
