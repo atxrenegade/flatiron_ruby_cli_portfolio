@@ -1,10 +1,33 @@
 require "web_dev_cheatsheets/version"
+class Greeting
+	def welcome
+		#can this be in the executable and removed from the class since it's a one off?
+		puts "\n\n\t\t\tWELCOME TO THE\n ******  LAZY PROGRAMMER's Shortcuts and Cheatsheets  ******\n\n"
 
-	class Menus
-		def initialize
-			main_menu
+		puts "  Shortcuts and Cheatsheets is a cli utility gem designed\n"
+		puts "  as a quick reference to a web developer’s most commonly\n"
+		puts "  used tools. Think of it as a Swiss army knife for web developers\n"
+		puts "  and web dev students. With so many languages, commands, shortcuts\n"
+		puts "  and tools to memorize, you can now access a quick digital\n"
+		puts "  reference without having shuffle through pages of cheatsheets,\n"
+		puts "  or drown in stack overflow posts.\n\n"
+		puts "  Being familiar with shortcuts and important commands speeds up\n"
+		puts "  your workflow and increases your productivity as a programmer.\n"
+		puts "  This program does not to include an exhaustive list of all\n"
+		puts "  available commands but focuses on the most commonly used\n"
+		puts "  shortcuts and commands you will need as a developer.\n\n"
+		puts "\n\n  Press the ENTER key to continue....."
+		any_key = gets
+		if any_key.include?("\n")
+			Menu.main_menu
 		end
 
+		def exit
+			puts "\n  Thanks for using the LAZY PROGRAMMER's shortcuts and cheatsheets!"
+			puts "  See you again soon!\n"
+		end
+
+	class Menus
 		def main_menu
 			def main_menu
 				puts"\n*********************************\n"
@@ -52,10 +75,9 @@ require "web_dev_cheatsheets/version"
 			else
 				puts "  Your response was not understood.\n"
 				puts "  Please try again\n\n"
-				daily_shortcut_submenu
+				menus.daily_shortcut_submenu
 			end
 		end
-
 
 	class Scraper
 		def initialize(user_selection)
@@ -99,32 +121,4 @@ require "web_dev_cheatsheets/version"
 			daily_shortcut_submenu
 		end
 	end
-
-	class Greeting
-		def welcome
-			#can this be in the executable and removed from the class since it's a one off?
-			puts "\n\n\t\t\tWELCOME TO THE\n ******  LAZY PROGRAMMER's Shortcuts and Cheatsheets  ******\n\n"
-
-			puts "  Shortcuts and Cheatsheets is a cli utility gem designed\n"
-			puts "  as a quick reference to a web developer’s most commonly\n"
-			puts "  used tools. Think of it as a Swiss army knife for web developers\n"
-			puts "  and web dev students. With so many languages, commands, shortcuts\n"
-			puts "  and tools to memorize, you can now access a quick digital\n"
-			puts "  reference without having shuffle through pages of cheatsheets,\n"
-			puts "  or drown in stack overflow posts.\n\n"
-			puts "  Being familiar with shortcuts and important commands speeds up\n"
-			puts "  your workflow and increases your productivity as a programmer.\n"
-			puts "  This program does not to include an exhaustive list of all\n"
-			puts "  available commands but focuses on the most commonly used\n"
-			puts "  shortcuts and commands you will need as a developer.\n\n"
-			puts "\n\n  Press the ENTER key to continue....."
-			any_key = gets
-			if any_key.include?("\n")
-				Menu.main_menu
-			end
-
-			def exit
-				puts "\n  Thanks for using the LAZY PROGRAMMER's shortcuts and cheatsheets!"
-				puts "  See you again soon!\n"
-			end
-	end
+end
