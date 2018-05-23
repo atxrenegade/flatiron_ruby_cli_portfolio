@@ -57,9 +57,7 @@ end
 				Scraper.new(input.to_i)
 			end
 		end
-
-
-		end
+	end
 
 	class Scraper
 		def initialize(user_selection)
@@ -122,11 +120,14 @@ end
 				puts "  You chose all of the above!"
 				Scraper.new(1.3)
 			when "MM"
-				main_menu
+				Menu.new
 			when "mm"
-				main_menu
+				Menu.new
 			when "X"
 				exit
+				#TO DO fix exit function
+				#how do i call these methods from other classes
+				#without having to initialize a new class each time?
 		 	when "x"
 				exit
 			else
