@@ -52,40 +52,13 @@ end
 			if input == "X" || input == "x"
 				exit
 			elsif input == "1"
-				daily_shortcut_greeting
+				Daily_Shortcut.new
 			else
 				Scraper.new(input.to_i)
 			end
 		end
 
-		def daily_shortcut_submenu
-			puts "  1. Mac/Linux\n  2. Windows\n  3. All of the Above\n"
-			puts "  MM. Main Menu\n  X. EXIT"
-			user_input = gets.strip!
-			user_input.to_f
-			case user_input
-			when "1"
-				puts "  You chose Mac/Linux!"
-				Scraper.new(1.1)
-			when "2"
-				puts "  You chose Windows!"
-				Scraper.new(1.2)
-			when "3"
-				puts "  You chose all of the above!"
-				Scraper.new(1.3)
-			when "MM"
-				main_menu
-			when "mm"
-				main_menu
-			when "X"
-				exit
-		 	when "x"
-				exit
-			else
-				puts "  Your response was not understood.\n"
-				puts "  Please try again\n\n"
-				menus.daily_shortcut_submenu
-			end
+
 		end
 
 	class Scraper
@@ -120,6 +93,10 @@ end
 	end
 
 	class Daily_Shortcut
+		def initialize
+			daily_shortcut_greeting
+		end
+
 		def daily_shortcut_greeting
 			puts "\n  WELCOME TO SHORTCUTS!\n"
 			puts "  This feature is designed to familiarize you with a\n"
@@ -128,5 +105,34 @@ end
 			puts "  systems you are using?\n"
 			daily_shortcut_submenu
 		end
+
+		def daily_shortcut_submenu
+			puts "  1. Mac/Linux\n  2. Windows\n  3. All of the Above\n"
+			puts "  MM. Main Menu\n  X. EXIT"
+			user_input = gets.strip!
+			user_input.to_f
+			case user_input
+			when "1"
+				puts "  You chose Mac/Linux!"
+				Scraper.new(1.1)
+			when "2"
+				puts "  You chose Windows!"
+				Scraper.new(1.2)
+			when "3"
+				puts "  You chose all of the above!"
+				Scraper.new(1.3)
+			when "MM"
+				main_menu
+			when "mm"
+				main_menu
+			when "X"
+				exit
+		 	when "x"
+				exit
+			else
+				puts "  Your response was not understood.\n"
+				puts "  Please try again\n\n"
+				menus.daily_shortcut_submenu
+			end
 	end
 end
