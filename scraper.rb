@@ -3,6 +3,10 @@ require 'nokogiri'
 
 class Scraper
 	def initialize(user_selection)
+		user_selection(user_selection)
+	end
+
+	def selector(user_selection)
 		case user_selection
 		when 1.1
 			puts "  Im choosing a random category from Mac/Linux OS relevant shortcuts and\n"
