@@ -4,7 +4,7 @@ class Greeting
 	def initialize
 		welcome
 	end
-		
+
 	def welcome
 		#can this be in the executable and removed from the class since it's a one off?
 		puts "\n\n\t\t\tWELCOME TO THE\n ******  LAZY PROGRAMMER's Shortcuts and Cheatsheets  ******\n\n"
@@ -24,7 +24,7 @@ class Greeting
 		puts "\n\n  Press the ENTER key to continue....."
 		any_key = gets
 		if any_key.include?("\n")
-			Menu.main_menu
+			Menu.new
 		end
 	end
 
@@ -34,25 +34,27 @@ class Greeting
 	end
 end
 
-	class Menus
+	class Menu
+		def initialize
+			main_menu
+		end
+
 		def main_menu
-			def main_menu
-				puts"\n*********************************\n"
-				puts "**********  MAIN MENU  **********\n"
-				puts "*********************************\n\n"
-				puts "  1. Shortcut of the Day\n  2. Github COMMANDS \n  3. Atom SHORTCUTS\n"
-				puts "  4. Pry COMMANDS\n  5. Bash/Shell COMMANDS (CLI for linux and UNIX)\n"
-				puts "  6. COMMAND (CLI for windows)\n  7. Mac OS keyboard SHORTCUTS\n"
-				puts "  8. Windows keyboard SHORTCUTS\n  X. EXIT\n\n"
-				puts "  Please select the number for the command you would\n  like to execute?\n\t"
-				input = gets.strip!
-				if input == "X" || input == "x"
-					exit
-				elsif input == "1"
-					daily_shortcut_greeting
-				else
-					Scraper.new(input.to_i)
-				end
+			puts"\n*********************************\n"
+			puts "**********  MAIN MENU  **********\n"
+			puts "*********************************\n\n"
+			puts "  1. Shortcut of the Day\n  2. Github COMMANDS \n  3. Atom SHORTCUTS\n"
+			puts "  4. Pry COMMANDS\n  5. Bash/Shell COMMANDS (CLI for linux and UNIX)\n"
+			puts "  6. COMMAND (CLI for windows)\n  7. Mac OS keyboard SHORTCUTS\n"
+			puts "  8. Windows keyboard SHORTCUTS\n  X. EXIT\n\n"
+			puts "  Please select the number for the command you would\n  like to execute?\n\t"
+			input = gets.strip!
+			if input == "X" || input == "x"
+				exit
+			elsif input == "1"
+				daily_shortcut_greeting
+			else
+				Scraper.new(input.to_i)
 			end
 		end
 
