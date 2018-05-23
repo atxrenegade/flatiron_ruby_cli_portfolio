@@ -1,4 +1,6 @@
 require "web_dev_cheatsheets/version"
+require 'nokogiri'
+require 'pry'
 
 class Greeting
 	def initialize

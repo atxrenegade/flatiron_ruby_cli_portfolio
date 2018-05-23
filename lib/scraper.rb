@@ -1,5 +1,5 @@
-require 'open-uri'
-require 'nokogiri'
+#require 'nokogiri'
+#require 'pry'
 
 class Scraper
 	def initialize(user_selection)
@@ -36,7 +36,7 @@ class Scraper
 		puts "\n\n"
 	end
 		def scrape_github_cmds
-			github_cmd_doc = Nokogiri::HTML(open(https://www.interserver.net/tips/kb/git-common-git-commands/))
+			github_cmd_doc = Nokogiri::HTML(open("https://www.interserver.net/tips/kb/git-common-git-commands/"))
 			binding.pry
 		end
 end
