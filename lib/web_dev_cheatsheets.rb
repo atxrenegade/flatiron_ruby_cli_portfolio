@@ -1,11 +1,16 @@
 require "web_dev_cheatsheets/version"
+
 class Greeting
+	def initialize
+		welcome
+	end
+		
 	def welcome
 		#can this be in the executable and removed from the class since it's a one off?
 		puts "\n\n\t\t\tWELCOME TO THE\n ******  LAZY PROGRAMMER's Shortcuts and Cheatsheets  ******\n\n"
 
 		puts "  Shortcuts and Cheatsheets is a cli utility gem designed\n"
-		puts "  as a quick reference to a web developer’s most commonly\n"
+		puts "  as a quick reference to a web developer\’s most commonly\n"
 		puts "  used tools. Think of it as a Swiss army knife for web developers\n"
 		puts "  and web dev students. With so many languages, commands, shortcuts\n"
 		puts "  and tools to memorize, you can now access a quick digital\n"
@@ -21,11 +26,13 @@ class Greeting
 		if any_key.include?("\n")
 			Menu.main_menu
 		end
+	end
 
-		def exit
-			puts "\n  Thanks for using the LAZY PROGRAMMER's shortcuts and cheatsheets!"
-			puts "  See you again soon!\n"
-		end
+	def exit
+		puts "\n  Thanks for using the LAZY PROGRAMMER's shortcuts and cheatsheets!"
+		puts "  See you again soon!\n"
+	end
+end
 
 	class Menus
 		def main_menu
@@ -108,7 +115,6 @@ class Greeting
 			end
 		end
 		puts "\n\n"
-		CLI_interface.new(false)
 	end
 
 	class Daily_Shortcut
