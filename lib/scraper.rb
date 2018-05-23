@@ -40,6 +40,6 @@ class Scraper
 			#heading - strong
 			#function - p
 			#command - blockquote p
-			Github_Obj.new
+			DisplayObject.new
 		end
 end
