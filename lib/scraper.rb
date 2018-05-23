@@ -1,5 +1,3 @@
-#require 'nokogiri'
-#require 'pry'
 
 class Scraper
 	def initialize(user_selection)
@@ -38,5 +36,10 @@ class Scraper
 		def scrape_github_cmds
 			github_cmd_doc = Nokogiri::HTML(open("https://www.interserver.net/tips/kb/git-common-git-commands/"))
 			binding.pry
+			#main - div#content.kwd-content
+			#heading - strong
+			#function - p
+			#command - blockquote p
+			Github_Obj.new
 		end
 end
