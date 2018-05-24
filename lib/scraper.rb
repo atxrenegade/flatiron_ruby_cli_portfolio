@@ -1,11 +1,11 @@
 
 class Scraper
-	def initialize(user_selection)
-		user_selection(user_selection)
+	def initialize(user_input)
+		@user_input = user_input
 	end
 
-	def selector(user_selection)
-		case user_selection
+	def selector
+		case @user_input
 		when 1.1
 			puts "  Im choosing a random category from Mac/Linux OS relevant shortcuts and\n"
 			puts "  and commands and scraping it for the random shortcut of the day!\n"
@@ -33,13 +33,13 @@ class Scraper
 		end
 		puts "\n\n"
 	end
-		def scrape_github_cmds
-			github_cmd_doc = Nokogiri::HTML(open("https://www.interserver.net/tips/kb/git-common-git-commands/"))
-			binding.pry
-			#main - div#content.kwd-content
-			#heading - strong
-			#function - p
-			#command - blockquote p
-			DisplayObject.new
-		end
+	def scrape_github_cmds
+		github_cmd_doc = Nokogiri::HTML(open("https://www.interserver.net/tips/kb/git-common-git-commands/"))
+		binding.pry
+		#main - div#content.kwd-content
+		#heading - strong
+		#function - p
+		#command - blockquote p
+		DisplayObject.new
+	end
 end
