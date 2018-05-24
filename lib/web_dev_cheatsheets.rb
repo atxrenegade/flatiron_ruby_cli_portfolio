@@ -1,4 +1,3 @@
-require "web_dev_cheatsheets/version"
 
 class Greeting
 	def initialize
