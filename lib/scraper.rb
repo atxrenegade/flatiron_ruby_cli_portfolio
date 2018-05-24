@@ -16,7 +16,7 @@ class Scraper
 			puts "  Im choosing a random category from ALL OF THE ABOVE relevant shortcuts and\n"
 			puts "  and commands and scraping it for the random shortcut of the day!\n"
 		when 2
-			scrape_github_cmds
+			scrape_github
 			puts "  Scraping Github COMMANDS!\n"
 		when 3
 			puts "  Scraping Atom SHORTCUTS!\n"
@@ -34,8 +34,8 @@ class Scraper
 		puts "\n\n"
 	end
 
-	def scrape_github_cmds
-		github_cmd_doc = Nokogiri::HTML(open("https://www.interserver.net/tips/kb/git-common-git-commands/"))
+	def scrape_github
+		github_doc = Nokogiri::HTML(open("https://www.interserver.net/tips/kb/git-common-git-commands/"))
 		binding.pry
 		data_array = []
 		#main - div#content.kwd-content
