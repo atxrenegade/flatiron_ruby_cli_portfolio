@@ -33,13 +33,15 @@ class Scraper
 		end
 		puts "\n\n"
 	end
+
 	def scrape_github_cmds
 		github_cmd_doc = Nokogiri::HTML(open("https://www.interserver.net/tips/kb/git-common-git-commands/"))
 		binding.pry
+		data_array = []
 		#main - div#content.kwd-content
 		#heading - strong
 		#function - p
 		#command - blockquote p
-		DisplayObject.new
+		ToolObj.new(data_array)
 	end
 end
