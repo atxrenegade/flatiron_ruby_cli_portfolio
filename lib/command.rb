@@ -20,10 +20,23 @@ attr_accessor :command_name, :function, :description, :node
             @description = nil
         end
         node = ToolNode.new(data_array[0])
-        command = Command.new(node, command_name, function, description)  
+        command = Command.new(node, command_name, function, description)
     end
+
+	def self.search_for_command(name)
+		all.detect {|command_to_search| command_to_search.command_name == name}
+	end
 
 	def self.all
         @@all
     end
+
+=begin -----test, notes and data-------
+		 git_init = Command.new("Start-up Commands", ".git init", "starts new repository")
+
+		 git_commit = Command.new("Making Commits", ".git push origin master", "pushes file to master branch")
+
+		Command.search_for_command(".git init")
+		Command.all
+=end
 end
