@@ -40,7 +40,7 @@ class Scraper
 		data_string = github_doc.css("article.markdown-body.entry-content").children.text
 		data_string
 		binding.pry
- #test github = Scraper.new("2").scrape_github
+ 		#test github = Scraper.new("2").scrape_github
 
 		#ToolObj.new(data_array)
 	end
