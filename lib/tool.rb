@@ -2,10 +2,12 @@ class Tool
 	attr_accessor :name
 	attr_reader :commands, :modules
 
-	def initialize
+	def initialize(name)
+		@name = name
 	end
 
 	def modules
+		
 	end
 
 	def commands
