@@ -2,32 +2,31 @@ class Tool
 	attr_accessor :name
 	attr_reader :commands, :modules
 
-	@commands = []
+ 	@@all = []
 
 	def initialize(name)
 		@name = name
+		@modules = []
 	end
 
 	def modules
-		module.all
-	end
-
+		self.modules
 	end
 
 	def commands
-		@commands = modules.collect {|commands| modules.commands}
+		self.modules.collect {|commands| modules.commands}
 	end
 
-	def self.find_or_create
-	end
-
-	def save
-	end
-
-	def self.find
+	def self.find_or_create(name)
+		if tool.name == nil
+			new_tool = Tool.new(name)
+		else
+			tool.all {||}
+		end
 	end
 
 	def self.all
+		@@all
 	end
 end
 
