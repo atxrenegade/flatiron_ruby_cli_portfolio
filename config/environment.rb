@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "web_dev_cheatsheets"
+require "cli_interface"
 require 'open-uri'
 require 'nokogiri'
 require 'require_all'
