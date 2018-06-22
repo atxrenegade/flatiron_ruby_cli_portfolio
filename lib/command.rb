@@ -11,13 +11,13 @@ attr_reader :tool
         @details = details
     end
 
-	def create_command(module, name, function, details)
+	def create_command(module_name, name, function, details)
 		command = Command.new(module_name, name, function, details)
 		self.save
 		command.module = module_name
 	end
 
-	def self.new_from_data_array(tool, module, data_array)
+	def self.new_from_data_array(tool_name, module_name, data_array)
         name = data_array[0]
         function = data_array[1]
         if data_array[2] != nil
@@ -25,10 +25,10 @@ attr_reader :tool
         else
             details = nil
         end
-		command = Command.new(module, name, function, details)
-		module = Module.create_if_none(tool, module)
-		command.module = module
-		module.add_command(self)
+		command = Command.new(module_name, name, function, details)
+		new_module = Module.create_if_none(tool_name, module_name)
+		command.module = module_name
+		new_module.add_command(self)
 		command.save
 		command
     end
@@ -45,9 +45,9 @@ attr_reader :tool
 		@@all << self
 	end
 
-	def module=(module)
-		@module = module
-		module.add_command(self)
+	def module=(module_name)
+		@module = module_name
+		module_name.add_command(self)
 	end
 
 	def tool=(tool)
