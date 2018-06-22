@@ -26,9 +26,10 @@ attr_reader :module, :tool
             details = nil
         end
 		command = Command.new(module, name, function, details)
-		module = Module.create_if_new(module)
+		module = Module.create_if_none(module)
+		command.module = module
+		module.add_command(self)
 		command.save
-		command.module(module)
 		command
     end
 
@@ -37,7 +38,7 @@ attr_reader :module, :tool
 	end
 
 	def self.all
-        @@all_all
+        @@all
     end
 
 	def save
