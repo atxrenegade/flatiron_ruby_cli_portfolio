@@ -26,6 +26,20 @@ class Tool
 	def self.all
 		@@all
 	end
+
+	def add_module(module)
+		module.tool.nil? ? module.tool = self : module.tool
+		if !(modules.include?(module))
+		 	modules << module
+		end
+	end
+
+		song.artist.nil? ? song.artist = self : song.artist
+		if !(songs.include?(song))
+		 	songs << song
+		end
+
+	end
 end
 
 
