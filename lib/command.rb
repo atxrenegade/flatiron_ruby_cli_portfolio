@@ -1,17 +1,16 @@
 class Command
 attr_accessor :name, :function, :details, :module
 
-    @@all = []
+    @@commands = []
 
     def initialize(module, name, function, details= nil)
 		@module = module
         @name = name
         @function = function
         @details = details
-        @@all << self
     end
 
-	def create_command(module, name, function, details = nil)
+	def create_command(module, name, function, details =nil)
 		command = Command.new(name, function, details)
 		@@commands << self
 		command.module = module
@@ -32,9 +31,11 @@ attr_accessor :name, :function, :details, :module
 		all.detect {|command_to_search| command_to_search.command_name == name}
 	end
 
-	def self.all
-        @@all
+	def self.commands
+        @@commands
     end
+
+
 
 =begin -----test, notes and data-------
 example of command format
