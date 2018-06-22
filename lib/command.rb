@@ -1,5 +1,5 @@
 class Command
-attr_accessor :command_name, :function, :details
+attr_accessor :name, :function, :details, :module
 
     @@all = []
 
@@ -11,16 +11,21 @@ attr_accessor :command_name, :function, :details
         @@all << self
     end
 
-	def new_from_node(tool, data_array)
-        command_name = data_array[1]
-        function = data_array[2]
+	def create_command(module, name, function, details = nil)
+		command = Command.new(name, function, details)
+		@@commands << self
+		command.module = module
+	end
+
+	def command_formatter(module, data_array)
+		self.module = module
+        self.name = data_array[1]
+        self.function = data_array[2]
         if data_array[3] != nil
-            @description = data_array[3]
+            self.details = data_array[3]
         else
-            @description = nil
+            self.details = nil
         end
-        node = ToolNode.new(data_array[0])
-        command = Command.new(module, name, function, details)
     end
 
 	def self.search_for_command(name)
@@ -32,6 +37,7 @@ attr_accessor :command_name, :function, :details
     end
 
 =begin -----test, notes and data-------
+example of command format
 		 git_init = Command.new("Start-up Commands", ".git init", "starts new repository")
 
 		 git_commit = Command.new("Making Commits", ".git push origin master", "pushes file to master branch")
