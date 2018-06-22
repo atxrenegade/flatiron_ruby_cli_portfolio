@@ -1,7 +1,7 @@
 class Command
 attr_accessor :name, :function, :details, :module
 
-    @@commands = []
+    @@all = []
 
     def initialize(module, name, function, details= nil)
 		@module = module
@@ -12,7 +12,7 @@ attr_accessor :name, :function, :details, :module
 
 	def create_command(module, name, function, details =nil)
 		command = Command.new(name, function, details)
-		@@commands << self
+		@@all << self
 		command.module = module
 	end
 
@@ -31,8 +31,8 @@ attr_accessor :name, :function, :details, :module
 		all.detect {|command_to_search| command_to_search.command_name == name}
 	end
 
-	def self.commands
-        @@commands
+	def self.all
+        @@all_all
     end
 
 
