@@ -1,20 +1,20 @@
 class Command
-attr_accessor :module, :name, :function, :details
+attr_accessor :module_name, :name, :function, :details
 attr_reader :tool
 
     @@all = []
 
-    def initialize(module, name, function, details= nil)
-		@module = module
+    def initialize(module_name, name, function, details= nil)
+		@module_name = module_name
         @name = name
         @function = function
         @details = details
     end
 
 	def create_command(module, name, function, details)
-		command = Command.new(module, name, function, details)
+		command = Command.new(module_name, name, function, details)
 		self.save
-		command.module = module
+		command.module = module_name
 	end
 
 	def self.new_from_data_array(tool, module, data_array)
