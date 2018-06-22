@@ -7,7 +7,7 @@ class Tool
 	end
 
 	def modules
-		
+
 	end
 
 	def commands

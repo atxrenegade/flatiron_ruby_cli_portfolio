@@ -103,5 +103,6 @@ end
 				puts "  Please try again\n\n"
 				menus.daily_shortcut_submenu
 			end
-	end
+		end
+	
 end
