@@ -1,5 +1,5 @@
 class Tool
-	attr_accessor :name
+	attr_accessor :name, :module
 	attr_reader :commands, :modules
 
  	@@all = []
@@ -32,13 +32,6 @@ class Tool
 		if !(modules.include?(module))
 		 	modules << module
 		end
-	end
-
-		song.artist.nil? ? song.artist = self : song.artist
-		if !(songs.include?(song))
-		 	songs << song
-		end
-
 	end
 end
 

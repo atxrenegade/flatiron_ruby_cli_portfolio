@@ -1,6 +1,6 @@
 class Command
-attr_accessor :name, :function, :details
-attr_reader :module, :tool
+attr_accessor :name, :function, :details, :module
+attr_reader :tool
 
     @@all = []
 
@@ -48,6 +48,10 @@ attr_reader :module, :tool
 	def module=(module)
 		@module = module
 		module.add_command(self)
+	end
+
+	def tool=(tool)
+		@tool = tool
 	end
 
 =begin -----test, notes and data-------

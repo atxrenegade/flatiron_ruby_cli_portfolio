@@ -1,10 +1,11 @@
-class module
+class Module
 	attr_accessor :name, :tool
+
 	@@all = []
 	@@commands = []
 
 	def initialize(name, tool)
-		@name name
+		@name = name
 		@tool = tool
 		@@all << self
 	end
@@ -24,11 +25,4 @@ class module
 	def self.all
 		@@all
 	end
-end
-
-
-
-
-
-
 end
