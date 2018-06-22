@@ -18,17 +18,17 @@ attr_reader :module, :tool
 	end
 
 	def self.new_from_data_array(module, data_array)
-        name = data_array[1]
-        function = data_array[2]
-        if data_array[3] != nil
-            details = data_array[3]
+        name = data_array[0]
+        function = data_array[1]
+        if data_array[2] != nil
+            details = data_array[2]
         else
             details = nil
         end
 		command = Command.new(module, name, function, details)
 		module = Module.create_if_new(module)
 		command.save
-		command.module = module
+		command.module(module)
 		command
     end
 
@@ -42,6 +42,11 @@ attr_reader :module, :tool
 
 	def save
 		@@all << self
+	end
+
+	def module=(module)
+		@module = module
+		module.add_command(self)
 	end
 
 =begin -----test, notes and data-------
