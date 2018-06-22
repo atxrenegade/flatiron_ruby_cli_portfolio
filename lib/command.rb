@@ -1,13 +1,13 @@
 class Command
-attr_accessor :command_name, :function, :description, :node
+attr_accessor :command_name, :function, :details
 
     @@all = []
 
-    def initialize(node_name, command_name, function, description= nil)
-		@node = node
-        @command_name = command_name
+    def initialize(module, name, function, details= nil)
+		@module = module
+        @name = name
         @function = function
-        @description = description
+        @details = details
         @@all << self
     end
 
@@ -20,7 +20,7 @@ attr_accessor :command_name, :function, :description, :node
             @description = nil
         end
         node = ToolNode.new(data_array[0])
-        command = Command.new(node, command_name, function, description)
+        command = Command.new(module, name, function, details)
     end
 
 	def self.search_for_command(name)
