@@ -10,9 +10,9 @@ attr_accessor :name, :function, :details, :module
         @details = details
     end
 
-	def create_command(module, name, function, details =nil)
+	def create_command
 		command = Command.new(name, function, details)
-		@@all << self
+		self.save
 		command.module = module
 	end
 
@@ -35,7 +35,9 @@ attr_accessor :name, :function, :details, :module
         @@all_all
     end
 
-
+	def save
+		@@all << self
+	end
 
 =begin -----test, notes and data-------
 example of command format
