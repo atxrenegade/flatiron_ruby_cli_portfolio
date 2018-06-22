@@ -17,12 +17,10 @@ class Tool
 		self.modules.collect {|commands| modules.commands}
 	end
 
-	def self.find_or_create(name)
-		if tool.name == nil
-			new_tool = Tool.new(name)
-		else
-			tool.all {||}
-		end
+	def self.create(name)
+		tool = Tool.new(name)
+		tool.save
+		tool
 	end
 
 	def self.all
