@@ -1,5 +1,5 @@
 class Tool
-	attr_accessor :name, :module
+	attr_accessor :name, :module_name
 	attr_reader :commands, :modules
 
  	@@all = []
@@ -27,10 +27,10 @@ class Tool
 		@@all
 	end
 
-	def add_module(module)
-		module.tool.nil? ? module.tool = self : module.tool
-		if !(modules.include?(module))
-		 	modules << module
+	def add_module(module_name)
+		module_name.tool.nil? ? module_name.tool = self : module_name.tool
+		if !(modules.include?(module_name))
+		 	modules << module_name
 		end
 	end
 end
