@@ -1,5 +1,6 @@
 class Command
-attr_accessor :name, :function, :details, :module
+attr_accessor :name, :function, :details
+attr_reader :module, :tool
 
     @@all = []
 
@@ -16,16 +17,30 @@ attr_accessor :name, :function, :details, :module
 		command.module = module
 	end
 
-	def command_formatter(module, data_array)
-		self.module = module
-        self.name = data_array[1]
-        self.function = data_array[2]
+	def self. new_from_data_array(module, data_array)
+        name = data_array[1]
+        function = data_array[2]
         if data_array[3] != nil
-            self.details = data_array[3]
+            details = data_array[3]
         else
-            self.details = nil
+            details = nil
         end
+		command = Command.new(module, name, function, details)
+		module = Module.create_if_new(module)
+		command.save
+		command.module = module
     end
+
+	def self.new_from_filename(filename)
+	new_artist, new_song, new_genre = filename.split(" - ")
+	song = Song.new(new_song)
+	artist = Artist.find_or_create_by_name(new_artist)
+	genre = new_genre.gsub(".mp3","")
+	genre = Genre.find_or_create_by_name(genre)
+	song.artist = artist
+	song.genre = genre
+	song
+end
 
 	def self.search_for_command(name)
 		all.detect {|command_to_search| command_to_search.command_name == name}
