@@ -11,13 +11,13 @@ attr_reader :module, :tool
         @details = details
     end
 
-	def create_command
-		command = Command.new(name, function, details)
+	def create_command(module, name, function, details)
+		command = Command.new(module, name, function, details)
 		self.save
 		command.module = module
 	end
 
-	def self. new_from_data_array(module, data_array)
+	def self.new_from_data_array(module, data_array)
         name = data_array[1]
         function = data_array[2]
         if data_array[3] != nil
@@ -29,18 +29,8 @@ attr_reader :module, :tool
 		module = Module.create_if_new(module)
 		command.save
 		command.module = module
+		command
     end
-
-	def self.new_from_filename(filename)
-	new_artist, new_song, new_genre = filename.split(" - ")
-	song = Song.new(new_song)
-	artist = Artist.find_or_create_by_name(new_artist)
-	genre = new_genre.gsub(".mp3","")
-	genre = Genre.find_or_create_by_name(genre)
-	song.artist = artist
-	song.genre = genre
-	song
-end
 
 	def self.search_for_command(name)
 		all.detect {|command_to_search| command_to_search.command_name == name}
