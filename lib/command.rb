@@ -1,5 +1,5 @@
 class Command
-attr_accessor :name, :function, :details, :module
+attr_accessor :module, :name, :function, :details
 attr_reader :tool
 
     @@all = []
