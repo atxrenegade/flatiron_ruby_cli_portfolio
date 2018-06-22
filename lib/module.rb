@@ -9,7 +9,7 @@ class module
 		@@all << self
 	end
 
-	def create_if_new(name)
+	def create_if_none(name)
 
 	end
 
@@ -19,7 +19,7 @@ class module
 
 	def self.all
 		@@all
-	end	
+	end
 end
 
 
