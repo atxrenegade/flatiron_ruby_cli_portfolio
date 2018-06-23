@@ -12,12 +12,11 @@ attr_reader :tool
         @details = details
     end
 
-	def create_command(module_name, name, function, details)
+	def self.create_command(module_name, name, function, details)
 		command = Command.new(module_name, name, function, details)
-		command.save #not saving
-		command.module = module_name
+		command.save 
+		command
 	end
-
 	#to_be_tested
 	#not working "error: wrong number of arguments"
 	def new_from_data_array(tool_name, module_name, data_array)
@@ -29,7 +28,8 @@ attr_reader :tool
         else
             details = nil
         end
-		command = Command.create_command(module_name, name, function, details)
+		#tested and working above this line
+		command = command.create_command(module_name, name, function, details)
 		binding.pry
 		new_module = Module.create_if_none(tool_name, module_name)
 		command.module = module_name
