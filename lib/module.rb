@@ -16,7 +16,7 @@ class Module
 	end
 
 	def add_command(command)
-		@@command << command
+		@@commands << command
 	end
 
 	def self.commands
@@ -26,4 +26,6 @@ class Module
 	def self.all
 		@@all
 	end
+
+
 end
