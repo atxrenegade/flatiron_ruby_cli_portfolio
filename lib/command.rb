@@ -1,4 +1,5 @@
 class Command
+	#how and when do I tell modules and commands about each_other?
 attr_accessor :module_name, :name, :function, :details
 attr_reader :tool
 
@@ -13,10 +14,11 @@ attr_reader :tool
 
 	def create_command(module_name, name, function, details)
 		command = Command.new(module_name, name, function, details)
-		self.save
+		command.save #not saving
 		command.module = module_name
 	end
 
+	#to_be_tested
 	def self.new_from_data_array(tool_name, module_name, data_array)
         name = data_array[0]
         function = data_array[1]
@@ -34,7 +36,7 @@ attr_reader :tool
     end
 
 	def self.search_for_command(name)
-		all.detect {|command_to_search| command_to_search.command_name == name}
+		all.detect {|command_to_search| command_to_search.name == name}
 	end
 
 	def self.all
@@ -50,6 +52,7 @@ attr_reader :tool
 		module_name.add_command(self)
 	end
 
+	#do I need this method?
 	def tool=(tool)
 		@tool = tool
 	end

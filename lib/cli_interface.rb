@@ -1,4 +1,5 @@
-#cli_interface.rb
+#cli_interface.rb formerly web_dev_cheatsheets
+# will this name change cause issues at runtime?
 class Greeting
 	def initialize
 		welcome
@@ -104,5 +105,5 @@ end
 				menus.daily_shortcut_submenu
 			end
 		end
-	
+
 end
