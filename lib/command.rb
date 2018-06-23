@@ -19,7 +19,9 @@ attr_reader :tool
 	end
 
 	#to_be_tested
-	def self.new_from_data_array(tool_name, module_name, data_array)
+	#not working "error: wrong number of arguments"
+	def new_from_data_array(tool_name, module_name, data_array)
+		#NoMethodError: undefined method `new_from_data_array' for Command:Class
         name = data_array[0]
         function = data_array[1]
         if data_array[2] != nil
@@ -27,7 +29,8 @@ attr_reader :tool
         else
             details = nil
         end
-		command = Command.new(module_name, name, function, details)
+		command = Command.create_command(module_name, name, function, details)
+		binding.pry
 		new_module = Module.create_if_none(tool_name, module_name)
 		command.module = module_name
 		new_module.add_command(self)
