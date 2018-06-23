@@ -14,13 +14,12 @@ attr_reader :tool
 
 	def self.create_command(module_name, name, function, details)
 		command = Command.new(module_name, name, function, details)
-		command.save 
+		command.save
 		command
 	end
-	#to_be_tested
-	#not working "error: wrong number of arguments"
-	def new_from_data_array(tool_name, module_name, data_array)
-		#NoMethodError: undefined method `new_from_data_array' for Command:Class
+
+	def self.new_from_data_array(tool_name, module_name, data_array)
+		#git_init = Command.new_from_data_array("Git Hub", "Git Repository", [".git_init", "initiate git repository", nil])
         name = data_array[0]
         function = data_array[1]
         if data_array[2] != nil
@@ -29,12 +28,11 @@ attr_reader :tool
             details = nil
         end
 		#tested and working above this line
-		command = command.create_command(module_name, name, function, details)
+		command = Command.create_command(module_name, name, function, details)
 		binding.pry
 		new_module = Module.create_if_none(tool_name, module_name)
 		command.module = module_name
 		new_module.add_command(self)
-		command.save
 		command
     end
 
