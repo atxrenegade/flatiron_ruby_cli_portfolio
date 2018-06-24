@@ -3,7 +3,7 @@ class DisplayObjects
 	end
  	#what does the data look like coming from Scraper?
 	#Output will include 2-5 of the following details :title, :command (or key sequence), :function, :details (only on some commands not on shortcuts, #these will include index numbers to access these details)
-	def output_data(tool, @@modules)
+	def output_data(tool)
 		puts "******************************************************\n"
 		puts "\t\t\t#{tool.upcase}\n"
 		puts "******************************************************\n\n"
