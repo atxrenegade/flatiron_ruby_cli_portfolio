@@ -13,4 +13,10 @@ class DisplayObjects
 			end
 		end
 	end
+
+	def display_shortcut_of_the_day
+		#outputs shortcut of the day to screen"
+
+
+	end		
 end
