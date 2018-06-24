@@ -1,4 +1,4 @@
-class ToolObj
+class DisplayObjects
 	def initialize(data_hash)
 	end
  	#what does the data look like coming from Scraper?
