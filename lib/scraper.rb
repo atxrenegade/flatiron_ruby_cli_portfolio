@@ -40,6 +40,6 @@ class Scraper
 
  		#test github = Scraper.new("2").scrape_github
 
-		FormatData.github.new(data_array)
+		FormatData.new(github, data_array)
 	end
 end
