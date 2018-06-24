@@ -27,9 +27,9 @@ attr_reader :tool
         else
             details = nil
         end
-		#tested and working above this line
 		command = Command.create_command(module_name, name, function, details)
 		binding.pry
+		#tested and working above this line
 		new_module = Module.create_if_none(tool_name, module_name)
 		command.module = module_name
 		new_module.add_command(self)

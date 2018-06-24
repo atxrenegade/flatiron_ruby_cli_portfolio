@@ -1,5 +1,5 @@
 #cli_interface.rb formerly web_dev_cheatsheets
-# will this name change cause issues at runtime?
+# will this name change cause issues at
 class Greeting
 	def initialize
 		welcome
