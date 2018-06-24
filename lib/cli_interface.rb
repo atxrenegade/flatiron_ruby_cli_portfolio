@@ -15,7 +15,7 @@ class Greeting
 		puts "  and web dev students. With so many languages, commands, shortcuts\n"
 		puts "  and tools to memorize, you can now access a quick digital\n"
 		puts "  reference without having shuffle through pages of cheatsheets,\n"
-		puts "  or drown in stack overflow posts.\n\n"
+		puts "  or drown in Stack Overflow and Reedit posts.\n\n"
 		puts "  Being familiar with shortcuts and important commands speeds up\n"
 		puts "  your workflow and increases your productivity as a programmer.\n"
 		puts "  This program does not to include an exhaustive list of all\n"
