@@ -5,15 +5,18 @@ class DataFormatter
 	end
 
 	def type_switch
-		case Tool_type
+		case tool_type
 		when tool == "Git Hub"
 			format_github(data_array)
-		when tool == "Atom"
+		else tool == "Atom"
 			format_atom(data_array)
+		#add future pages options here	
 		end
 	end
 
 	def format_github
+
+
 
 	end
 
