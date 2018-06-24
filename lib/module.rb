@@ -12,7 +12,7 @@ class Module
 
 	def create_if_none(tool_name, module_name)
 		@@all.detect {|instance| module_name == instance.name}
-		#tool_name
+		tool_name.add_module(module_name)
 	end
 
 	def add_command(command)
