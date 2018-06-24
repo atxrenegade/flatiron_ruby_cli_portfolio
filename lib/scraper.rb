@@ -17,7 +17,7 @@ class Scraper
 			puts "  and commands and scraping it for the random shortcut of the day!\n"
 		when 2
 			scrape_github
-			puts "  Scraping Github COMMANDS!\n"
+			#puts "  Scraping Github COMMANDS!\n"
 		when 3
 			puts "  Scraping Atom SHORTCUTS!\n"
 		when 4
@@ -40,6 +40,6 @@ class Scraper
 
  		#test github = Scraper.new("2").scrape_github
 
-		Format_data_github.new(data_array)
+		FormatData.github.new(data_array)
 	end
 end
