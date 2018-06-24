@@ -35,13 +35,11 @@ class Scraper
 	end
 
 	def scrape_github
-		github_doc = Nokogiri::HTML(open("https://github.com/joshnh/Git-Commands"))
-		title = github_doc.css("article.markdown-body.entry-content h1").text
-		data_string = github_doc.css("article.markdown-body.entry-content").children.text
-		data_string
-		binding.pry
+		github_doc = Nokogiri::HTML(open("http://www.yolinux.com/TUTORIALS/Git-commands.html"))
+		data_string = github_doc.css("html body div.container-fluid div.yo-row div#content table.box tbody")
+
  		#test github = Scraper.new("2").scrape_github
 
-		#ToolObj.new(data_array)
+		Format_data_github.new(data_array)
 	end
 end
