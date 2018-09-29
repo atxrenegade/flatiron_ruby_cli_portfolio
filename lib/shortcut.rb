@@ -1,4 +1,4 @@
 #atom shortcut key sequences
-class ShortcutFunction
+class Shortcut
 
 end
