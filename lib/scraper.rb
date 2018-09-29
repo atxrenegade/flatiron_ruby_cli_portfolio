@@ -2,7 +2,7 @@
 class Scraper
 	def initialize(user_input)
 		@user_input = user_input
-		selector
+		self.selector
 	end
 
 	def selector
