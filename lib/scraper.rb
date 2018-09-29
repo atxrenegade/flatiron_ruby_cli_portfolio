@@ -2,13 +2,14 @@
 class Scraper
 	def initialize(user_input)
 		@user_input = user_input
+		selector
 	end
 
 	def selector
-		if @user_input == "1"
+		if @user_input == 1
 			puts "  Scraping Atom SHORTCUTS!\n"
 			scrape_atom
-		elsif @user_input == "2"
+		elsif @user_input == 2
 			puts "  Scraping Bash COMMANDS!\n"
 			scrape_bash
 		else
@@ -27,7 +28,7 @@ class Scraper
 	def scrape_atom
 		binding.pry
 		atom_doc = Nokogiri::HTML(open("https://github.com/nwinkler/atom-keyboard-shortcuts"))
-		binding.pry
+		#binding.pry
 		#data_string = github_doc.css("html body div.container-fluid div.yo-row div#content table.box tbody")
 		#FormatData.new(github, data_array)
 	end

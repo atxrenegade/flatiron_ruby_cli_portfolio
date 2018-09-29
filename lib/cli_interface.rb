@@ -19,7 +19,7 @@ class Greeting
 		puts "  up your workflow and increases your productivity as a programmer.\n"
 		puts "  This program does not to include an exhaustive list of all\n"
 		puts "  available commands but focuses on the most commonly used\n"
-		puts "  Ruby methods, Bash commands and Atom shortcuts you will need\n" 
+		puts "  Ruby methods, Bash commands and Atom shortcuts you will need\n"
 		puts "  as a developer."
 		puts "\n\nPress the ENTER key to continue....."
 
