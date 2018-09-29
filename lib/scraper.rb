@@ -19,6 +19,9 @@ class Scraper
 	end
 
 	def scrape_ruby
+		ruby_doc = Nokogiri::HTML(open(""))
+		@ruby_string = atom_doc.css("").children.text
+		@ruby_string.format_data
 
 	end
 	def scrape_bash
@@ -26,11 +29,11 @@ class Scraper
 	end
 
 	def scrape_atom
-		if @shortcut_string.empty?
+		if @shortcut_string == nil
 			atom_doc = Nokogiri::HTML(open("https://github.com/nwinkler/atom-keyboard-shortcuts"))
 			@shortcut_string = atom_doc.css("html body div div #js-repo-pjax-container div div #readme div article.markdown-body.entry-content table tbody").children.text
-
-			@shortcut_string.format_data
+			binding.pry
+			#@shortcut_string.format_data
 		else
 			#submenu list all or search shortcuts
 		end
