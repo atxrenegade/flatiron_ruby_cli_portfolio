@@ -33,30 +33,29 @@ class Greeting
 	end
 end
 
-	class Menu
-		def initialize
-			main_menu
-		end
+class Menu
+	def initialize
+		main_menu
+	end
 
-		def main_menu
-			puts"\n*********************************\n"
-			puts "**********  MAIN MENU  **********\n"
-			puts "*********************************\n\n"
-			puts "1. Atom SHORTCUTS\n"
-			puts "2.Bash/Shell COMMANDS (CLI for linux and UNIX)\n"
-			puts "3. Common Ruby Methods\n"
-			puts "X. EXIT\n\n"
-			puts "  Please select the number for the command you would\n  like to execute?\n\t"
-			input = gets.strip!
-			if input == "X" || input == "x"
-				exit
-			elsif input == "1" || input =="2" || input=="3"
-				Scraper.new(input.to_i)
-			else
-				puts "  Your response was not understood.\n"
-				puts "  Please try again\n\n"
-				main_menu
-			end
+	def main_menu
+		puts"\n*********************************\n"
+		puts "**********  MAIN MENU  **********\n"
+		puts "*********************************\n\n"
+		puts "1. Atom SHORTCUTS\n"
+		puts "2.Bash/Shell COMMANDS (CLI for linux and UNIX)\n"
+		puts "3. Common Ruby Methods\n"
+		puts "X. EXIT\n\n"
+		puts "  Please select the number for the command you would\n  like to execute?\n\t"
+		input = gets.strip!
+		if input == "X" || input == "x"
+			exit
+		elsif input == "1" || input =="2" || input=="3"
+			Scraper.new(input.to_i)
+		else
+			puts "  Your response was not understood.\n"
+			puts "  Please try again\n\n"
+			main_menu
 		end
 	end
 end
