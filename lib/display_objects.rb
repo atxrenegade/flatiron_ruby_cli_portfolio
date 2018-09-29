@@ -1,3 +1,5 @@
+#displays results by listing all or results of search
+
 class DisplayObjects
 	def initialize(data_hash)
 	end
@@ -12,13 +14,5 @@ class DisplayObjects
 				puts "\t#{heading.upcase}"
 			end
 		end
-	end
-
-	def display_shortcut_of_the_day
-		#outputs shortcut of the day to screen"
-		puts "\t#{tool.name}\n"
-		puts "\t\t #{command.name} : #{command.function}\n"
-		puts
-
 	end
 end

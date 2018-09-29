@@ -54,7 +54,7 @@ class Menu
 			Scraper.new(input.to_i)
 		else
 			puts "  Your response was not understood.\n"
-			puts "  Please try again\n\n"
+			puts "  Please try again.\n\n"
 			main_menu
 		end
 	end
