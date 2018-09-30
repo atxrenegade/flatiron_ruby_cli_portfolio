@@ -5,7 +5,7 @@ class CLIInterface
 	end
 
 	def welcome
-		puts "****** WELCOME TO Atom Shortcuts Quick Reference ******\n\n"
+		puts "\n\n\n****** Welcome To - Atom Shortcuts Quick Reference ******\n\n"
 
 		puts "  This is a cli utility gem designed as a quick reference\n"
 		puts "  to Atoms many shortcuts. With so many languages, commands,\n"
@@ -17,7 +17,7 @@ class CLIInterface
 
 		any_key = gets
 		if any_key.include?("\n")
-			self.menu
+			main_menu
 		end
 	end
 
