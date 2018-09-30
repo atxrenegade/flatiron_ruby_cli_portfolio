@@ -1,3 +1,0 @@
-class SearchShortcuts
-
-end
