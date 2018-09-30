@@ -1,5 +1,5 @@
 class Shortcut
-	attr_accessor :name, :description, :shortcut_key
+	attr_accessor :name, :description, :mac, :linux, :windows
 	def initialize
 	end
 
