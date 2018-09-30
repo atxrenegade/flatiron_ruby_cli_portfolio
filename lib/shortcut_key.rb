@@ -1,4 +1,3 @@
-#atom shortcut names
-class ShortcutName
+class ShortcutKey
 
 end
