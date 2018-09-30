@@ -8,8 +8,11 @@ class DataFormatter
 		shortcut = shortcut.first.split("\n")
 		shortcut = shortcut.reject { |item| item.nil? || item == ''}
 		shortcut = shortcut.each_slice(5).to_a
+		shortcut.object_hash_from_array
+	end
 
-		#do these methods belong in the class?  Shortcut.create KeySequence.create
+	def object_hash_from_array
+
 		shortcut.each do |atom_array|
 			@shortcut = Shortcut.new(atom_array[0])
 			@shortcut.name = atom_array[0] #is this redundant?
