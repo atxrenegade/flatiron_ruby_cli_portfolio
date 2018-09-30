@@ -1,9 +1,9 @@
 class DataFormatter
-	def initialize()
-
+	def initialize
 	end
 
-	def create_shortcuts_from_web
+	def create_data_array_from_web
+		binding.pry
 		shortcut = @shortcut_string.split("Block Travel").first
 		shortcut = shortcut.first.split("\n")
 		shortcut = shortcut.reject { |item| item.nil? || item == ''}

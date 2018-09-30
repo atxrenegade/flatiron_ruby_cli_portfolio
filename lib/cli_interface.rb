@@ -6,7 +6,6 @@ class CLIInterface
 
 	def welcome
 		puts "\n\n\n****** Welcome To - Atom Shortcuts Quick Reference ******\n\n"
-
 		puts "  This is a cli utility gem designed as a quick reference\n"
 		puts "  to Atoms many shortcuts. With so many languages, commands,\n"
 		puts "  shortcuts and tools to memorize, you can now access a quick\n"
@@ -37,7 +36,8 @@ class CLIInterface
 		if @user_os == "X" || @user_os == "x"
 			exit
 		elsif @user_os == "1" || @user_os =="2" || @user_os =="3"
-			Scraper.scrape_atom
+			binding.pry
+			Scraper.new
 		else
 			puts "  Your response was not understood.\n"
 			puts "  Please try again.\n\n"
