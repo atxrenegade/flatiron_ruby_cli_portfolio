@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    LAZY_PROGRAMMERs_shortcuts_and_cheatsheets (0.1.0)
+    atom_shortcuts (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -35,7 +35,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  LAZY_PROGRAMMERs_shortcuts_and_cheatsheets!
+  atom_shortcuts!
   bundler (~> 1.16)
   nokogiri (~> 1.8)
   pry (~> 0.11.3)
