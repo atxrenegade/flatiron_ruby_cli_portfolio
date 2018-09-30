@@ -37,7 +37,7 @@ class CLIInterface
 		if @user_os == "X" || @user_os == "x"
 			exit
 		elsif @user_os == "1" || @user_os =="2" || @user_os =="3"
-			Scraper.new
+			Scraper.scrape_atom
 		else
 			puts "  Your response was not understood.\n"
 			puts "  Please try again.\n\n"

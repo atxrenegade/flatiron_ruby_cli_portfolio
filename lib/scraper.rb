@@ -1,6 +1,5 @@
 class Scraper
-	def initialize(user_input)
-		self.selector
+	def initialize
 	end
 
 	def scrape_atom
