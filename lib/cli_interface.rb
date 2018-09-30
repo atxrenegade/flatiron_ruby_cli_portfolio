@@ -34,9 +34,9 @@ class CLIInterface
 		puts "X. EXIT\n\n"
 
 		@user_os = gets.strip!
-		if @user_os == "X" || input == "x"
+		if @user_os == "X" || @user_os == "x"
 			exit
-		elsif @user_os == "1" || input =="2" || input=="3"
+		elsif @user_os == "1" || @user_os =="2" || @user_os =="3"
 			Scraper.new
 		else
 			puts "  Your response was not understood.\n"
