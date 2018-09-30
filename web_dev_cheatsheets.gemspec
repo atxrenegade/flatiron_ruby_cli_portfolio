@@ -1,16 +1,16 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "web_dev_cheatsheets/version"
+require "atom_shortcuts/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "LAZY_PROGRAMMERs_shortcuts_and_cheatsheets"
-  spec.version       = WebDevCheatsheets::VERSION
+  spec.name          = "atom_shortcuts"
+  spec.version       = AtomShortcuts::VERSION
   spec.authors       = ["atxrenegade"]
   spec.email         = ["harleighabel@gmail.com"]
 
-  spec.summary       = "LAZY PROGRAMMER'S Cheatsheets and shorcuts tool for Web Developers"
-  spec.description   = "A quick CLI reference to shortcuts and cheetsheets from common web development tools"
+  spec.summary       = "A Cli gem for quick reference to Atom Shortcuts"
+  spec.description   = "A quick CLI reference to Atom shortcuts for Mac, Windows and Linux, with search function"
   spec.homepage      = "https://github.com/atxrenegade/flatiron_ruby_cli_portfolio"
   spec.license       = "MIT"
 
