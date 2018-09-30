@@ -2,7 +2,7 @@ class DataFormatter
 	def initialize
 	end
 
-	def create_data_array_from_web
+	def create_data_array_from_scraper
 		binding.pry
 		shortcut = @shortcut_string.split("Block Travel").first
 		shortcut = shortcut.first.split("\n")
