@@ -17,7 +17,7 @@ class CLIInterface
 
 		any_key = gets
 		if any_key.include?("\n")
-			Menu.new
+			self.menu
 		end
 	end
 
