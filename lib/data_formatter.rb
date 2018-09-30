@@ -3,14 +3,7 @@ class DataFormatter
 
 	end
 
-	def format_ruby
-	end
-
-	def format_bash
-
-	end
-
-	def format_atom
+	def create_shortcuts_from_web
 		shortcut = @shortcut_string.split("Block Travel").first
 		shortcut = shortcut.first.split("\n")
 		shortcut = shortcut.reject { |item| item.nil? || item == ''}
@@ -27,6 +20,7 @@ class DataFormatter
 			@shortcut_key.mac = atom_array[1]
 			@shortcut_key.windows = atom_array[2]
 			@shortcut_key.linux = atom_array[3]
+
 			@shortcut.shortcut_key = @shortcut_key
 			@shortcut.save
 		end
