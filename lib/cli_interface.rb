@@ -7,20 +7,14 @@ class Greeting
 
 	def welcome
 		#can this be in the executable and removed from the class since it's a one off?
-		puts "\n\n\t\t\tWELCOME TO THE\n ******  LAZY PROGRAMMER's Shortcuts and Ruby Reference  ******\n\n"
+		puts "\n\n\t\t\tWELCOME TO THE\n ******  Atom Shortcuts Quick Reference  ******\n\n"
 
 		puts "  This is a cli utility gem designed as a quick reference\n"
-		puts "  some common tools used by Ruby Developers. With so\n"
+		puts "  to Atoms many shortcuts. With so\n"
 		puts "  many languages, commands, shortcuts and tools to memorize,\n"
-		puts "  you can now access a quick digital reference without having\n"
-		puts "  to shuffle through pages of cheatsheets, or drown in Stack\n"
-		puts "  Overflow and Reedit posts.\n\n"
+		puts "  you can now access a quick digital reference without having to interrupt your workflow.\n\n"
 		puts "  Being familiar with shortcuts and important commands speeds\n"
 		puts "  up your workflow and increases your productivity as a programmer.\n"
-		puts "  This program does not to include an exhaustive list of all\n"
-		puts "  available commands but focuses on the most commonly used\n"
-		puts "  Ruby methods, Bash commands and Atom shortcuts you will need\n"
-		puts "  as a developer."
 		puts "\n\nPress the ENTER key to continue....."
 
 		any_key = gets
@@ -30,7 +24,7 @@ class Greeting
 	end
 
 	def exit
-		puts "\n  Thanks for using the LAZY PROGRAMMER's shortcuts and cheatsheets!"
+		puts "\n  Thanks for using the Atom Shortcuts!"
 		puts "  See you again soon!\n"
 	end
 end
@@ -44,16 +38,17 @@ class Menu
 		puts"\n*********************************\n"
 		puts "**********  MAIN MENU  **********\n"
 		puts "*********************************\n\n"
-		puts "1. Atom SHORTCUTS\n"
-		puts "2. Bash/Shell COMMANDS (CLI for linux and UNIX)\n"
-		puts "3. Common Ruby Methods\n"
+
+		puts "1. Mac OS\n"
+		puts "2. Windows\n"
+		puts "3. Linux\n"
 		puts "X. EXIT\n\n"
 		puts "  Please select the number for the command you would\n  like to execute?\n\t"
-		input = gets.strip!
-		if input == "X" || input == "x"
+		@user_os = gets.strip!
+		if @user_os == "X" || input == "x"
 			exit
-		elsif input == "1" || input =="2" || input=="3"
-			Scraper.new(input.to_i)
+		elsif @user_os == "1" || input =="2" || input=="3"
+			Scraper.new
 		else
 			puts "  Your response was not understood.\n"
 			puts "  Please try again.\n\n"
