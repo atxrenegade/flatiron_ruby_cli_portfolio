@@ -1,5 +1,6 @@
 class ShortcutKey
 	attr_accessor :mac, :linux, :windows, :shortcut
+	
 	def initialize
 	end
 
@@ -20,4 +21,11 @@ class ShortcutKey
 		#lists all linux commands
 	end
 
+	def all
+
+	end
+
+	def find_by_key
+
+	end
 end
