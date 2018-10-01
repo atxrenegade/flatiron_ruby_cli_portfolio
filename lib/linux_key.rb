@@ -1,3 +1,8 @@
 class LinuxKey
+	attr_accessor :key_seq
 
-end	
+	def initialize(key)
+		@key_seq = key
+	end	
+
+end
