@@ -1,3 +1,5 @@
+#old class to be removed
+
 class Command
 	#how and when do I tell modules and commands about each_other?
 attr_accessor :module_name, :name, :function, :details
