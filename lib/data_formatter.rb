@@ -2,12 +2,11 @@ class DataFormatter
 	def initialize
 	end
 
-	def create_data_array_from_scraper
-		shortcut = @shortcut_string.split("Block Travel").first.split("\n")
-		@shortcut_array = shortcut.reject { |item| item.nil? || item == ''}.each_slice(5).to_a
-
+	def create_data_array_from_scraper(data)
+		shortcut_array = data.split("Block Travel").first.split("\n")
+		shortcut_array = shortcut_array.reject { |item| item.nil? || item == ''}.each_slice(5).to_a
 		binding.pry
-		#shortcut.object_hash_from_array
+		#objects hash
 	end
 
 	def object_hash_from_array
