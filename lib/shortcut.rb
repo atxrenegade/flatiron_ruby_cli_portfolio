@@ -2,6 +2,7 @@ class Shortcut
 	@@all
 
 	attr_accessor :name, :description, :mac, :linux, :windows
+
 	def initialize(name)
 		@name = name
 	end
@@ -27,6 +28,6 @@ class Shortcut
 	end
 
 	def all
-
+		@@all
 	end
 end
