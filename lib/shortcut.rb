@@ -1,10 +1,14 @@
 class Shortcut
 	@@all
 
-	attr_accessor :name, :description, :mac, :linux, :windows
+	attr_accessor :name, :description, :mac_key, :linux_key, :windows_key
 
-	def initialize(name)
+	def initialize(name, description, mac_key=nil, windows_key=nil, linux_key=nil )
 		@name = name
+		@description = description
+		@mac_key = mac_key
+		@windows_key = windows_key
+		@linux_key = linux_key
 	end
 
 
@@ -19,7 +23,7 @@ class Shortcut
 		new_windows_key = WindowsKey.new(windows_key_seq)
 		new_linux_key = LinuxKey.new(linux_key_seq)
 		new_description = Description.new(description_string)
-		shortcut = Shortcut.new(name, mac_key, windows_key, linux_key, description)
+		shortcut = Shortcut.new(name, mac_key_seq, windows_key_seq, linux_key_seq, description_string)
 		#create associations between new objects
 	end
 
