@@ -5,13 +5,6 @@ class Shortcut
 
 	def create_shortcut_from_data_array(data_array)
 
-	end
-
-	def all_shortcuts
-
-	end
-
-	def all_descriptions
 
 	end
 

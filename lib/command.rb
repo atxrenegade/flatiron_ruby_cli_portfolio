@@ -1,4 +1,4 @@
-#old class to be removed
+#old class to be removed for REFERENCE ONLY
 
 class Command
 	#how and when do I tell modules and commands about each_other?
