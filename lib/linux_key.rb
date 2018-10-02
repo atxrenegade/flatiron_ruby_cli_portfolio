@@ -4,5 +4,4 @@ class LinuxKey
 	def initialize(key)
 		@key_seq = key
 	end	
-
 end
