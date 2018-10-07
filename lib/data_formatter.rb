@@ -16,7 +16,7 @@ class DataFormatter
 		    "description": attribute[4]
 		}
 		end
-		create_objects_from_array(attribute_array)
+		parse_attribute_array(attribute_array)
 	end
 
 	def parse_attribute_array(attribute_array)
