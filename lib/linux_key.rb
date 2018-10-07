@@ -1,8 +1,8 @@
 class LinuxKey
 	@all
 
-	attr_accessor :description, :shortcut, key_seq
-	
+	attr_accessor :description, :shortcut, :key_seq
+
 	def initialize(key_seq)
 		@key_seq = key_seq
 		@shortcuts = []
@@ -17,7 +17,7 @@ class LinuxKey
 	end
 
 	def create_key(key_seq)
-		key = key.new(key_seq)
+		key = LinuxKey.new(key_seq)
 		key.save
 		key
 	end
