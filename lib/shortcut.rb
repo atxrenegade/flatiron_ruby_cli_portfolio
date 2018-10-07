@@ -12,7 +12,7 @@ class Shortcut
 	end
 
 
-	def create_from_attribute_array(attribute_hash)
+	def create_from_attribute_hash(attribute_hash)
 		binding.pry
 		#["Preferences/Settings", "cmd-,", "ctrl-,", "ctrl-,", "Opens the Preferences/Settings view"]
 
@@ -25,11 +25,20 @@ class Shortcut
 			#create associations between new objects
 	end
 
-	def find_by_name
-
+	def save
+		@@all << self
 	end
 
 	def all
 		@@all
 	end
+
+	def find_by_name
+
+	end
+
+	def list_all
+
+	end 	
+
 end
