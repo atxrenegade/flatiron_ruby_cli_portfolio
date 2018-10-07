@@ -12,10 +12,18 @@ class ShortcutDescription
 		puts "Description: \n\t #{self}\n"
 	end
 
+	def search_for_description(search_phrase)
+
+	end
+
 	def create_shortcut_description(description)
 		description = ShortcutDescription.new(description)
 		description.save
 		description
+	end
+
+	def list_all
+		self.all.each {|description| description.display }
 	end
 
 	def save
@@ -25,6 +33,4 @@ class ShortcutDescription
 	def self.all
 		@@all
 	end
-
-
 end
