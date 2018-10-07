@@ -17,7 +17,7 @@ class MacOSKey
 	end
 
 	def create_key(key_seq)
-		key = MacOS.new(key_seq)
+		key = MacOSKey.new(key_seq)
 		key.save
 		key
 	end
