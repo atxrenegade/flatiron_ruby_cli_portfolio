@@ -27,4 +27,4 @@ class DataFormatter
 	end
 end
 
-#Shortcut.create_from_attribute_hash(shortcut_hash)
+#create_from_attribute_hash(shortcut_hash)

@@ -10,7 +10,7 @@ class Shortcut
 		self.windows_key if windows_key
 		self.linux_key if linux_key
 	end
-	
+
 	def create_from_attribute_hash(attribute_hash)
 		binding.pry
 		#["Preferences/Settings", "cmd-,", "ctrl-,", "ctrl-,", "Opens the Preferences/Settings view"]
@@ -21,14 +21,16 @@ class Shortcut
 		description = Description.new(attribute_hash[:description])
 		shortcut = Shortcut.new(attribute_hash[:name], description, mac_key, windows_key, linux_key, description)
 		shortcut.save
-		shortcut
+		#create object reciprocity for windows, linux, mac and descriptions
+		#how do I call #create_from_attribute_hash from another class without having to use initialize
+		binding.pry
 	end
 
 	def save
 		@@all << self
 	end
 
-	def all
+	def self.all
 		@@all
 	end
 
