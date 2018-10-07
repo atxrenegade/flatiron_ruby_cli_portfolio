@@ -16,9 +16,13 @@ class DataFormatter
 		    "description": attribute[4]
 		}
 		end
+		create_objects_from_array(attribute_array)
+	end
+
+	def parse_attribute_array(attribute_array)
 		attribute_array.each do |shortcut_hash|
-			shortcut = Shortcut.new(shortcut_hash)
+			Shortcut.new(shortcut_hash)
+			#replace initialize with Shorcut.create_from_attribute_array
 		end
-			binding.pry
 	end
 end
