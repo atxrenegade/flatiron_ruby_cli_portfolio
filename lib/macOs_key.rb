@@ -26,7 +26,7 @@ class MacOSKey
 		self.all.each do |key|
 			puts "MacOS Key: #{self.key_seq}:"
 			puts "Shortcut Name: #{self.shortcut.name}\n"
-			puts "Linux Key: #{self.shortcut.mac_key}\n"
+			puts "Linux Key: #{self.shortcut.linux_key}\n"
 			puts "Windows Key: #{self.shortcut.windows_key}\n\n\n"
 		end
 	end
