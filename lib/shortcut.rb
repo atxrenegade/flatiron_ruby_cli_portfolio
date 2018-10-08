@@ -12,9 +12,6 @@ class Shortcut
 	end
 
 	def self.create_from_attribute_hash(attribute_hash)
-		binding.pry
-		#["Preferences/Settings", "cmd-,", "ctrl-,", "ctrl-,", "Opens the Preferences/Settings view"]
-
 		mac_key = MacOSKey.new(attribute_hash[:mac_key])
 		windows_key = WindowsKey.new(attribute_hash[:windows_key])
 		linux_key = LinuxKey.new(attribute_hash[:linux_key])
