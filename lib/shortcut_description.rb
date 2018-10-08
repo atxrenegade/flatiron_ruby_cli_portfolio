@@ -8,7 +8,7 @@ class ShortcutDescription
 	end
 
 	def display
-		puts "Description: \n\t #{self}\n"
+		puts "Description: \n\t #{self.description}\n"
 	end
 
 	def search_for_description(search_phrase)

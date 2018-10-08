@@ -21,10 +21,7 @@ class DataFormatter
 
 	def parse_attribute_array(attribute_array)
 		attribute_array.each do |shortcut_hash|
-			binding.pry
-			Shortcut.new(shortcut_hash) #to be replaced
+			Shortcut.create_from_attribute_hash(shortcut_hash)
 		end
 	end
 end
-
-#create_from_attribute_hash(shortcut_hash)
