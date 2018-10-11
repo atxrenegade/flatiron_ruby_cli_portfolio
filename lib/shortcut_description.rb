@@ -4,7 +4,6 @@ class ShortcutDescription
 	attr_accessor :description, :shortcut
 	def initialize(description)
 		@description = description
-		@shortcuts = []
 	end
 
 	def display
@@ -17,6 +16,7 @@ class ShortcutDescription
 
 	def create_shortcut_description(description)
 		description = ShortcutDescription.new(description)
+		shortcut.shortcut_description = self
 		description.save
 		description
 	end
