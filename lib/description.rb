@@ -1,5 +1,5 @@
 class Description
-	@all
+	@@all
 
 	attr_accessor :details, :shortcut
 	def initialize(details)
