@@ -15,10 +15,11 @@ class Shortcut
 		mac_key = MacOSKey.new(attribute_hash[:mac_key])
 		windows_key = WindowsKey.new(attribute_hash[:windows_key])
 		linux_key = LinuxKey.new(attribute_hash[:linux_key])
-		description = ShortcutDescription.new(attribute_hash[:description])
+		description = Description.new(attribute_hash[:description])
 
 		shortcut = Shortcut.new(attribute_hash[:command_name], description, mac_key, windows_key, linux_key)
 		shortcut.save
+
 		#create object reciprocity for windows, linux, mac and descriptions
 		#how do I call #create_from_attribute_hash from another class without having to use initialize
 		binding.pry
