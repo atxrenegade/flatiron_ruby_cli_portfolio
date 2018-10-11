@@ -1,13 +1,13 @@
-class ShortcutDescription
+class Description
 	@all
 
-	attr_accessor :description, :shortcut
-	def initialize(description)
-		@description = description
+	attr_accessor :details, :shortcut
+	def initialize(details)
+		@details = details
 	end
 
 	def display
-		puts "Description: \n\t #{self.description}\n"
+		puts "Description: \n\t #{self.details}\n"
 	end
 
 	def search_for_description(search_phrase)
@@ -15,8 +15,8 @@ class ShortcutDescription
 	end
 
 	def create_shortcut_description(description)
-		description = ShortcutDescription.new(description)
-		shortcut.shortcut_description = self
+		description = Description.new(description)
+		shortcut.description = self
 		description.save
 		description
 	end
