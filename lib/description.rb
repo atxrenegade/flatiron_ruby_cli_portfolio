@@ -1,5 +1,5 @@
 class Description
-	@@all
+	@@all = []
 
 	attr_accessor :details, :shortcut
 	def initialize(details)
@@ -14,11 +14,9 @@ class Description
 
 	end
 
-	def create_shortcut_description(description)
-		description = Description.new(description)
-		shortcut.description = self
-		description.save
-		description
+	def command=(command)
+		@command = command
+		command.add_description(self) unless command.description == self
 	end
 
 	def list_all_by_description
