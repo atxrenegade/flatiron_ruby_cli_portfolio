@@ -18,6 +18,14 @@ class Shortcut
 		description = Description.new(attribute_hash[:description])
 
 		shortcut = Shortcut.new(attribute_hash[:command_name], description, mac_key, windows_key, linux_key)
+		#why is this not happening in the initalize method?
+		#why do I need to use a class method to create these instances?
+		shortcut.description = description
+		shortcut.mac_key = mac_key
+		shortcut.windows_key = windows_key
+		shortcut.linux_key = linux_key
+		
+
 		shortcut.save
 
 		#create object reciprocity for windows, linux, mac and descriptions
