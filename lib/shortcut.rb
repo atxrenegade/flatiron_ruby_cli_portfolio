@@ -11,6 +11,24 @@ class Shortcut
 		self.linux_key if linux_key
 	end
 
+	def add_description(description)
+		#binding.pry
+		self.description = description unless self.description == description
+	end
+
+	def add_mac_key(mac_key)
+		self.mac_key = mac_key unless self.mac_key == mac_key
+	end
+
+	def add_windows_key(windows_key)
+		self.windows_key = windows_key unless self.windows_key == windows_key
+	end
+
+	def add_linux_key(linux_key)
+		self.linux_key = linux_key unless self.linux_key == linux_key
+	end
+
+###this should NOT BE A CLASS METHODS It SHOULD BE INSTANCE METHOD
 	def self.create_from_attribute_hash(attribute_hash)
 		mac_key = MacOSKey.new(attribute_hash[:mac_key])
 		windows_key = WindowsKey.new(attribute_hash[:windows_key])
@@ -21,30 +39,17 @@ class Shortcut
 		#why is this not happening in the initalize method?
 		#why do I need to use a class method to create these instances?
 
+
 		shortcut.add_description(description) #to be tested?
 		shortcut.add_mac_key(mac_key)
 		shortcut.add_windows_key(windows_key)
 		shortcut.add_linux_key(linux_key)
-
 		shortcut.save
 
 		#create object reciprocity for windows, linux, mac and descriptions
 		#how do I call #create_from_attribute_hash from another class without having to use initialize
-		binding.pry
 	end
 
-	def add_description(description)
-		shortcut.description = self unless shortcut.description == self
-	end
-	def add_mac_key(mac_key)
-		shortcut.mac_key = self unless shortcut.mac_key == self
-	end
-	def add_windows_key(windows_key)
-		shortcut.windows_key = self unless shortcut.windows_key == self
-	end
-	def add_linux_key(linux_key)
-		shortcut.linux_key = self unless shortcut.linux_key == self
-	end
 
 	def save
 		@@all << self
