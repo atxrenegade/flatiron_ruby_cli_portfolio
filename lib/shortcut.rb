@@ -21,19 +21,29 @@ class Shortcut
 		#why is this not happening in the initalize method?
 		#why do I need to use a class method to create these instances?
 
-		shortcut.description = description
-		shortcut.mac_key = mac_key
-		shortcut.windows_key = windows_key
-		shortcut.linux_key = linux_key
-
-		
-
+		shortcut.add_description(description) #to be tested?
+		shortcut.add_mac_key(mac_key)
+		shortcut.add_windows_key(windows_key)
+		shortcut.add_linux_key(linux_key)
 
 		shortcut.save
 
 		#create object reciprocity for windows, linux, mac and descriptions
 		#how do I call #create_from_attribute_hash from another class without having to use initialize
 		binding.pry
+	end
+
+	def add_description(description)
+		shortcut.description = self unless shortcut.description == self
+	end
+	def add_mac_key(mac_key)
+		shortcut.mac_key = self unless shortcut.mac_key == self
+	end
+	def add_windows_key(windows_key)
+		shortcut.windows_key = self unless shortcut.windows_key == self
+	end
+	def add_linux_key(linux_key)
+		shortcut.linux_key = self unless shortcut.linux_key == self
 	end
 
 	def save
