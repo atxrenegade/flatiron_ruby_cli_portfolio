@@ -1,31 +1,38 @@
 class Shortcut
 	@@all = []
 
-	attr_accessor :name, :description, :mac_key, :linux_key, :windows_key
+	attr_accessor :name
+	attr_reader :description, :mac_key, :linux_key, :windows_key
 
 	def initialize(name, description=nil, mac_key=nil, windows_key=nil, linux_key=nil )
 		@name = name
-		self.description if description
-		self.mac_key if mac_key
-		self.windows_key if windows_key
-		self.linux_key if linux_key
+		@description if description
+		@mac_key if mac_key
+		@windows_key if windows_key
+		@linux_key if linux_key
 	end
 
 	def add_description(description)
 		#binding.pry
-		self.description = description unless self.description == description
+		@description = description
+		#create reciprocity here
+		Description.add_shortcut(self) unless Description.shortcut == self
 	end
 
 	def add_mac_key(mac_key)
-		self.mac_key = mac_key unless self.mac_key == mac_key
+		@mac_key = mac_key
+		MacOSKey.add_shortcut(self) unless MacOSKey.shortcut == self
 	end
 
 	def add_windows_key(windows_key)
-		self.windows_key = windows_key unless self.windows_key == windows_key
+		@windows_key = windows_key
+		WindowsKey.add_shortcut(self) unless WindowsKey.shortcut == self
+
 	end
 
 	def add_linux_key(linux_key)
-		self.linux_key = linux_key unless self.linux_key == linux_key
+		@linux_key = linux_key
+		LinuxKey.add_shortcut(self) unless LinuxKey.shortcut == self
 	end
 
 ###this should NOT BE A CLASS METHODS It SHOULD BE INSTANCE METHOD
@@ -39,15 +46,16 @@ class Shortcut
 		#why is this not happening in the initalize method?
 		#why do I need to use a class method to create these instances?
 
-
+		binding.pry
 		shortcut.add_description(description) #to be tested?
 		shortcut.add_mac_key(mac_key)
 		shortcut.add_windows_key(windows_key)
 		shortcut.add_linux_key(linux_key)
+
 		shortcut.save
 
 		#create object reciprocity for windows, linux, mac and descriptions
-		#how do I call #create_from_attribute_hash from another class without having to use initialize
+		#how do I call #create_from_attribute_hash from another class without having to use initialize or a class method
 	end
 
 
