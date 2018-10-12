@@ -14,10 +14,9 @@ class Description
 
 	end
 
-	def command=(command)
-		@command = command
-		command.add_description(self) unless command.description == self
-	end
+	def shortcut=(shortcut)
+		@shortcut = shortcut
+	end	
 
 	def list_all_by_description
 		self.all.each do |description|

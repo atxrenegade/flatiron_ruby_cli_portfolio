@@ -31,6 +31,10 @@ class MacOSKey
 		end
 	end
 
+	def shortcut=(shortcut)
+		@shortcut = shortcut
+	end	
+
 	def save
 		@@all << self
 	end

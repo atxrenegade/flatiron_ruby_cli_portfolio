@@ -8,6 +8,10 @@ class LinuxKey
 		@shortcuts = []
 	end
 
+	def shortcut=(shortcut)
+		@shortcut = shortcut
+	end	
+
 	def display
 		puts "Linux Key: \n\t #{self}\n"
 	end

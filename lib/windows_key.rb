@@ -6,6 +6,10 @@ class WindowsKey
 		@shortcuts = []
 	end
 
+	def shortcut=(shortcut)
+		@shortcut = shortcut
+	end	
+
 	def display
 		puts "Windows Key: \n\t #{self}\n"
 	end

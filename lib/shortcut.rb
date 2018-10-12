@@ -46,7 +46,7 @@ class Shortcut
 		#why is this not happening in the initalize method?
 		#why do I need to use a class method to create these instances?
 
-		binding.pry
+		#binding.pry
 		shortcut.add_description(description) #to be tested?
 		shortcut.add_mac_key(mac_key)
 		shortcut.add_windows_key(windows_key)
