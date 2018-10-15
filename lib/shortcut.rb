@@ -6,17 +6,14 @@ class Shortcut
 
 	def initialize(name, description=nil, mac_key=nil, windows_key=nil, linux_key=nil )
 		@name = name
-		@description if description
-		@mac_key if mac_key
-		@windows_key if windows_key
-		@linux_key if linux_key
+		@description = description
+		@mac_key = mac_key
+		@windows_key = windows_key
+		@linux_key = linux_key
 	end
 
 	def add_description(description)
-		#binding.pry
-		@description = description
-		#create reciprocity here
-		Description.add_shortcut(self) unless Description.shortcut == self
+		 description. = self
 	end
 
 	def add_mac_key(mac_key)
@@ -35,7 +32,7 @@ class Shortcut
 		LinuxKey.add_shortcut(self) unless LinuxKey.shortcut == self
 	end
 
-###this should NOT BE A CLASS METHODS It SHOULD BE INSTANCE METHOD
+###class method or instance method?
 	def self.create_from_attribute_hash(attribute_hash)
 		mac_key = MacOSKey.new(attribute_hash[:mac_key])
 		windows_key = WindowsKey.new(attribute_hash[:windows_key])
@@ -46,13 +43,16 @@ class Shortcut
 		#why is this not happening in the initalize method?
 		#why do I need to use a class method to create these instances?
 
-		#binding.pry
-		shortcut.add_description(description) #to be tested?
-		shortcut.add_mac_key(mac_key)
-		shortcut.add_windows_key(windows_key)
-		shortcut.add_linux_key(linux_key)
+
+
+
+		description.shortcut = shortcut #to be tested?
+		mac_key.shortcut = shortcut
+		windows_key.shortcut = shortcut
+		linux_key.shortcut = shortcut
 
 		shortcut.save
+		binding.pry
 
 		#create object reciprocity for windows, linux, mac and descriptions
 		#how do I call #create_from_attribute_hash from another class without having to use initialize or a class method

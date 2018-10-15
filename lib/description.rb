@@ -14,9 +14,7 @@ class Description
 
 	end
 
-	def shortcut=(shortcut)
-		@shortcut = shortcut
-	end	
+
 
 	def list_all_by_description
 		self.all.each do |description|
