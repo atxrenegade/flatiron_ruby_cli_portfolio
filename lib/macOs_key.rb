@@ -9,8 +9,11 @@ class MacOSKey
 		#do I need to add reciprocity here?
 	end
 
-	def display
-		puts "MacOS Key: \n\t #{self}\n"
+	def detail_view
+		puts "Shortcut Key Sequence: #{self.key_seq}\n"
+		puts "Shortcut Name: #{self.shortcut.name}\n"
+		puts "Operating System: Mac OS\n"
+		puts "Shortcut Description: #{self.description}\n\n"
 	end
 
 	def save
@@ -27,10 +30,7 @@ class MacOSKey
 
 	def self.list_all_by_key
 		self.all.each do |key|
-			puts "MacOS Key: #{self.key_seq}:"
-			puts "Shortcut Name: #{self.shortcut.name}\n"
-			puts "Linux Key: #{self.shortcut.linux_key}\n"
-			puts "Windows Key: #{self.shortcut.windows_key}\n\n\n"
+			puts "#{self.key_seq}: #{self.shortcut.name}\n"
 		end
 	end
 
