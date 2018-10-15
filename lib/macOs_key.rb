@@ -1,5 +1,5 @@
 class MacOSKey
-	@@all
+	@@all = []
 
 	attr_accessor :description, :shortcut, :key_seq
 
