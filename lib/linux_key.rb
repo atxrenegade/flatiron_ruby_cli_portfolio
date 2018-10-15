@@ -1,38 +1,18 @@
 class LinuxKey
-	@all
+	@@all = []
 
 	attr_accessor :description, :shortcut, :key_seq
 
 	def initialize(key_seq)
 		@key_seq = key_seq
-		@shortcuts = []
+		@key_seq.save
 	end
 
-	def shortcut=(shortcut)
-		@shortcut = shortcut
-	end	
-
-	def display
-		puts "Linux Key: \n\t #{self}\n"
-	end
-
-	def search_for_key(search_phrase)
-
-	end
-
-	def create_key(key_seq)
-		key = LinuxKey.new(key_seq)
-		key.save
-		key
-	end
-
-	def list_all_by_key
-		self.all.each do |key|
-			puts "Linux Key: #{self.key_seq}:"
-			puts "Shortcut Name: #{self.shortcut.name}\n"
-			puts "Mac Key: #{self.shortcut.mac_key}\n"
-			puts "Windows Key: #{self.shortcut.windows_key}\n\n\n"
-		end
+	def detail_view
+		puts "Shortcut Key Sequence: #{self.key_seq}\n"
+		puts "Shortcut Name: #{self.shortcut.name}\n"
+		puts "Operating System: LINUX OS\n"
+		puts "Shortcut Description: #{self.description}\n\n"
 	end
 
 	def save
@@ -41,5 +21,19 @@ class LinuxKey
 
 	def self.all
 		@@all
+	end
+
+	def self.sort_keys_alphabetically
+
+	end
+
+	def self.list_all_by_key
+		self.all.each do |key|
+			puts "#{self.key_seq}: #{self.shortcut.name}\n"
+		end
+	end
+
+	def self.search_for_key(search_phrase)
+
 	end
 end
