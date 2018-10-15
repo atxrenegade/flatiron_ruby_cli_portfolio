@@ -5,7 +5,7 @@ class MacOSKey
 
 	def initialize(key_seq)
 		@key_seq = key_seq
-		key_seq.save
+		@key_seq.save
 		#do I need to add reciprocity here?
 	end
 
@@ -21,7 +21,7 @@ class MacOSKey
 		@@all
 	end
 
-	def self. sort_keys_alphabetically
+	def self.sort_keys_alphabetically
 
 	end
 
