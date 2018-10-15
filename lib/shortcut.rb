@@ -37,12 +37,17 @@ class Shortcut
 		@@all
 	end
 
-	def find_by_name
+	def self.find_by_name(name)
 
 	end
 
-	def list_all
-
+	def self.list_all_by_name
+		@@all.sort_by_name
+		#list and number each shortcut in alphabetical order by name
 	end
 
+	def self.sort_by_name
+		#sort shortcuts_by_alphabetical_name
+
+	end
 end
