@@ -1,27 +1,26 @@
 class WindowsKey
+	@@all = []
 	attr_accessor :description, :shortcut, :key_seq
 
 	def initialize(key_seq)
 		@key_seq = key_seq
-		@shortcuts = []
+		@key_seq.save
 	end
-
-	def shortcut=(shortcut)
-		@shortcut = shortcut
-	end	
 
 	def display
 		puts "Windows Key: \n\t #{self}\n"
 	end
 
-	def search_for_key(search_phrase)
-
+	def save
+		@@all << self
 	end
 
-	def create_key(key_seq)
-		key = WindowsKey.new(key_seq)
-		key.save
-		key
+	def self.all
+		@@all
+	end
+
+	def self.sort_keys_alphabetically
+
 	end
 
 	def list_all_by_key
@@ -33,11 +32,7 @@ class WindowsKey
 		end
 	end
 
-	def save
-		@@all << self
-	end
+	def search_for_key(search_phrase)
 
-	def self.all
-		@@all
 	end
 end
