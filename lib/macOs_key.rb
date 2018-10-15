@@ -5,7 +5,7 @@ class MacOSKey
 
 	def initialize(key_seq)
 		@key_seq = key_seq
-		@key_seq.save
+		@@all << key_seq
 		#do I need to add reciprocity here?
 	end
 

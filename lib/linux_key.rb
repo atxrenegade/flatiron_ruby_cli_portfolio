@@ -5,14 +5,14 @@ class LinuxKey
 
 	def initialize(key_seq)
 		@key_seq = key_seq
-		@key_seq.save
+		@@all << key_seq
 	end
 
 	def detail_view
 		puts "Shortcut Key Sequence: #{self.key_seq}\n"
 		puts "Shortcut Name: #{self.shortcut.name}\n"
 		puts "Operating System: LINUX OS\n"
-		puts "Shortcut Description: #{self.description}\n\n"
+		puts "Shortcut Description: #{self.description.details}\n\n"
 	end
 
 	def save

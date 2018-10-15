@@ -4,7 +4,7 @@ class WindowsKey
 
 	def initialize(key_seq)
 		@key_seq = key_seq
-		@key_seq.save
+		@@all << key_seq
 	end
 
 	def detail_view
