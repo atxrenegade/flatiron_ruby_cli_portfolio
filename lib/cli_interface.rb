@@ -4,6 +4,11 @@ class CLIInterface
 		welcome
 	end
 
+	def is_integer?
+		#helper_method
+    	@user_input.to_i.to_s == @user_input
+  	end
+
 	def welcome
 		puts "\n\n\n****** Welcome To - Atom Shortcuts Quick Reference ******\n\n"
 		puts "  This is a cli utility gem designed as a quick reference\n"
