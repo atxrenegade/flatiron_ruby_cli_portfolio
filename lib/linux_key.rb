@@ -40,7 +40,15 @@ class LinuxKey
 	end
 
 	def self.search_by_name
-
+		binding.pry
+		self.all.each do |linux_key|
+			if linux_key.shortcut.name == @find_me_name
+				linux_key.detail_view
+			else
+				puts "That name was not found.\n"
+				puts "Please try again or choose a different name."
+			end
+		end	
 	end
 
 	def self.search_by_key
@@ -48,6 +56,7 @@ class LinuxKey
 	end
 
 	def self.search_by_number
+
 
 	end
 end
