@@ -140,7 +140,7 @@ endclass CLIInterface
 		elsif is_integer?
 			#binding.pry
 			#prevent non-integer values from triggering this method
-				display_details
+			display_details
 		else
 			puts "Your response was not understood.\n"
 			puts "Please select a valid option.\n"
