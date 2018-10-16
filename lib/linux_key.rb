@@ -12,7 +12,7 @@ class LinuxKey
 		puts "\n\tShortcut Key Sequence: #{self.key_seq}\n"
 		puts "\tShortcut Name: #{self.shortcut.name}\n"
 		puts "\tOperating System: LINUX OS\n"
-		puts "\tShortcut Description: #{self.description.details}\n\n"
+		puts "\tShortcut Description: #{self.description}\n\n"
 	end
 
 	def description
