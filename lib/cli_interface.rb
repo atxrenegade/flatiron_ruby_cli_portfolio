@@ -1,4 +1,7 @@
-class CLIInterface
+##TO DO work out bug with #exit, #is_integer?
+## COMPLETE sort_by_alphabetize
+# Look in into strange formatting on some objects, key and value reversed
+endclass CLIInterface
 
 	def initialize
 		welcome
