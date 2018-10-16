@@ -37,13 +37,33 @@ class CLIInterface
 			exit
 		elsif @user_os == "1" || @user_os =="2" || @user_os =="3"
 			Scraper.new.scrape_atom
-			binding.pry
+			display_shortcuts
 		else
 			puts "  Your response was not understood.\n"
 			puts "  Please try again.\n\n"
 			main_menu
 		end
 	end
+
+	def display_shortcuts
+		if @user_os == "1"
+			MacOSKey.list_all_by_key
+		elsif
+			@user_os == "2"
+			WindowsKey.list_all_by_key
+		else
+			LinuxKey.list_all_by_key
+		end
+		submenu
+	end
+
+	def submenu
+		puts "Please select an option from the Menu Below:\n"
+		#to view_details
+		# search_by_key
+		# search_by_title
+	end
+
 	def exit
 		puts "\nThanks for using the Atom Shortcuts!"
 		puts "  See you again soon!\n"
