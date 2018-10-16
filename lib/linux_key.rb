@@ -73,13 +73,14 @@ class LinuxKey
 		end
 	end
 
-	def self.search_by_number
+	def self.search_by_number(number)
+		binding.pry
 		counter = 0
 		self.all.each do |key|
 			counter += 1
-			if counter == @details_input
+			if counter.to_s == number
 				key.detail_view
 			end
-		end 		
+		end
 	end
 end

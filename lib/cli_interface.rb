@@ -8,9 +8,9 @@ class CLIInterface
 		welcome
 	end
 
-	def is_integer?
+	def is_integer?(details_input)
 		#helper_method
-    	@details_input.to_i.to_s == @details_input
+    	details_input.to_i.to_s == details_input
   	end
 
 	def welcome
@@ -131,26 +131,26 @@ class CLIInterface
 		puts "To view DETAILS of a specific shortcut enter the number below \n"
 		puts "To return to Search Menu type 'SM'"
 		puts "To return to Main Menu type 'MM'\n"
-		@details_input = gets.strip!
-		if @details_input == 'sm' || @details_input == 'SM'
+		details_input = gets.strip!
+		if details_input == 'sm' || details_input == 'SM'
 			submenu_options
-		elsif @details_input == 'mm' || @details_input == 'MM'
+		elsif details_input == 'mm' || details_input == 'MM'
 			main_menu
-		elsif is_integer?
-			display_details
+		elsif is_integer?(details_input)
+			display_details(details_input)
 		else
 			puts "Your response was not understood.\n"
 			puts "Please select a valid option.\n"
 		end
 	end
 
-	def display_details
+	def display_details(number)
 		if @user_os == "1"
-			MacOSKey.search_by_number
+			MacOSKey.search_by_number(number)
 		elsif @user_os == "2"
-			WindowsKey.search_by_number
+			WindowsKey.search_by_number(number)
 		else
-			LinuxKey.search_by_number
+			LinuxKey.search_by_number(number)
 		end
 	end
 
