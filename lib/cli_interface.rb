@@ -74,13 +74,13 @@ class CLIInterface
 		if @user_input == "X" || @user_input == "x"
 			exit
 		elsif @user_input == "N" || @user_input == "n"
-			find_by_name
+			#find_by_name
 		elsif @user_input == "K" || @user_input == "k"
-			find_by_key
+			#find_by_key
 		elsif @user_input == "MM" || @user_input == "mm"
 			main_menu
 		elsif @user_input.integer?
-			display_details
+			#display_details
 		else
 			puts "Your response was not understood.\n"
 			puts "Please select a valid option.\n\n\n"
@@ -91,7 +91,12 @@ class CLIInterface
 	end
 
 	def exit
-		puts "\nThanks for using the Atom Shortcuts!"
-		puts "  See you again soon!\n"
+		binding.pry
+		unless @user_input != 'x' || @user_input != 'X'
+			puts "\nThanks for using the Atom Shortcuts!"
+			puts "  See you again soon!\n"
+
+		end
+
 	end
 end
