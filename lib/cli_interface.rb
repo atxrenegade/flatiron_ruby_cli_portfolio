@@ -76,9 +76,9 @@ class CLIInterface
 		if @user_input == "X" || @user_input == "x"
 			exit
 		elsif @user_input == "N" || @user_input == "n"
-			search_by_name
+			search_by_os_and_name
 		elsif @user_input == "K" || @user_input == "k"
-			search_by_key
+			search_by_os_and_key
 		elsif @user_input == "MM" || @user_input == "mm"
 			main_menu
 		elsif is_integer?
