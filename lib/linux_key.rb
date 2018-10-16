@@ -54,8 +54,19 @@ class LinuxKey
 		end
 	end
 
-	def self.search_by_key
-
+	def self.search_by_key(key_to_find)
+		self.all.each do |key|
+			if key.key_seq == key_to_find
+				@found_key = key
+			end
+		end
+		if @found_key.nil?
+				puts "\nThat name was not found.\n"
+				puts "Please try again or choose a different key."
+			else
+				puts "\n\n"
+				@found_key.detail_view
+		end
 	end
 
 	def self.search_by_number

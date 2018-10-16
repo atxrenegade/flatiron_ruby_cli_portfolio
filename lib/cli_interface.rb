@@ -112,13 +112,13 @@ class CLIInterface
 	def search_by_os_and_key
 		puts "Enter the key you would like to search for: \n"
 		puts "(Use the format 'ctrl-key')\n"
-		@find_me_key = gets.strip!
+		key_to_find = gets.strip!
 		if @user_os == "1"
-			MacOSKey.search_by_key
+			MacOSKey.search_by_key(key_to_find)
 		elsif @user_os == "2"
-			WindowsKey.search_by_key
+			WindowsKey.search_by_key(key_to_find)
 		else
-			LinuxKey.search_by_key
+			LinuxKey.search_by_key(key_to_find)
 		end
 	end
 
