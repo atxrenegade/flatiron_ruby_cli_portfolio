@@ -72,7 +72,7 @@ class CLIInterface
 
 		if @user_input == "L" || @user_input == "l"
 			display_shortcuts
-		elseif @user_input == "X" || @user_input == "x"
+		elsif @user_input == "X" || @user_input == "x"
 			exit
 		elsif @user_input == "N" || @user_input == "n"
 			search_by_os_and_name
