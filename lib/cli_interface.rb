@@ -69,21 +69,25 @@ class CLIInterface
 	end
 
 	def submenu_input
-		user_input == gets.strip!
+		@user_input = gets.strip!
+		puts "\n\n\n"
 		if @user_input == "X" || @user_input == "x"
 			exit
-		if user_input.integer?
-
+		elsif @user_input == "N" || @user_input == "n"
+			find_by_name
+		elsif @user_input == "K" || @user_input == "k"
+			find_by_key
+		elsif @user_input == "MM" || @user_input == "mm"
+			main_menu
+		elsif @user_input.integer?
+			display_details
 		else
 			puts "Your response was not understood.\n"
 			puts "Please select a valid option.\n\n\n"
 			submenu_options
 		end
+		puts "\n\n\n"
 		submenu_options
-
-		#to view_details
-		# search_by_key
-		# search_by_title
 	end
 
 	def exit
