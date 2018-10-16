@@ -16,6 +16,10 @@ class MacOSKey
 		puts "Shortcut Description: #{self.description}\n\n"
 	end
 
+	def description
+		self.shortcut.description.details
+	end	
+
 	def save
 		@@all << self
 	end
