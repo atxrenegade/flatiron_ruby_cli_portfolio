@@ -5,7 +5,7 @@ class MacOSKey
 
 	def initialize(key_seq)
 		@key_seq = key_seq
-		@@all << key_seq
+		self.save
 		#do I need to add reciprocity here?
 	end
 
@@ -29,8 +29,13 @@ class MacOSKey
 	end
 
 	def self.list_all_by_key
+		puts "\n\n*************************************"
+		puts "\n\tATOM SHORTCUTS FOR MAC OS"
+		puts "\n*************************************\n\n"
+		counter = 1
 		self.all.each do |key|
-			puts "#{self.key_seq}: #{self.shortcut.name}\n"
+			puts "  #{counter}.  #{key.key_seq}: #{key.shortcut.name}\n"
+			counter += 1
 		end
 	end
 
