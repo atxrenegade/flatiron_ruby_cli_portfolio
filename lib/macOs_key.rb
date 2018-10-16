@@ -30,7 +30,7 @@ class MacOSKey
 
 	def self.list_all_by_key
 		puts "\n\n*************************************"
-		puts "\n\tATOM SHORTCUTS FOR MAC OS"
+		puts "\n  ATOM SHORTCUTS FOR MAC OS"
 		puts "\n*************************************\n\n"
 		counter = 1
 		self.all.each do |key|

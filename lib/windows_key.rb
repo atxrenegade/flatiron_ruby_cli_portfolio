@@ -28,7 +28,7 @@ class WindowsKey
 
 	def self.list_all_by_key
 		puts "\n\n*************************************"
-		puts "\n\tWINDOWS SHORTCUTS FOR MAC OS"
+		puts "\n  WINDOWS SHORTCUTS FOR MAC OS"
 		puts "\n*************************************\n\n"
 		counter = 1
 		self.all.each do |key|
