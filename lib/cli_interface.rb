@@ -99,13 +99,13 @@ class CLIInterface
 
 	def search_by_os_and_name
 		puts "Enter the shortcut name you would like to search for: \n"
-		@find_me_name = gets.strip!
+		name = gets.strip!
 		if @user_os == "1"
-			MacOSKey.search_by_name
+			MacOSKey.search_by_name(name)
 		elsif @user_os == "2"
-			WindowsKey.search_by_name
+			WindowsKey.search_by_name(name)
 		else
-			LinuxKey.search_by_name
+			LinuxKey.search_by_name(name)
 		end
 	end
 
