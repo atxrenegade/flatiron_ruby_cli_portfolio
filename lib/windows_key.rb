@@ -8,10 +8,10 @@ class WindowsKey
 	end
 
 	def detail_view
-		puts "Shortcut Key Sequence: #{self.key_seq}\n"
-		puts "Shortcut Name: #{self.shortcut.name}\n"
-		puts "Operating System: WINDOWS OS\n"
-		puts "Shortcut Description: #{self.description}\n\n"
+		puts "\n\tShortcut Key Sequence: #{self.key_seq}\n"
+		puts "\tShortcut Name: #{self.shortcut.name}\n"
+		puts "\tOperating System: WINDOWS OS\n"
+		puts "\tShortcut Description: #{self.description}\n"
 	end
 
 	def description

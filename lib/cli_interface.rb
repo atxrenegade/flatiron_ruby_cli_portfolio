@@ -142,6 +142,8 @@ class CLIInterface
 			puts "Your response was not understood.\n"
 			puts "Please select a valid option.\n"
 		end
+		puts "\n"
+		details_menu
 	end
 
 	def display_details(number)

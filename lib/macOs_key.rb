@@ -9,10 +9,10 @@ class MacOSKey
 	end
 
 	def detail_view
-		puts "Shortcut Key Sequence: #{self.key_seq}\n"
-		puts "Shortcut Name: #{self.shortcut.name}\n"
-		puts "Operating System: Mac OS\n"
-		puts "Shortcut Description: #{self.description}\n\n"
+		puts "\n\tShortcut Key Sequence: #{self.key_seq}\n"
+		puts "\tShortcut Name: #{self.shortcut.name}\n"
+		puts "\tOperating System: Mac OS\n"
+		puts "\tShortcut Description: #{self.description}\n\n"
 	end
 
 	def description
