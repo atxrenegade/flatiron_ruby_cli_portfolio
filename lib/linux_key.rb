@@ -40,9 +40,9 @@ class LinuxKey
 	end
 
 	def self.search_by_name(name)
-		self.all.each do |linux_key|
-			if linux_key.shortcut.name == name
-				@found_key = linux_key
+		self.all.each do |key|
+			if key.shortcut.name == name
+				@found_key = key
 			end
 		end
 		if @found_key.nil?
