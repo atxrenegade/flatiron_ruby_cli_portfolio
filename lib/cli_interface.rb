@@ -2,7 +2,7 @@
 ## COMPLETE sort_by_alphabetize
 # Look in into strange formatting on some objects, key and value reversed
 #create module for searches
-endclass CLIInterface
+class CLIInterface
 
 	def initialize
 		welcome
