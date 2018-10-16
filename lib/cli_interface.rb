@@ -106,7 +106,13 @@ class CLIInterface
 	end
 
 	def display_details
-		puts "display_details"
+		if @user_os == "1"
+			MacOSKey.find_by_id
+		elsif @user_os == "2"
+			WindowsKey.find_by_id
+		else
+			LinuxKey.find_by_id
+		end
 	end
 
 	def exit
