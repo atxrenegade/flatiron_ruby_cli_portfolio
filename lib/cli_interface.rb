@@ -55,7 +55,7 @@ class CLIInterface
 	end
 
 	def submenu_options
-		puts "\n\n\nPlease select an option from the Menu Below:
+		puts "\nPlease select an option from the Menu Below:
 		\n"
 		puts "To LIST ALL shortcuts for your operating system type 'L'"
 		puts "To search shortcuts by NAME type 'N'"

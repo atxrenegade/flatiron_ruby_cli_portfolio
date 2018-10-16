@@ -8,7 +8,6 @@ class WindowsKey
 	end
 
 	def detail_view
-		binding.pry
 		puts "Shortcut Key Sequence: #{self.key_seq}\n"
 		puts "Shortcut Name: #{self.shortcut.name}\n"
 		puts "Operating System: WINDOWS OS\n"
