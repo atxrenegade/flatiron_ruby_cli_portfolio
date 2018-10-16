@@ -160,10 +160,7 @@ endclass CLIInterface
 
 	def exit
 		#how do I terminate the program here?
-		unless @user_input != 'x' || @user_input != 'X'
-			puts "\nThanks for using the Atom Shortcuts!"
-			puts "  See you again soon!\n"
-
-		end
+		puts "\nThanks for using the Atom Shortcuts!"
+		puts "  See you again soon!\n"
 	end
 end

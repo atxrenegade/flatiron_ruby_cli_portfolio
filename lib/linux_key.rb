@@ -17,7 +17,7 @@ class LinuxKey
 
 	def description
 		self.shortcut.description.details
-	end	
+	end
 
 	def save
 		@@all << self
@@ -74,7 +74,12 @@ class LinuxKey
 	end
 
 	def self.search_by_number
-
-
+		counter = 0
+		self.all.each do |key|
+			counter += 1
+			if counter == @details_input
+				key.detail_view
+			end
+		end 		
 	end
 end
