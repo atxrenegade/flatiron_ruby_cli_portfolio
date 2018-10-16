@@ -72,6 +72,7 @@ class CLIInterface
 	def submenu_input
 		@user_input = gets.strip!
 		puts "\n"
+
 		if @user_input == "X" || @user_input == "x"
 			exit
 		elsif @user_input == "N" || @user_input == "n"
@@ -80,16 +81,21 @@ class CLIInterface
 			find_by_key
 		elsif @user_input == "MM" || @user_input == "mm"
 			main_menu
-		elsif @user_input.integer?
-			display_details
+		elsif is_integer?
+				display_details
 		else
 			puts "Your response was not understood.\n"
 			puts "Please select a valid option.\n"
 			submenu_options
 		end
-		puts "\n\n\n"
+		puts "\n"
 		submenu_options
 	end
+
+	def is_integer?
+		#helper_method
+    	@user_input.to_i.to_s == @user_input
+  	end
 
 	def find_by_name
 		puts "find_by_name"
