@@ -65,12 +65,13 @@ class CLIInterface
 		puts "To search shortcuts by KEY type 'K'"
 		puts "To return to MAIN MENU type 'MM'"
 		puts "To exit type 'X'"
+		puts "\nEnter your Selection:"
 		submenu_input
 	end
 
 	def submenu_input
 		@user_input = gets.strip!
-		puts "\n\n\n"
+		puts "\n"
 		if @user_input == "X" || @user_input == "x"
 			exit
 		elsif @user_input == "N" || @user_input == "n"
@@ -83,7 +84,7 @@ class CLIInterface
 			display_details
 		else
 			puts "Your response was not understood.\n"
-			puts "Please select a valid option.\n\n\n"
+			puts "Please select a valid option.\n"
 			submenu_options
 		end
 		puts "\n\n\n"
