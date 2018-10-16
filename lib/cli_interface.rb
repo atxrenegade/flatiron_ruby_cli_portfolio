@@ -128,12 +128,15 @@ class CLIInterface
 		puts "To return to Search Menu type 'SM'"
 		puts "To return to Main Menu type 'MM'\n"
 		@details_input = gets.strip!
-		if @details_input.is_integer?
-			display_details
-		elsif @details_input == 'sm' || @details_input == 'SM'
+		binding.pry
+		if @details_input == 'sm' || @details_input == 'SM'
 			submenu_options
 		elsif @details_input == 'mm' || @details_input == 'MM'
 			main_menu
+		elsif is_integer?
+			#binding.pry
+			#prevent non-integer values from triggering this method
+				display_details
 		else
 			puts "Your response was not understood.\n"
 			puts "Please select a valid option.\n"
