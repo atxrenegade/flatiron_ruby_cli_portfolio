@@ -49,7 +49,7 @@ class LinuxKey
 				puts "\nThat name was not found.\n"
 				puts "Please try again or choose a different name."
 			else
-				puts "\n\n"
+				puts "\n"
 				@found_key.detail_view
 		end
 	end
@@ -64,7 +64,7 @@ class LinuxKey
 				puts "\nThat name was not found.\n"
 				puts "Please try again or choose a different key."
 			else
-				puts "\n\n"
+				puts "\n"
 				@found_key.detail_view
 		end
 	end
