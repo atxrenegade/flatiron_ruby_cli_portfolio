@@ -18,7 +18,7 @@ class MacOSKey
 
 	def description
 		self.shortcut.description.details
-	end	
+	end
 
 	def save
 		@@all << self
@@ -73,8 +73,13 @@ class MacOSKey
 		end
 	end
 
-	def self.search_by_number
-
-
+	def self.search_by_number(number)
+		counter = 0
+		self.all.each do |key|
+			counter += 1
+			if counter.to_s == number
+				key.detail_view
+			end
+		end
 	end
 end
