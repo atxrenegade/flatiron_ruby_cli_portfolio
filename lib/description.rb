@@ -2,6 +2,7 @@ class Description
 	@@all = []
 
 	attr_accessor :details, :shortcut
+
 	def initialize(details)
 		@details = details
 		self.save
@@ -19,7 +20,7 @@ class Description
 		self.each do |description|
 			puts "#{description.display}:"
 			puts "Shortcut Name: #{self.shortcut.name}\n"
-		end	
+		end
 	end
 
 	def self.search_description(search_phrase)

@@ -8,11 +8,16 @@ class WindowsKey
 	end
 
 	def detail_view
+		binding.pry
 		puts "Shortcut Key Sequence: #{self.key_seq}\n"
 		puts "Shortcut Name: #{self.shortcut.name}\n"
 		puts "Operating System: WINDOWS OS\n"
 		puts "Shortcut Description: #{self.description}\n\n"
 	end
+
+	def description
+		self.shortcut.description.details
+	end	
 
 	def save
 		@@all << self
