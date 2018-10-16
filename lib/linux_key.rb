@@ -15,6 +15,10 @@ class LinuxKey
 		puts "Shortcut Description: #{self.description.details}\n\n"
 	end
 
+	def description
+		self.shortcut.description.details
+	end	
+
 	def save
 		@@all << self
 	end
