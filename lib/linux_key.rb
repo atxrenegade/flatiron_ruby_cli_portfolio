@@ -28,6 +28,7 @@ class LinuxKey
 	end
 
 	def self.list_all_by_key
+		#sort_alphabetically then display
 		puts "\n\n*************************************"
 		puts "\n  LINUX SHORTCUTS FOR MAC OS"
 		puts "\n*************************************\n\n"
@@ -38,7 +39,15 @@ class LinuxKey
 		end
 	end
 
-	def self.search_for_key(search_phrase)
+	def self.search_by_name
+
+	end
+
+	def self.search_by_key
+
+	end
+
+	def self.search_by_number
 
 	end
 end
