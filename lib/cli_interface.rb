@@ -1,4 +1,4 @@
-##TO DO work out bug with #exit, #is_integer?
+##TO DO work out bug with #exit
 ## COMPLETE sort_by_alphabetize
 # Look in into strange formatting on some objects, key and value reversed
 #create module for searches

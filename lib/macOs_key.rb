@@ -6,7 +6,6 @@ class MacOSKey
 	def initialize(key_seq)
 		@key_seq = key_seq
 		self.save
-		#do I need to add reciprocity here?
 	end
 
 	def detail_view
