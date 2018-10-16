@@ -54,11 +54,33 @@ class CLIInterface
 		else
 			LinuxKey.list_all_by_key
 		end
-		submenu
+		submenu_options
 	end
 
-	def submenu
-		puts "Please select an option from the Menu Below:\n"
+	def submenu_options
+		puts "\n\n\nPlease select an option from the Menu Below:
+		\n"
+		puts "To view DETAILS of a specific shortcut enter the number below \n"
+		puts "To search shortcuts by NAME type 'N'"
+		puts "To search shortcuts by KEY type 'K'"
+		puts "To return to MAIN MENU type 'MM'"
+		puts "To exit type 'X'"
+		submenu_input
+	end
+
+	def submenu_input
+		user_input == gets.strip!
+		if @user_input == "X" || @user_input == "x"
+			exit
+		if user_input.integer?
+
+		else
+			puts "Your response was not understood.\n"
+			puts "Please select a valid option.\n\n\n"
+			submenu_options
+		end
+		submenu_options
+
 		#to view_details
 		# search_by_key
 		# search_by_title
