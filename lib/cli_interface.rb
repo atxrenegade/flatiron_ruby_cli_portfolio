@@ -37,7 +37,7 @@ class CLIInterface
 			exit
 		elsif @user_os == "1" || @user_os =="2" || @user_os =="3"
 			Scraper.new.scrape_atom
-			display_shortcuts
+			submenu_options
 		else
 			puts "  Your response was not understood.\n"
 			puts "  Please try again.\n\n"
@@ -45,22 +45,10 @@ class CLIInterface
 		end
 	end
 
-	def display_shortcuts
-		if @user_os == "1"
-			MacOSKey.list_all_by_key
-		elsif
-			@user_os == "2"
-			WindowsKey.list_all_by_key
-		else
-			LinuxKey.list_all_by_key
-		end
-		submenu_options
-	end
-
 	def submenu_options
 		puts "\n\n\nPlease select an option from the Menu Below:
 		\n"
-		puts "To view DETAILS of a specific shortcut enter the number below \n"
+		puts "To LIST ALL shortcuts for your operating system type 'L'"
 		puts "To search shortcuts by NAME type 'N'"
 		puts "To search shortcuts by KEY type 'K'"
 		puts "To return to MAIN MENU type 'MM'"
@@ -73,7 +61,9 @@ class CLIInterface
 		@user_input = gets.strip!
 		puts "\n"
 
-		if @user_input == "X" || @user_input == "x"
+		if @user_input == "L" || @user_input == "l"
+			display_shortcuts
+		elseif @user_input == "X" || @user_input == "x"
 			exit
 		elsif @user_input == "N" || @user_input == "n"
 			search_by_os_and_name
@@ -81,8 +71,6 @@ class CLIInterface
 			search_by_os_and_key
 		elsif @user_input == "MM" || @user_input == "mm"
 			main_menu
-		elsif is_integer?
-			display_details
 		else
 			puts "Your response was not understood.\n"
 			puts "Please select a valid option.\n"
@@ -92,10 +80,18 @@ class CLIInterface
 		submenu_options
 	end
 
-	def is_integer?
-		#helper_method
-    	@user_input.to_i.to_s == @user_input
-  	end
+	def display_shortcuts
+		if @user_os == "1"
+			MacOSKey.list_all_by_key
+		elsif
+			@user_os == "2"
+			WindowsKey.list_all_by_key
+		else
+			LinuxKey.list_all_by_key
+		end
+		puts "\n"
+		details_menu
+	end
 
 	def search_by_os_and_name
 		puts "Enter the shortcut name you would like to search for: \n"
@@ -122,6 +118,13 @@ class CLIInterface
 		end
 	end
 
+	def details_menu
+		puts "To view DETAILS of a specific shortcut enter the number below \n"
+		puts "To return to Search Menu"
+		puts "To return to Main Menu"
+		@details_input = gets.strip!
+
+	end
 	def display_details
 		if @user_os == "1"
 			MacOSKey.search_by_number
