@@ -74,7 +74,6 @@ class LinuxKey
 	end
 
 	def self.search_by_number(number)
-		binding.pry
 		counter = 0
 		self.all.each do |key|
 			counter += 1
