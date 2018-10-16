@@ -120,11 +120,22 @@ class CLIInterface
 
 	def details_menu
 		puts "To view DETAILS of a specific shortcut enter the number below \n"
-		puts "To return to Search Menu"
-		puts "To return to Main Menu"
+		puts "To return to Search Menu type 'SM'"
+		puts "To return to Main Menu type 'MM'\n"
 		@details_input = gets.strip!
-
+		if @details_input.is_integer?
+			display_details
+		elsif @details_input == 'sm' || @details_input == 'SM'
+			submenu_options
+		elsif @details_input == 'mm' || @details_input == 'MM'
+			main_menu
+		else
+			puts "Your response was not understood.\n"
+			puts "Please select a valid option.\n"
+			details_menu
+		end
 	end
+
 	def display_details
 		if @user_os == "1"
 			MacOSKey.search_by_number
