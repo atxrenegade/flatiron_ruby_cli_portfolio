@@ -97,21 +97,38 @@ class CLIInterface
     	@user_input.to_i.to_s == @user_input
   	end
 
-	def find_by_name
-		puts "find_by_name"
+	def search_by_os_and_name
+		puts "Enter the shortcut name you would like to search for: \n"
+		@find_me_name = gets.strip!
+		if @user_os == "1"
+			MacOSKey.search_by_name
+		elsif @user_os == "2"
+			WindowsKey.search_by_name
+		else
+			LinuxKey.search_by_name
+		end
 	end
 
-	def find_by_key
-		puts "find_by_key"
+	def search_by_os_and_key
+		puts "Enter the key you would like to search for: \n"
+		puts "(Use the format 'ctrl-key')\n"
+		@find_me_key = gets.strip!
+		if @user_os == "1"
+			MacOSKey.search_by_key
+		elsif @user_os == "2"
+			WindowsKey.search_by_key
+		else
+			LinuxKey.search_by_key
+		end
 	end
 
 	def display_details
 		if @user_os == "1"
-			MacOSKey.find_by_id
+			MacOSKey.search_by_number
 		elsif @user_os == "2"
-			WindowsKey.find_by_id
+			WindowsKey.search_by_number
 		else
-			LinuxKey.find_by_id
+			LinuxKey.search_by_number
 		end
 	end
 
