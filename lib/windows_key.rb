@@ -37,7 +37,23 @@ class WindowsKey
 		end
 	end
 
-	def search_for_key(search_phrase)
+	def self.search_by_key(key_to_find)
+		self.all.each do |key|
+			if key.key_seq == key_to_find
+				@found_key = key
+			end
+		end
+		if @found_key.nil?
+				puts "\nThat key was not found.\n"
+				puts "Please try again or choose a different key."
+			else
+				puts "\n"
+				@found_key.detail_view
+		end
+	end
+
+	def self.search_by_number
+
 
 	end
 end
