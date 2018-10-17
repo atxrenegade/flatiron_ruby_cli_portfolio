@@ -1,10 +1,7 @@
 ##TO DO work out bug with #exit
 ## COMPLETE sort_by_alphabetize
 # Look in into strange formatting on some objects, key and value reversed
-#create module for searches
 class CLIInterface
-	include Helpers
-
 	def initialize
 		welcome
 	end
@@ -14,6 +11,9 @@ class CLIInterface
 	#	menu # or any other methods
 	#	exit_method
 	# end
+	def is_integer?(details_input)
+		details_input.to_i.to_s == details_input
+	end
 
 
 	def welcome
