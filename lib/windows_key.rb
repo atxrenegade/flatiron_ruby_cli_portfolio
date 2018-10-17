@@ -3,7 +3,7 @@ class WindowsKey
 	attr_accessor :description, :shortcut, :key_seq
 
 	extend Searchable::ClassMethods
-	extend Memorable::InstanceMethods
+	include Memorable::InstanceMethods
 	extend Memorable::ClassMethods
 
 	def initialize(key_seq)
