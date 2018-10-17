@@ -4,6 +4,8 @@ class MacOSKey
 	attr_accessor :description, :shortcut, :key_seq
 
 	extend Searchable::ClassMethods
+	extend Memorable::InstanceMethods
+	extend Memorable::ClassMethods
 
 	def initialize(key_seq)
 		@key_seq = key_seq
@@ -19,14 +21,6 @@ class MacOSKey
 
 	def description
 		self.shortcut.description.details
-	end
-
-	def save
-		@@all << self
-	end
-
-	def self.all
-		@@all
 	end
 
 	def self.sort_keys_alphabetically
