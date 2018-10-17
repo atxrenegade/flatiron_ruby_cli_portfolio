@@ -12,7 +12,7 @@ class CLIInterface
 		puts "  digital reference without having to interrupt your workflow.\n\n"
 		puts "  Being familiar with important shortcuts and commands speeds\n"
 		puts "  up your workflow and increases your productivity as a programmer.\n"
-		puts "\n\nPress the ENTER key to continue....."
+		puts "\n\nPress the ENTER key to continue....."	
 
 		any_key = gets
 		if any_key.include?("\n")
