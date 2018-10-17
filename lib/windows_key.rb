@@ -32,6 +32,10 @@ class WindowsKey
 		puts "\n*************************************\n\n"
 		counter = 1
 		self.all.each do |key|
+			if (counter-1)%10 == 0 && (counter-1) != 0
+				puts "\n (Press Enter to Continue)\n\n"
+				gets
+			end
 			puts "  #{counter}.  #{key.key_seq}: #{key.shortcut.name}\n"
 			counter += 1
 		end
