@@ -3,6 +3,7 @@
 # Look in into strange formatting on some objects, key and value reversed
 #create module for searches
 class CLIInterface
+	include Helpers
 
 	def initialize
 		welcome
@@ -14,10 +15,6 @@ class CLIInterface
 	#	exit_method
 	# end
 
-	def is_integer?(details_input)
-		#helper_method
-    	details_input.to_i.to_s == details_input
-  	end
 
 	def welcome
 		puts "\n\n\n****** Welcome To - Atom Shortcuts Quick Reference ******\n\n"
