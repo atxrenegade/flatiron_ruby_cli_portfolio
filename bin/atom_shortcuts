@@ -2,3 +2,5 @@
 require_relative '../config/environment.rb'
 
 CLIInterface.new
+
+#CLIInterface.new.call

@@ -8,6 +8,12 @@ class CLIInterface
 		welcome
 	end
 
+	# def call
+	#	welcome
+	#	menu # or any other methods
+	#	exit_method
+	# end
+
 	def is_integer?(details_input)
 		#helper_method
     	details_input.to_i.to_s == details_input
@@ -43,7 +49,7 @@ class CLIInterface
 
 		@user_os = gets.strip!
 		if @user_os == "X" || @user_os == "x"
-			exit
+			exit_method
 		elsif @user_os == "1" || @user_os =="2" || @user_os =="3"
 			Scraper.new.scrape_atom
 			submenu_options
@@ -73,7 +79,7 @@ class CLIInterface
 		if @user_input == "L" || @user_input == "l"
 			display_shortcuts
 		elsif @user_input == "X" || @user_input == "x"
-			exit
+			exit_method
 		elsif @user_input == "N" || @user_input == "n"
 			search_by_os_and_name
 		elsif @user_input == "K" || @user_input == "k"
@@ -156,7 +162,7 @@ class CLIInterface
 		end
 	end
 
-	def exit
+	def exit_method
 		#how do I terminate the program here?
 		puts "\nThanks for using the Atom Shortcuts!"
 		puts "  See you again soon!\n"
