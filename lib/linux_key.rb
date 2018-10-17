@@ -5,8 +5,7 @@ class LinuxKey
 
 	include Helper::InstanceMethods
 	extend Searchable::ClassMethods
-	include Memorable::InstanceMethods
-	extend Memorable::ClassMethods
+
 
 	def initialize(key_seq)
 		@key_seq = key_seq
