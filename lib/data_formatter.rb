@@ -1,8 +1,13 @@
 class DataFormatter
 	def create_data_array_from_scraper(data)
 		shortcut_array = data.split("Block Travel").first.split("\n")
-		shortcut_array = shortcut_array.reject { |item| item.nil? || item == ''}.each_slice(5).to_a
-		create_array_of_hashed_attributes(shortcut_array)
+		shortcut_array = shortcut_array.reject { |item| item.nil? || item == ''}
+		insert_location = shortcut_array.index("ctrl-shift-o")
+   		revised_array = shortcut_array.insert(insert_location + 1, "n/a", "n/a")
+		insert_location = shortcut_array.index("alt-cmd-s")
+		revised_array = shortcut_array.insert(insert_location + 1, "n/a", "n/a")
+		revised_array = revised_array.each_slice(5).to_a
+		create_array_of_hashed_attributes(revised_array)
 	end
 
 	def create_array_of_hashed_attributes(array)
