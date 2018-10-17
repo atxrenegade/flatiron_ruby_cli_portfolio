@@ -1,8 +1,4 @@
 module Searchable
-	module InstanceMethods
-
-	end
-	
 	module ClassMethods
 		def search_by_name(name)
 			self.all.each do |key|
