@@ -28,7 +28,7 @@ class LinuxKey
 	end
 
 	def self.list_all_by_key
-		puts "\n\n*************************************"
+		puts "\n*************************************"
 		puts "\n  LINUX SHORTCUTS FOR MAC OS"
 		puts "\n*************************************\n\n"
 		counter = 1
