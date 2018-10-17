@@ -13,6 +13,10 @@ class LinuxKey
 		self.save
 	end
 
+	def save
+		@@all << self
+	end
+
 	def detail_view
 		puts "\n\tShortcut Key Sequence: #{self.key_seq}\n"
 		puts "\tShortcut Name: #{self.shortcut.name}\n"
@@ -20,8 +24,11 @@ class LinuxKey
 		puts "\tShortcut Description: #{self.description}\n\n"
 	end
 
+	def self.all
+		@@all
+	end
+
 	def self.list_all_by_key
-		#sort_alphabetically then display
 		puts "\n\n*************************************"
 		puts "\n  LINUX SHORTCUTS FOR MAC OS"
 		puts "\n*************************************\n\n"
