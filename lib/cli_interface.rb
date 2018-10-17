@@ -1,16 +1,8 @@
-##TO DO work out bug with #exit
-# Look in into strange formatting on some objects, key and value reversed
 class CLIInterface
 
 	def initialize
 		welcome
 	end
-
-	# def call
-	#	welcome
-	#	menu # or any other methods
-	#	exit_method
-	# end
 
 	def welcome
 		puts "\n\n\n****** Welcome To - Atom Shortcuts Quick Reference ******\n\n"
