@@ -2,6 +2,7 @@ class WindowsKey
 	@@all = []
 	attr_accessor :description, :shortcut, :key_seq
 
+	include Helper::InstanceMethods
 	extend Searchable::ClassMethods
 	include Memorable::InstanceMethods
 	extend Memorable::ClassMethods
@@ -16,10 +17,6 @@ class WindowsKey
 		puts "\tShortcut Name: #{self.shortcut.name}\n"
 		puts "\tOperating System: WINDOWS OS\n"
 		puts "\tShortcut Description: #{self.description}\n"
-	end
-
-	def description
-		self.shortcut.description.details
 	end
 
 	def self.list_all_by_key

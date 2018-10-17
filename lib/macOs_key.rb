@@ -3,6 +3,7 @@ class MacOSKey
 
 	attr_accessor :description, :shortcut, :key_seq
 
+	include Helper::InstanceMethods
 	extend Searchable::ClassMethods
 	include Memorable::InstanceMethods
 	extend Memorable::ClassMethods
@@ -17,10 +18,6 @@ class MacOSKey
 		puts "\tShortcut Name: #{self.shortcut.name}\n"
 		puts "\tOperating System: Mac OS\n"
 		puts "\tShortcut Description: #{self.description}\n\n"
-	end
-
-	def description
-		self.shortcut.description.details
 	end
 
 	def self.list_all_by_key
