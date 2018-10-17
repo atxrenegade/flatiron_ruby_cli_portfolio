@@ -2,7 +2,7 @@ module Searchable
 	module ClassMethods
 		def search_by_name(name)
 			self.all.each do |key|
-				if key.shortcut.name == name
+				if key.shortcut.name.include?(name)
 					@found_key = key
 				end
 			end
