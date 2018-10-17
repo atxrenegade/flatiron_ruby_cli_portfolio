@@ -23,11 +23,6 @@ class LinuxKey
 		self.shortcut.description.details
 	end
 
-
-	def self.sort_keys_alphabetically
-
-	end
-
 	def self.list_all_by_key
 		#sort_alphabetically then display
 		puts "\n\n*************************************"

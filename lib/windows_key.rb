@@ -22,11 +22,6 @@ class WindowsKey
 		self.shortcut.description.details
 	end
 
-
-	def self.sort_keys_alphabetically
-
-	end
-
 	def self.list_all_by_key
 		puts "\n\n*************************************"
 		puts "\n  WINDOWS SHORTCUTS FOR MAC OS"
