@@ -128,7 +128,7 @@ class CLIInterface
 			submenu_options
 		elsif details_input == 'mm' || details_input == 'MM'
 			main_menu
-		elsif details_input == 'xx' || details_input == 'XX'
+		elsif details_input == 'x' || details_input == 'X'
 			exit_method
 		elsif is_integer?(details_input)
 			display_details(details_input)
