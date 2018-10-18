@@ -1,26 +1,33 @@
-# WebDevCheatsheets
+# Atom Shortcuts
 
-Welcome to LAZY PROGRAMMER's Shortcuts and Cheatsheets!
+Welcome to Atom Shortcuts!
 
-Shortcuts and Cheatsheets is a cli utility gem designed for as a quick reference to a web developer’s most commonly used tools. Think of it as a Swiss army knife for programmers and programming students. With so many languages, commands, shortcuts and tools to memorize, now you can access a quick digital reference without having shuffle through pages of cheatsheets, or drown in stack overflow posts.
+This is a utility gem designed for as a quick reference to a some of the atom shortcuts. Being familiar with shortcuts and important commands speeds up your workflow and increases your productivity as a programmer. This gem includes atom shortcuts for MacOS, Windows, and Linux operating systems.  There is a search by name, and search by key sequence function, and users can select and individual shortcuts for a detailed view.
 
-Being familiar with shortcuts and important commands speeds up your workflow and increases your productivity as a programmer.
-
-As a Flatiron Student I have chosen to focus on the most commonly used tools in the flatiron stack.
-This gem currently includes references for the following:  Atom, Regex, Pry, Git Hub, CLI - bash and windows, Keyboard Shortcuts for Mac and Windows.
-
-atxrenegade
+Harleigh/atxrenegade
 
 ## Usage
-This GEM retrieves the MAIN MENU upon execution providing you with a list of shortcuts and cheatsheets you can access through this gem. Once you have selected which topic you would like to explore the internal menu offer the following commands: LIST-ALL, SEARCH, REVERSE-SEARCH, SHORTCUT-OF-THE-DAY, EXIT.
 
-The LIST-ALL command provides just that, a full list of shortcuts or commands for your chosen category.  The handy SEARCH feature allows you to retrieve individual commands and shortcuts quickly and easily,  and the  REVERSE-SEARCH feature allows you to check the result of specific key combinations.  As a bonus feature I’ve also included a SHORTCUT-OF-THE-DAY feature to familiarize noobs with a single randomly chosen shortcut to focus on adding to their toolbox. I do not to include an exhaustive list and instead have chosen but the most commonly used shortcuts and commands to facilitate ease of use.  EXIT takes you back to the MAIN MENU, where you can select a new category, or EXIT again to quit the cli gem entirely.
+To launch this gem 'cd bin' into bin directory and execute the program with 'ruby atom_shortcut'.
+
+This GEM upon execution will display a greeting and directions to proceed.  Press the enter key to bring up the main menu.  Here you can select your operating system or exit the program. Once you have selected your operating system you will have a choice to list all commands, search shortcuts by name, or search shortcuts by key sequence.
+
+If you select LIST ALL, a full list of commands will be displayed. If you would like to view details for a specific shortcut type in the number press enter and you will bering up the detailed view for that shortcut. From here you can choose another shortcut by number, exit to the search menu, or back to the main menu to choose a different operating system.
+
+If you select SEARCH BY NAME, you will be prompted to enter a name or search term to look for this shortcut. If a shortcut for this operating system matches your search term it will return the detailed view for that shortcut.
+
+If you select SEARCH BY KEY, you will be prompted to enter a key sequence to look up. If a shortcut for this operating system matches your search term it will return the detailed view for that shortcut.
+
+From the MAIN MENU and the SHORTCUT MENU you can EXIT by entering "x".
+
+This application is easy to use and each stage will prompt you for the expected response.
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bundle install` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To install this gem onto your local machine, run `bundle exec rake install`.
+
 
 ## Contributing
 

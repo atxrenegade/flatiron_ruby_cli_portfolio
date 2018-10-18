@@ -1,4 +1,4 @@
-FUNCTIONALITY BRAINSTORM for web_dev_cheatsheets
+BRAINSTORM for web_dev_cheatsheets which became atom_shortcuts
 
 >./lazy_programmer
 
