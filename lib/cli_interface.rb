@@ -12,7 +12,7 @@ class CLIInterface
 		puts "  digital reference without having to interrupt your workflow.\n\n"
 		puts "  Being familiar with important shortcuts and commands speeds\n"
 		puts "  up your workflow and increases your productivity as a programmer.\n"
-		puts "\n\nPress the ENTER key to continue....."	
+		puts "\n\nPress the ENTER key to continue....."
 
 		any_key = gets
 		if any_key.include?("\n")
@@ -122,11 +122,14 @@ class CLIInterface
 		puts "To view DETAILS of a specific shortcut enter the number below \n"
 		puts "To return to Search Menu type 'SM'"
 		puts "To return to Main Menu type 'MM'\n"
+		puts "To exit type 'X'"
 		details_input = gets.strip!
 		if details_input == 'sm' || details_input == 'SM'
 			submenu_options
 		elsif details_input == 'mm' || details_input == 'MM'
 			main_menu
+		elsif details_input == 'xx' || details_input == 'XX'
+			exit	
 		elsif is_integer?(details_input)
 			display_details(details_input)
 		else
