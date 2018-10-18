@@ -30,13 +30,13 @@ class WindowsKey
 		puts "\n*************************************"
 		puts "\n  WINDOWS SHORTCUTS FOR MAC OS"
 		puts "\n*************************************\n\n"
-		counter = 1
+		counter = 0
 		self.all.each do |key|
-			if (counter-1)%10 == 0 && (counter-1) != 0
+			if (counter)%10 == 0 && (counter) != 0
 				puts "\n (Press Enter to Continue)\n\n"
 				input = gets
 			end
-			puts "  #{counter}.  #{key.key_seq}: #{key.shortcut.name}\n"
+			puts "  #{counter + 1}.  #{key.key_seq}: #{key.shortcut.name}\n"
 			counter += 1
 		end
 	end
