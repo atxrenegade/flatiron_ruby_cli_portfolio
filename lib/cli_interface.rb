@@ -52,7 +52,7 @@ class CLIInterface
 		puts "To search shortcuts by NAME type 'N'"
 		puts "To search shortcuts by KEY type 'K'"
 		puts "To return to MAIN MENU type 'MM'"
-		puts "To exit type 'X'"
+		puts "To EXIT type 'X'"
 		puts "\nEnter your Selection:"
 		submenu_input
 	end
@@ -120,16 +120,16 @@ class CLIInterface
 
 	def details_menu
 		puts "To view DETAILS of a specific shortcut enter the number below \n"
-		puts "To return to Search Menu type 'SM'"
-		puts "To return to Main Menu type 'MM'\n"
-		puts "To exit type 'X'"
+		puts "To return to SEARCH MENU type 'SM'"
+		puts "To return to MAIN MENU type 'MM'\n"
+		puts "To EXIT type 'X'"
 		details_input = gets.strip!
 		if details_input == 'sm' || details_input == 'SM'
 			submenu_options
 		elsif details_input == 'mm' || details_input == 'MM'
 			main_menu
 		elsif details_input == 'xx' || details_input == 'XX'
-			exit	
+			exit
 		elsif is_integer?(details_input)
 			display_details(details_input)
 		else
