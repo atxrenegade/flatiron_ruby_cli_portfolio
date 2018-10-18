@@ -129,7 +129,7 @@ class CLIInterface
 		elsif details_input == 'mm' || details_input == 'MM'
 			main_menu
 		elsif details_input == 'xx' || details_input == 'XX'
-			exit
+			exit_method
 		elsif is_integer?(details_input)
 			display_details(details_input)
 		else
