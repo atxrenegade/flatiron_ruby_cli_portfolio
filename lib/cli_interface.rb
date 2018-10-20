@@ -95,6 +95,7 @@ class CLIInterface
 
 	def search_by_os_and_name
 		puts "Enter the shortcut name you would like to search for: \n"
+		puts "(Use the format 'Find in Project')"
 		name = gets.strip!
 		if @user_os == "1"
 			MacOSKey.search_by_name(name)
