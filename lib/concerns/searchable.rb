@@ -13,6 +13,7 @@ module Searchable
 					puts "\n"
 					@found_key.detail_view
 			end
+			@found_key = nil
 		end
 
 		def search_by_key(key_to_find)
@@ -28,6 +29,7 @@ module Searchable
 					puts "\n"
 					@found_key.detail_view
 			end
+			@found_key = nil
 		end
 
 		def search_by_number(number)
