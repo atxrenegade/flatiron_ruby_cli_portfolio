@@ -9,7 +9,7 @@ class CLIInterface
 		puts "  This is a cli utility gem designed as a quick reference\n"
 		puts "  to Atoms many shortcuts. With so many languages, commands,\n"
 		puts "  shortcuts and tools to memorize, you can now access a quick\n"
-		puts "  digital reference without having to interrupt your workflow.\n\n"
+		puts "  digital reference without having to interrupt your workflow.\n"
 		puts "  Being familiar with important shortcuts and commands speeds\n"
 		puts "  up your workflow and increases your productivity as a programmer.\n"
 		puts "\n\nPress the ENTER key to continue....."
