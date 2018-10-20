@@ -29,17 +29,22 @@ class LinuxKey
 		@@all
 	end
 
+	def self.sort_alphabetically
+		Shortcut.all.collect.sort_by {|obj| obj.name}
+	end
+
 	def self.list_all_by_key
 		puts "\n*************************************"
 		puts "\n  LINUX SHORTCUTS FOR MAC OS"
 		puts "\n*************************************\n\n"
 		counter = 0
-		self.all.each do |key|
+		sorted_array = self.sort_alphabetically
+		sorted_array.each do |shortcut|
 			if (counter)%10 == 0 && (counter) != 0
 				puts "\n (Press Enter to Continue)\n\n"
 				gets
 			end
-			puts "  #{counter + 1}.  #{key.key_seq}: #{key.shortcut.name}\n"
+			puts "  #{counter + 1}.  #{shortcut.name}: #{shortcut.linux_key.key_seq} \n"
 			counter += 1
 			#added to correct bug - continuous looping through keys.all for multiple iterations
 			break if counter == 46
