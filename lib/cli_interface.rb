@@ -155,7 +155,6 @@ class CLIInterface
 	end
 
 	def exit_method
-		#how do I terminate the program here?
 		puts "\nThanks for using the Atom Shortcuts!"
 		puts "See you again soon!\n\n\n"
 		exit
