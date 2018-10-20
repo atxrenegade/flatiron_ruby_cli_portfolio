@@ -19,7 +19,6 @@ class MacOSKey
 		puts "\tShortcut Name: #{self.shortcut.name}\n"
 		puts "\tOperating System: Mac OS\n"
 		puts "\tShortcut Description: #{self.description}\n\n"
-		binding.pry
 	end
 
 	def description
@@ -39,10 +38,12 @@ class MacOSKey
 		self.all.each do |key|
 			if (counter)%10 == 0 && (counter) != 0
 				puts "\n (Press Enter to Continue)\n\n"
-				input = gets
+				gets
 			end
 			puts "  #{counter + 1}.  #{key.key_seq}: #{key.shortcut.name}\n"
 			counter += 1
+			#added to correct bug - continuous looping through keys.all for multiple iterations
+			break if counter == 46
 		end
 	end
 end
