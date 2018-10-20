@@ -3,7 +3,6 @@ class MacOSKey
 
 	attr_accessor :description, :shortcut, :key_seq
 
-	include Helper::InstanceMethods
 	extend Searchable::ClassMethods
 
 	def initialize(key_seq)
@@ -20,6 +19,11 @@ class MacOSKey
 		puts "\tShortcut Name: #{self.shortcut.name}\n"
 		puts "\tOperating System: Mac OS\n"
 		puts "\tShortcut Description: #{self.description}\n\n"
+		binding.pry
+	end
+
+	def description
+		self.shortcut.description.details
 	end
 
 	def self.all
