@@ -1,7 +1,9 @@
 class CLIInterface
 
 	def initialize
+		Scraper.new.scrape_atom
 		welcome
+
 	end
 
 	def welcome
@@ -36,7 +38,7 @@ class CLIInterface
 		if @user_os == "X" || @user_os == "x"
 			exit_method
 		elsif @user_os == "1" || @user_os =="2" || @user_os =="3"
-			Scraper.new.scrape_atom
+
 			submenu_options
 		else
 			puts "  Your response was not understood.\n"
