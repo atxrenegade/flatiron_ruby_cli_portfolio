@@ -46,8 +46,6 @@ class LinuxKey
 			end
 			puts "  #{counter + 1}.  #{shortcut.name}: #{shortcut.linux_key.key_seq} \n"
 			counter += 1
-			#added to correct bug - continuous looping through keys.all for multiple iterations
-			break if counter == 46
 		end
 	end
 end
