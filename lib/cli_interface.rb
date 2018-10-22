@@ -3,7 +3,6 @@ class CLIInterface
 	def initialize
 		Scraper.new.scrape_atom
 		welcome
-
 	end
 
 	def welcome
