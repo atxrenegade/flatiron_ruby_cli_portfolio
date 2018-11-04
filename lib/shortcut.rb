@@ -13,18 +13,25 @@ class Shortcut
 	end
 
 	def self.create_from_attribute_hash(attribute_hash)
-
-		mac_key = MacOSKey.new(attribute_hash[:mac_key])
-		windows_key = WindowsKey.new(attribute_hash[:windows_key])
-		linux_key = LinuxKey.new(attribute_hash[:linux_key])
-		description = Description.new(attribute_hash[:description])
-
+		#create new shortcut with these attributes and add
+		binding.pry
 		shortcut = Shortcut.new(attribute_hash[:command_name], description, mac_key, windows_key, linux_key)
 
-		description.shortcut = shortcut
-		mac_key.shortcut = shortcut
-		windows_key.shortcut = shortcut
-		linux_key.shortcut = shortcut
+		#find_or_create_operating_system
+		if !shortcut.mac_key.nil?
+			mac_os = find_or_create_operating_system
+			mac_os.add_key
+		end
+
+		if !shortcut.windows_key.nil?
+			windows_os = find_or_create_operating_system
+			windows.add_key
+		end
+
+		if !shortcut.linux_key.nil?
+			linux_os = find_or_create_operating_system
+			linux.add_key
+		end
 
 		shortcut.save
 	end
