@@ -23,17 +23,17 @@ class Shortcut
 
 		#find_or_create_operating_system
 		if !shortcut.mac_key.nil?
-			mac_os = find_or_create_operating_system
+			mac_os = find_or_create_operating_system(mac_os)
 			mac_os.add_key
 		end
 
 		if !shortcut.windows_key.nil?
-			windows_os = find_or_create_operating_system
+			windows_os = find_or_create_operating_system(windows_os)
 			windows.add_key
 		end
 
 		if !shortcut.linux_key.nil?
-			linux_os = find_or_create_operating_system
+			linux_os = find_or_create_operating_system(linux_os)
 			linux.add_key
 		end
 
