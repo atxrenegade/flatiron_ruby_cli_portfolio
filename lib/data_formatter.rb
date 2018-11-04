@@ -21,7 +21,6 @@ class DataFormatter
 		parse_attribute_array(revised_array)
 	end
 
-
 	def parse_attribute_array(attribute_array)
 		attribute_array.each do |shortcut_array|
 			Shortcut.create_from_attribute_array(shortcut_array)
