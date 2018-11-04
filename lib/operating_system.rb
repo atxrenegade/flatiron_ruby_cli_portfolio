@@ -3,7 +3,7 @@ class OperatingSystem
 
 	attr_accessor :name, :shortcut
 
-	def initialize(name)
+	def initialize(name= nil)
 		@name = name
 		@shortcuts = []
 	end
@@ -18,15 +18,19 @@ class OperatingSystem
 			create_operating_system(name)
 		else
 			os
-		end 
+		end
 	end
 
 	def create_operating_system(name)
-		os = OperatingSystem.new
+		os = OperatingSystem.new(name)
 		os.save
 	end
 
 	def self.all
 		@@all
 	end
+
+	def save
+		@@all << self
+	end	
 end
