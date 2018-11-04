@@ -13,7 +13,6 @@ class OperatingSystem
 	end
 
 	def self.find_or_create_operating_system(name)
-		binding.pry
 		os = OperatingSystem.all.detect {|os_object| name == os_object.name}
 		if os.nil?
 			create_operating_system(name)
