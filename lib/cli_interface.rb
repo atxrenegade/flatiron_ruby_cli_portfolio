@@ -84,16 +84,35 @@ class CLIInterface
 
 	def display_shortcuts
 		if @user_os == "1"
-			os = OperatingSystem.find_by_name("Mac")
+			@os = OperatingSystem.find_by_name("Mac")
 		elsif
 			@user_os == "2"
-			os = OperatingSystem.find_by_name("Windows")
+			@os = OperatingSystem.find_by_name("Windows")
 		else
-			os = OperatingSystem.find_by_name("Linux")
+			@os = OperatingSystem.find_by_name("Linux")
 		end
 		puts "\n"
+		list_shortcuts
 		details_menu
 	end
+
+	def list_shortcuts
+		binding.pry
+		puts "\n*************************************"
+		puts "\n  ATOM SHORTCUTS FOR #{@os.name} OS"
+		puts "\n*************************************\n\n"
+		binding.pry
+		counter = 0
+		#sorted_array = self.sort_alphabetically
+		@os.shortcuts.all.each_with_index do |shortcut|
+			if (index)%10 == 0 && (index) != 0
+				puts "\n (Press Enter to Continue)\n\n"
+				gets
+			end
+			puts "  #{index + 1}.  #{shortcut.name}: #{shortcut.key_seq} \n"
+		end
+	end
+
 
 	def search_by_os_and_name
 		puts "Enter the shortcut name you would like to search for: \n"

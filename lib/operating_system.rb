@@ -8,10 +8,6 @@ class OperatingSystem
 		@shortcuts = []
 	end
 
-	def shortcuts
-		@shorcuts
-	end
-
 	def self.find_or_create_operating_system(name)
 		os = OperatingSystem.all.detect {|os_object| name == os_object.name}
 		if os.nil?
@@ -23,7 +19,7 @@ class OperatingSystem
 
 	def self.find_by_name(name)
 		@@all.detect {|os| os.name == name}
-	end	
+	end
 
 	def self.create_operating_system(name)
 		os = OperatingSystem.new(name)
@@ -32,8 +28,8 @@ class OperatingSystem
 	end
 
 	def add_shortcut(shortcut)
-		shortcut.operating_system = self
 		@shortcuts << shortcut
+		shortcut.operating_system = self
 	end
 
 	def self.all
@@ -42,5 +38,10 @@ class OperatingSystem
 
 	def save
 		@@all << self
+	end
+
+
+	def self.shortcuts
+		@shorcuts
 	end
 end

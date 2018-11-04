@@ -33,13 +33,13 @@ class MacOSKey
 		Shortcut.all.collect.sort_by {|obj| obj.name}
 	end
 
-	def self.list_all_by_key
+	def self.list_shortcuts
 		puts "\n*************************************"
-		puts "\n  ATOM SHORTCUTS FOR MAC OS"
+		puts "\n  ATOM SHORTCUTS FOR #{self.name} OS"
 		puts "\n*************************************\n\n"
 		counter = 0
-		sorted_array = self.sort_alphabetically
-		sorted_array.each do |shortcut|
+		#sorted_array = self.sort_alphabetically
+		sorted_array.each_with_index do |shortcut|
 			if (counter)%10 == 0 && (counter) != 0
 				puts "\n (Press Enter to Continue)\n\n"
 				gets
