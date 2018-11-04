@@ -1,10 +1,10 @@
 class Shortcut
 	@@all = []
 
-	attr_accessor :name
-	attr_reader :description, :mac_key, :linux_key, :windows_key
+	attr_accessor :name, :description, :mac_key, :linux_key, :windows_key
+	attr_reader :operating_system
 
-	def initialize(name, description=nil, mac_key=nil, windows_key=nil, linux_key=nil )
+	def initialize(name, description, mac_key, windows_key, linux_key )
 		@name = name
 		@description = description
 		@mac_key = mac_key
