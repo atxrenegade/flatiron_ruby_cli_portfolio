@@ -24,6 +24,11 @@ class OperatingSystem
 	def create_operating_system(name)
 		os = OperatingSystem.new(name)
 		os.save
+		os
+	end
+
+	def add_shortcut(shortcut)
+		@shortcuts << shortcut
 	end
 
 	def self.all
@@ -32,5 +37,5 @@ class OperatingSystem
 
 	def save
 		@@all << self
-	end	
+	end
 end
