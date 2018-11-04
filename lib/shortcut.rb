@@ -13,13 +13,13 @@ class Shortcut
 
 	def self.create_from_attribute_array(attribute_array)
 		binding.pry
-		operating_system = OperatingSystem.new.find_or_create_operating_system(attribute_array[3])
+		operating_system = OperatingSystem.find_or_create_operating_system(attribute_array[3])
 		name = attribute_array[0]
 		key_seq = attribute_array[1]
 		description = attribute_array[2]
 
-		@shortcut = Shortcut.new(name, key_seq, description, operating_system)
-		@shortcut.save
+		shortcut = Shortcut.new(name, key_seq, description, operating_system)
+		shortcut.save
 	end
 
 	def save

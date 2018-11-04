@@ -12,8 +12,9 @@ class OperatingSystem
 		@shorcuts
 	end
 
-	def find_or_create_operating_system(name)
-		os = OperatingSystem.all.detect {|os_object| name = os_object.name}
+	def self.find_or_create_operating_system(name)
+		binding.pry
+		os = OperatingSystem.all.detect {|os_object| name == os_object.name}
 		if os.nil?
 			create_operating_system(name)
 		else
@@ -21,7 +22,7 @@ class OperatingSystem
 		end
 	end
 
-	def create_operating_system(name)
+	def self.create_operating_system(name)
 		os = OperatingSystem.new(name)
 		os.save
 		os
