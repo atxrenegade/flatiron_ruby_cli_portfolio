@@ -13,27 +13,13 @@ class Shortcut
 	end
 
 	def self.create_from_attribute_array(attribute_array)
+		operating_system = OperatingSystem.new.find_or_create_operating_system(attribute_array[3])
 		name = attribute_array[0]
-		mac_key = attribute_array[1]
-		windows_key = attribute_array[2]
-		linux_key = attribute_array[3]
-		description = attribute_array[4]
-		@shortcut = Shortcut.new(name, mac_key, windows_key, linux_key, description)
-	
-		if @shortcut.mac_key != nil?
-			mac_os = OperatingSystem.new.find_or_create_operating_system("Mac OS")
-			mac_os.add_shortcut(@shortcut)
-		end
+		key_seq = attribute_array[1]
+		description = attribute_array[2]
 
-		if @shortcut.windows_key != nil?
-			windows_os = OperatingSystem.new.find_or_create_operating_system("Windows OS")
-			windows_os.add_shortcut(@shortcut)
-		end
+		@shortcut = Shortcut.new(name, key_seq, description, operating_system)
 
-		if @shortcut.linux_key != nil?
-			linux_os = OperatingSystem.new.find_or_create_operating_system("Linux OS")
-			linux_os.add_shortcut(@shortcut)
-		end
 		@shortcut.save
 	end
 
