@@ -59,18 +59,18 @@ class CLIInterface
 	end
 
 	def submenu_input
-		@user_input = gets.strip!
+		@user_input = gets.strip.upcase
 		puts "\n"
 
-		if @user_input == "L" || @user_input == "l"
+		if @user_input == "L"
 			display_shortcuts
-		elsif @user_input == "X" || @user_input == "x"
+		elsif @user_input == "X"
 			exit_method
-		elsif @user_input == "N" || @user_input == "n"
+		elsif @user_input == "N"
 			search_by_os_and_name
-		elsif @user_input == "K" || @user_input == "k"
+		elsif @user_input == "K"
 			search_by_os_and_key
-		elsif @user_input == "MM" || @user_input == "mm"
+		elsif @user_input == "MM"
 			main_menu
 		else
 			puts "Your response was not understood.\n"
@@ -97,7 +97,7 @@ class CLIInterface
 	def search_by_os_and_name
 		puts "Enter the shortcut name you would like to search for: \n"
 		puts "(Use the format 'Find in Project')"
-		name = gets.strip!
+		name = gets.strip
 		if @user_os == "1"
 			MacOSKey.search_by_name(name)
 		elsif @user_os == "2"
@@ -110,7 +110,7 @@ class CLIInterface
 	def search_by_os_and_key
 		puts "Enter the key you would like to search for: \n"
 		puts "(Use the format 'ctrl-key')\n"
-		key_to_find = gets.strip!
+		key_to_find = gets.strip
 		if @user_os == "1"
 			MacOSKey.search_by_key(key_to_find)
 		elsif @user_os == "2"
@@ -125,12 +125,12 @@ class CLIInterface
 		puts "To return to SEARCH MENU type 'SM'"
 		puts "To return to MAIN MENU type 'MM'\n"
 		puts "To EXIT type 'X'"
-		details_input = gets.strip!
-		if details_input == 'sm' || details_input == 'SM'
+		details_input = gets.strip.upcase
+		if details_input == 'SM'
 			submenu_options
-		elsif details_input == 'mm' || details_input == 'MM'
+		elsif details_input == 'MM'
 			main_menu
-		elsif details_input == 'x' || details_input == 'X'
+		elsif details_input == 'X'
 			exit_method
 		elsif is_integer?(details_input)
 			display_details(details_input)
