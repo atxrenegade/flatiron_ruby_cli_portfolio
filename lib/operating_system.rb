@@ -21,6 +21,10 @@ class OperatingSystem
 		end
 	end
 
+	def self.find_by_name(name)
+		@@all.detect {|os| os.name == name}
+	end	
+
 	def self.create_operating_system(name)
 		os = OperatingSystem.new(name)
 		os.save

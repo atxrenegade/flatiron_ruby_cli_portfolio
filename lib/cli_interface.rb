@@ -84,12 +84,12 @@ class CLIInterface
 
 	def display_shortcuts
 		if @user_os == "1"
-			MacOSKey.list_all_by_key
+			os = OperatingSystem.find_by_name("Mac")
 		elsif
 			@user_os == "2"
-			WindowsKey.list_all_by_key
+			os = OperatingSystem.find_by_name("Windows")
 		else
-			LinuxKey.list_all_by_key
+			os = OperatingSystem.find_by_name("Linux")
 		end
 		puts "\n"
 		details_menu
