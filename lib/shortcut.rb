@@ -18,7 +18,6 @@ class Shortcut
 		description = attribute_array[2]
 
 		@shortcut = Shortcut.new(name, key_seq, description, operating_system)
-
 		@shortcut.save
 	end
 

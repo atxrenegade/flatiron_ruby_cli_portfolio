@@ -18,7 +18,7 @@ class DataFormatter
 
 		#split array to sub arrays for object hashes
 		revised_array = revised_array.each_slice(5).to_a
-		parse_attribute_array(revised_array)
+		create_shortcuts_array(revised_array)
 	end
 
 	def create_shortcuts_array(revised_array)
@@ -27,12 +27,12 @@ class DataFormatter
     		shortcuts_array << [array[0], array[1], array[4], "Mac"]
     		shortcuts_array << [array[0], array[2],array[4], "Windows"]
     		shortcuts_array << [array[0], array[3], array[4], "Linux"]
-		end    
-		shorcut_array
+		end
+		parse_attribute_array(shortcuts_array)
 	end
 
 	def parse_attribute_array(shortcuts_array)
-		attribute_array.each do |shortcut_array|
+		shortcuts_array.each do |shortcut_array|
 			Shortcut.create_from_attribute_array(shortcut_array)
 		end
 	end
