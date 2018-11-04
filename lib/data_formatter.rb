@@ -21,7 +21,17 @@ class DataFormatter
 		parse_attribute_array(revised_array)
 	end
 
-	def parse_attribute_array(attribute_array)
+	def create_shortcuts_array(revised_array)
+		shortcuts_array = []
+		revised_array.each do |array|
+    		shortcuts_array << [array[0], array[1], array[4], "Mac"]
+    		shortcuts_array << [array[0], array[2],array[4], "Windows"]
+    		shortcuts_array << [array[0], array[3], array[4], "Linux"]
+		end    
+		shorcut_array
+	end
+
+	def parse_attribute_array(shortcuts_array)
 		attribute_array.each do |shortcut_array|
 			Shortcut.create_from_attribute_array(shortcut_array)
 		end
