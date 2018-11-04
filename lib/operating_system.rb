@@ -1,5 +1,6 @@
 class OperatingSystem
 	@@all = []
+	extend Searchable::ClassMethods
 
 	attr_accessor :name, :shortcut
 
