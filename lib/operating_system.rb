@@ -28,6 +28,7 @@ class OperatingSystem
 	end
 
 	def add_shortcut(shortcut)
+		shortcut.operating_system = self
 		@shortcuts << shortcut
 	end
 
