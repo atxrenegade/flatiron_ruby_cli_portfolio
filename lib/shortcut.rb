@@ -4,12 +4,11 @@ class Shortcut
 	attr_accessor :name, :description, :mac_key, :linux_key, :windows_key
 	attr_reader :operating_system
 
-	def initialize(name, mac_key, windows_key, linux_key, description)
+	def initialize(name, key_seq, description, operating_system)
 		@name = name
-		@mac_key = mac_key
-		@windows_key = windows_key
-		@linux_key = linux_key
+		@key_seq = key_seq
 		@description = description
+		@operating_system = operating_system
 	end
 
 	def self.create_from_attribute_array(attribute_array)
