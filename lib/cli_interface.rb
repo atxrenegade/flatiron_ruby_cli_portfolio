@@ -2,6 +2,7 @@ class CLIInterface
 
 	def call
 		Scraper.new.scrape_atom
+		binding.pry
 		welcome
 	end
 

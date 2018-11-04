@@ -12,6 +12,7 @@ class Shortcut
 	end
 
 	def self.create_from_attribute_array(attribute_array)
+		binding.pry
 		operating_system = OperatingSystem.new.find_or_create_operating_system(attribute_array[3])
 		name = attribute_array[0]
 		key_seq = attribute_array[1]
