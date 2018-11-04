@@ -18,15 +18,13 @@ class DataFormatter
 
 		#split array to sub arrays for object hashes
 		revised_array = revised_array.each_slice(5).to_a
-		binding.pry
-
 		parse_attribute_array(revised_array)
 	end
 
 
 	def parse_attribute_array(attribute_array)
 		attribute_array.each do |shortcut_array|
-			Shortcut.create_from_attribute_hash(shortcut_array)
+			Shortcut.create_from_attribute_array(shortcut_array)
 		end
 	end
 end

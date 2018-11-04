@@ -14,8 +14,8 @@ class Shortcut
 
 	def self.create_from_attribute_array(attribute_array)
 		#create new shortcut with these attributes and add
-		binding.pry
 		shortcut = Shortcut.new(attribute_array)
+		binding.pry
 
 		#find_or_create_operating_system
 		if !shortcut.mac_key.nil?
