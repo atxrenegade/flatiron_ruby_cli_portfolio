@@ -13,8 +13,12 @@ class Shortcut
 	end
 
 	def self.create_from_attribute_array(attribute_array)
-		#create new shortcut with these attributes and add
-		shortcut = Shortcut.new(attribute_array)
+		name = attribute_array[0]
+		mac_key = attribute_array[1]
+		windows_key = attribute_array[2]
+		linux_key = attribute_array[3]
+		description = attribute_array[4]
+		shortcut = Shortcut.new(name, mac_key, windows_key, linux_key, description)
 		binding.pry
 
 		#find_or_create_operating_system
