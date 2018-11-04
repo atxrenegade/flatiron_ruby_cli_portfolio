@@ -172,6 +172,14 @@ class CLIInterface
 		end
 	end
 
+	def detail_view
+		puts "\n   Shortcut Key Sequence: #{shortcut.key_seq}\n"
+		puts "   Shortcut Name: #{shortcut.name}\n"
+		puts "   Operating System: #{shortcut.os.name}\n"
+		puts "   Shortcut Description: #{shortcut.description}\n\n"
+	end
+
+	#helper_method
 	def is_integer?(details_input)
 		details_input.to_i.to_s == details_input
 	end

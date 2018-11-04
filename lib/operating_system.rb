@@ -41,8 +41,9 @@ class OperatingSystem
 		@@all << self
 	end
 
-
-	def self.shortcuts
-		@shorcuts
+	def shortcuts
+		@shortcuts
 	end
+
+
 end
