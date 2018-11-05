@@ -40,8 +40,7 @@ class CLIInterface
 			set_os
 			submenu_options
 		else
-			puts "  Your response was not understood.\n"
-			puts "  Please try again.\n\n"
+			CLIInterface.not_found
 			main_menu
 		end
 	end
@@ -61,9 +60,9 @@ class CLIInterface
 	def submenu_input
 		@user_input = gets.strip.upcase
 		puts "\n"
-
 		if @user_input == "L"
-			display_shortcuts
+			list_shortcuts
+			details_menu
 		elsif @user_input == "X"
 			exit_method
 		elsif @user_input == "N"
@@ -73,8 +72,7 @@ class CLIInterface
 		elsif @user_input == "MM"
 			main_menu
 		else
-			puts "Your response was not understood.\n"
-			puts "Please select a valid option.\n"
+			CLIInterface.not_found
 			submenu_options
 		end
 		puts "\n"
@@ -92,13 +90,6 @@ class CLIInterface
 		end
 	end
 
-
-	def display_shortcuts
-		list_shortcuts
-		puts "\n"
-		details_menu
-	end
-
 	def list_shortcuts
 		puts "\n*************************************"
 		puts "\n  ATOM SHORTCUTS FOR #{@os.name} OS"
@@ -112,7 +103,7 @@ class CLIInterface
 			end
 			puts "  #{index + 1}.  #{shortcut.name}: #{shortcut.key_seq} \n"
 		end
-		puts "\n"
+		puts "\n\n"
 	end
 
 
@@ -145,8 +136,7 @@ class CLIInterface
 		elsif is_integer?(details_input)
 			display_details(details_input)
 		else
-			puts "Your response was not understood.\n"
-			puts "Please select a valid option.\n"
+			CLIInterface.not_found
 		end
 		puts "\n"
 		details_menu
@@ -157,10 +147,15 @@ class CLIInterface
 	end
 
 	def self.detail_view(key)
-		puts "\n   Shortcut Key Sequence: #{key.key_seq}\n"
+		puts "\n\n   Shortcut Key Sequence: #{key.key_seq}\n"
 		puts "   Shortcut Name: #{key.name}\n"
 		puts "   Operating System: #{key.operating_system.name}\n"
 		puts "   Shortcut Description: #{key.description}\n\n"
+	end
+
+	def self.not_found
+		puts "\nYour response was not found or not understood.\n"
+		puts "Please select a valid option.\n"
 	end
 
 	#helper_method

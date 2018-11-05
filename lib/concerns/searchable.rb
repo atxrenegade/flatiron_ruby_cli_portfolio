@@ -1,9 +1,13 @@
 module Searchable
 	module InstanceMethods
 		def search_by_number(number)
-			shortcuts.each_with_index do |key, index|
-				if (index + 1).to_s == number
-					CLIInterface.detail_view(key)
+			if number.to_i > 45
+				CLIInterface.not_found
+			else
+				shortcuts.each_with_index do |key, index|
+					if (index + 1).to_s == number
+						CLIInterface.detail_view(key)
+					end	
 				end
 			end
 		end
@@ -30,7 +34,7 @@ module Searchable
 			end
 			if @found_key.nil?
 				CLIInterface.not_found
-			else	
+			else
 				CLIInterface.detail_view(@found_key)
 			end
 			@found_key = nil
