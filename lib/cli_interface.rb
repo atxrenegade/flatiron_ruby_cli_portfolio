@@ -37,7 +37,7 @@ class CLIInterface
 		if @user_os == "X"
 			exit_method
 		elsif @user_os == "1" || @user_os =="2" || @user_os =="3"
-
+			set_os
 			submenu_options
 		else
 			puts "  Your response was not understood.\n"
@@ -81,7 +81,7 @@ class CLIInterface
 		submenu_options
 	end
 
-	def display_shortcuts
+	def set_os
 		if @user_os == "1"
 			@os = OperatingSystem.find_by_name("Mac")
 		elsif
@@ -90,8 +90,12 @@ class CLIInterface
 		else
 			@os = OperatingSystem.find_by_name("Linux")
 		end
-		puts "\n"
+	end
+
+
+	def display_shortcuts
 		list_shortcuts
+		puts "\n"
 		details_menu
 	end
 
@@ -99,8 +103,8 @@ class CLIInterface
 		puts "\n*************************************"
 		puts "\n  ATOM SHORTCUTS FOR #{@os.name} OS"
 		puts "\n*************************************\n\n"
-		binding.pry
-		sort_alphabetically
+		#binding.pry
+		#sort_alphabetically
 		@os.shortcuts.each_with_index do |shortcut, index|
 			if (index)%10 == 0 && (index) != 0
 				puts "\n (Press Enter to Continue)\n\n"
@@ -116,13 +120,8 @@ class CLIInterface
 		puts "Enter the shortcut name you would like to search for: \n"
 		puts "(Use the format 'Find in Project')"
 		name = gets.strip
-		if @user_os == "1"
-			MacOSKey.search_by_name(name)
-		elsif @user_os == "2"
-			WindowsKey.search_by_name(name)
-		else
-			LinuxKey.search_by_name(name)
-		end
+		binding.pry
+		@os.search_by_name(name)
 	end
 
 	def search_by_os_and_key

@@ -3,18 +3,14 @@ module Searchable
 		def search_by_number(number)
 			shortcuts.each_with_index do |key, index|
 				if (index + 1).to_s == number
-					binding.pry
 					CLIInterface.detail_view(key)
 				end
 			end
 		end
-	end
 
-
-	module ClassMethods
 		def search_by_name(name)
-			self.all.each do |key|
-				if key.shortcut.name.include?(name)
+			shortcuts.each do |key|
+				if key.name.include?(name)
 					@found_key = key
 				end
 			end
@@ -23,11 +19,13 @@ module Searchable
 					puts "Please try again or choose a different name."
 				else
 					puts "\n"
-					@found_key.detail_view
+					binding.pry
+					CLIInterface.detail_view(@found_key)
 			end
 			@found_key = nil
 		end
-
+	end
+	module ClassMethods
 		def search_by_key(key_to_find)
 			self.all.each do |key|
 				if key.key_seq == key_to_find
