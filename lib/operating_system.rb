@@ -1,5 +1,6 @@
 class OperatingSystem
 	@@all = []
+	include Searchable::InstanceMethods
 	extend Searchable::ClassMethods
 
 	attr_accessor :name, :shortcut
@@ -45,21 +46,8 @@ class OperatingSystem
 		@shortcuts
 	end
 
-	def description
-		self.shortcut.description.details
-	end
-
 	def self.sort_alphabetically
 		Shortcut.all.collect.sort_by {|obj| obj.name}
 	end
 
-	def search_by_number(number)
-		#binding.pry
-		shortcuts.each_with_index do |key, index|
-			if (index + 1).to_s == number
-				binding.pry
-				CLIInterface.detail_view(key)
-			end
-		end
-	end
 end

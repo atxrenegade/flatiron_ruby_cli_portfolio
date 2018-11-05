@@ -1,4 +1,16 @@
 module Searchable
+	module InstanceMethods
+		def search_by_number(number)
+			shortcuts.each_with_index do |key, index|
+				if (index + 1).to_s == number
+					binding.pry
+					CLIInterface.detail_view(key)
+				end
+			end
+		end
+	end
+
+
 	module ClassMethods
 		def search_by_name(name)
 			self.all.each do |key|
@@ -30,15 +42,6 @@ module Searchable
 					@found_key.detail_view
 			end
 			@found_key = nil
-		end
-
-		def search_by_number(number)
-			#binding.pry
-			@os.shortcuts.each_with_index do |key, index|
-				if (index + 1).to_s == number
-					key.detail_view
-				end
-			end
 		end
 	end
 end
