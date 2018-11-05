@@ -3,7 +3,6 @@ class Shortcut
 
 	attr_accessor :name, :key_seq, :description, :operating_system
 
-
 	def initialize(name, key_seq, description, operating_system)
 		@name = name
 		@key_seq = key_seq
@@ -13,6 +12,10 @@ class Shortcut
 
 	def operating_system=(operating_system)
 		@operating_system= operating_system
+	end
+
+	def save
+		@@all << self
 	end
 
 	def self.create_from_attribute_array(attribute_array)
@@ -26,12 +29,6 @@ class Shortcut
 
 		shortcut.save
 		operating_system.add_shortcut(shortcut)
-
-	end
-
-
-	def save
-		@@all << self
 	end
 
 	def self.all

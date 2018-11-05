@@ -17,6 +17,7 @@ class OperatingSystem
 			os
 		end
 	end
+	
 	def save
 		@@all << self
 	end
