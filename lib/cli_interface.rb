@@ -108,6 +108,7 @@ class CLIInterface
 			end
 			puts "  #{index + 1}.  #{shortcut.name}: #{shortcut.key_seq} \n"
 		end
+		puts "\n"
 	end
 
 
@@ -160,13 +161,7 @@ class CLIInterface
 	end
 
 	def display_details(number)
-		if @user_os == "1"
-			MacOSKey.search_by_number(number)
-		elsif @user_os == "2"
-			WindowsKey.search_by_number(number)
-		else
-			LinuxKey.search_by_number(number)
-		end
+		@os.search_by_number(number)
 	end
 
 	def detail_view

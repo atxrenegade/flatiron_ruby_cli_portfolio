@@ -33,10 +33,9 @@ module Searchable
 		end
 
 		def search_by_number(number)
-			counter = 0
-			self.all.each do |key|
-				counter += 1
-				if counter.to_s == number
+			#binding.pry
+			@os.shortcuts.each_with_index do |key, index|
+				if (index + 1).to_s == number
 					key.detail_view
 				end
 			end
