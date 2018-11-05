@@ -45,5 +45,11 @@ class OperatingSystem
 		@shortcuts
 	end
 
+	def description
+		self.shortcut.description.details
+	end
 
+	def self.sort_alphabetically
+		Shortcut.all.collect.sort_by {|obj| obj.name}
+	end
 end
