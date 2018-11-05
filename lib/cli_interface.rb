@@ -41,7 +41,7 @@ class CLIInterface
 			exit_method
 		elsif @user_os == "1" || @user_os =="2" || @user_os =="3"
 			set_os
-			submenu_options
+			submenu_display
 		else
 			CLIInterface.not_found
 			main_menu_display
@@ -64,7 +64,7 @@ class CLIInterface
 		puts "\n"
 		if @user_input == "L"
 			list_shortcuts
-			details_menu
+			details_menu_display
 		elsif @user_input == "X"
 			exit_method
 		elsif @user_input == "N"
@@ -72,7 +72,7 @@ class CLIInterface
 		elsif @user_input == "K"
 			search_by_os_and_key
 		elsif @user_input == "MM"
-			main_menu
+			main_menu_display
 		else
 			CLIInterface.not_found
 			submenu_display
@@ -130,12 +130,12 @@ class CLIInterface
 		details_menu_input
 	end
 
-	def details_menu_iput
+	def details_menu_input
 		details_input = gets.strip.upcase
 		if details_input == 'SM'
-			submenu_options
+			submenu_display
 		elsif details_input == 'MM'
-			main_menu
+			main_menu_display
 		elsif details_input == 'X'
 			exit_method
 		elsif is_integer?(details_input)
