@@ -19,13 +19,11 @@ module Searchable
 					puts "Please try again or choose a different name."
 				else
 					puts "\n"
-					binding.pry
 					CLIInterface.detail_view(@found_key)
 			end
 			@found_key = nil
 		end
-	end
-	module ClassMethods
+
 		def search_by_key(key_to_find)
 			self.all.each do |key|
 				if key.key_seq == key_to_find
@@ -37,7 +35,7 @@ module Searchable
 					puts "Please try again or choose a different key."
 				else
 					puts "\n"
-					@found_key.detail_view
+					CLIInterface.detail_view(@found_key)
 			end
 			@found_key = nil
 		end
