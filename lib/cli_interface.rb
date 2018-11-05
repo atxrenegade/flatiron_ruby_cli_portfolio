@@ -2,10 +2,10 @@ class CLIInterface
 
 	def call
 		Scraper.new.scrape_atom
-		welcome
+		welcome_greeting
 	end
 
-	def welcome
+	def welcome_greeting
 		puts "\n\n\n****** Welcome To - Atom Shortcuts Quick Reference ******\n\n"
 		puts "  This is a cli utility gem designed as a quick reference\n"
 		puts "  to Atoms many shortcuts. With so many languages, commands,\n"
@@ -17,11 +17,11 @@ class CLIInterface
 
 		any_key = gets
 		if any_key.include?("\n")
-			main_menu
+			main_menu_display
 		end
 	end
 
-	def main_menu
+	def main_menu_display
 		puts"\n*********************************\n"
 		puts "**********  MAIN MENU  **********\n"
 		puts "*********************************\n\n"
@@ -32,7 +32,10 @@ class CLIInterface
 		puts "2. Windows\n"
 		puts "3. Linux\n"
 		puts "X. EXIT\n\n"
+		main_menu_input
+	end
 
+	def main_menu_input
 		@user_os = gets.strip.upcase
 		if @user_os == "X"
 			exit_method
@@ -41,13 +44,12 @@ class CLIInterface
 			submenu_options
 		else
 			CLIInterface.not_found
-			main_menu
+			main_menu_display
 		end
 	end
 
-	def submenu_options
-		puts "\nPlease select an option from the Menu Below:
-		\n"
+	def submenu_display
+		puts "\nPlease select an option from the Menu Below:\n"
 		puts "To LIST ALL shortcuts for your operating system type 'L'"
 		puts "To search shortcuts by NAME type 'N'"
 		puts "To search shortcuts by KEY type 'K'"
@@ -73,10 +75,10 @@ class CLIInterface
 			main_menu
 		else
 			CLIInterface.not_found
-			submenu_options
+			submenu_display
 		end
 		puts "\n"
-		submenu_options
+		submenu_display
 	end
 
 	def set_os
@@ -106,7 +108,6 @@ class CLIInterface
 		puts "\n\n"
 	end
 
-
 	def search_by_os_and_name
 		puts "Enter the shortcut name you would like to search for: \n"
 		puts "(Use the format 'Find in Project')"
@@ -121,11 +122,15 @@ class CLIInterface
 		@os.search_by_key(key_to_find)
 	end
 
-	def details_menu
+	def details_menu_display
 		puts "To view DETAILS of a specific shortcut enter the number below \n"
 		puts "To return to SEARCH MENU type 'SM'"
 		puts "To return to MAIN MENU type 'MM'\n"
 		puts "To EXIT type 'X'"
+		details_menu_input
+	end
+
+	def details_menu_iput
 		details_input = gets.strip.upcase
 		if details_input == 'SM'
 			submenu_options
@@ -139,7 +144,17 @@ class CLIInterface
 			CLIInterface.not_found
 		end
 		puts "\n"
-		details_menu
+		details_menu_display
+	end
+
+	def is_integer?(details_input)
+		details_input.to_i.to_s == details_input
+	end
+
+	def exit_method
+		puts "\nThanks for using the Atom Shortcuts!"
+		puts "See you again soon!\n\n\n"
+		exit
 	end
 
 	def self.detail_view(key)
@@ -152,16 +167,5 @@ class CLIInterface
 	def self.not_found
 		puts "\nYour response was not found or not understood.\n"
 		puts "Please select a valid option.\n"
-	end
-
-	#helper_method
-	def is_integer?(details_input)
-		details_input.to_i.to_s == details_input
-	end
-
-	def exit_method
-		puts "\nThanks for using the Atom Shortcuts!"
-		puts "See you again soon!\n\n\n"
-		exit
 	end
 end
