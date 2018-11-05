@@ -46,8 +46,8 @@ class OperatingSystem
 		@shortcuts
 	end
 
-	def self.sort_alphabetically
-		Shortcut.all.collect.sort_by {|obj| obj.name}
+	def sort_alphabetically
+		@shortcuts = shortcuts.collect.sort_by {|obj| obj.name}
 	end
 
 end
