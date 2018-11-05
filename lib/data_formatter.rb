@@ -21,6 +21,7 @@ class DataFormatter
 		create_shortcuts_array(revised_array)
 	end
 
+	#create object arrays for each shortcut for each operating system
 	def create_shortcuts_array(revised_array)
 		shortcuts_array = []
 		revised_array.each do |array|
@@ -29,6 +30,7 @@ class DataFormatter
 		parse_attribute_array(shortcuts_array)
 	end
 
+	#parse array to create shortcut objects
 	def parse_attribute_array(shortcuts_array)
 		shortcuts_array.each do |shortcut_array|
 			Shortcut.create_from_attribute_array(shortcut_array)
