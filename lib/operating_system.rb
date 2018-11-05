@@ -1,7 +1,6 @@
 class OperatingSystem
 	@@all = []
 	include Searchable::InstanceMethods
-	extend Searchable::ClassMethods
 
 	attr_accessor :name, :shortcut
 
