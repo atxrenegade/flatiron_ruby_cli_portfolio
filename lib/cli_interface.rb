@@ -33,8 +33,8 @@ class CLIInterface
 		puts "3. Linux\n"
 		puts "X. EXIT\n\n"
 
-		@user_os = gets.strip!
-		if @user_os == "X" || @user_os == "x"
+		@user_os = gets.strip.upcase
+		if @user_os == "X"
 			exit_method
 		elsif @user_os == "1" || @user_os =="2" || @user_os =="3"
 
