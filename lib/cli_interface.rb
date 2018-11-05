@@ -164,11 +164,11 @@ class CLIInterface
 		@os.search_by_number(number)
 	end
 
-	def detail_view
-		puts "\n   Shortcut Key Sequence: #{shortcut.key_seq}\n"
-		puts "   Shortcut Name: #{shortcut.name}\n"
-		puts "   Operating System: #{shortcut.os.name}\n"
-		puts "   Shortcut Description: #{shortcut.description}\n\n"
+	def self.detail_view(key)
+		puts "\n   Shortcut Key Sequence: #{key.key_seq}\n"
+		puts "   Shortcut Name: #{key.name}\n"
+		puts "   Operating System: #{key.operating_system.name}\n"
+		puts "   Shortcut Description: #{key.description}\n\n"
 	end
 
 	#helper_method

@@ -57,8 +57,8 @@ class OperatingSystem
 		#binding.pry
 		shortcuts.each_with_index do |key, index|
 			if (index + 1).to_s == number
-				key.detail_view
 				binding.pry
+				CLIInterface.detail_view(key)
 			end
 		end
 	end
