@@ -25,6 +25,10 @@ class DataFormatter
 	def create_shortcuts_array(revised_array)
 		shortcuts_array = []
 		revised_array.each do |array|
+			array[0].downcase!
+			array[1].upcase!
+			array[2].upcase!
+			array[3].upcase!
     		shortcuts_array << [array[0], array[1], array[4], "Mac"] << [array[0], array[2],array[4], "Windows"] << [array[0], array[3], array[4], "Linux"]
 		end
 		parse_attribute_array(shortcuts_array)
