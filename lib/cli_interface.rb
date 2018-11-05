@@ -96,8 +96,7 @@ class CLIInterface
 		puts "\n*************************************"
 		puts "\n  ATOM SHORTCUTS FOR #{@os.name} OS"
 		puts "\n*************************************\n\n"
-		#binding.pry
-		#sort_alphabetically
+		@os.sort_alphabetically
 		@os.shortcuts.each_with_index do |shortcut, index|
 			if (index)%10 == 0 && (index) != 0
 				puts "\n (Press Enter to Continue)\n\n"
