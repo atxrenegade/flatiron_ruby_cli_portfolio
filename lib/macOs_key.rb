@@ -39,12 +39,12 @@ class MacOSKey
 		puts "\n*************************************\n\n"
 		counter = 0
 		#sorted_array = self.sort_alphabetically
-		sorted_array.each_with_index do |shortcut|
-			if (counter)%10 == 0 && (counter) != 0
+		self.commands.all.each_with_index do |shortcut|
+			if (index)%10 == 0 && (index) != 0
 				puts "\n (Press Enter to Continue)\n\n"
 				gets
 			end
-			puts "  #{counter + 1}.  #{shortcut.name}: #{shortcut.windows_key.key_seq} \n"
+			puts "  #{index + 1}.  #{shortcut.name}: #{shortcut.windows_key.key_seq} \n"
 			counter += 1
 		end
 	end
