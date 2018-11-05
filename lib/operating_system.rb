@@ -17,6 +17,22 @@ class OperatingSystem
 			os
 		end
 	end
+	def save
+		@@all << self
+	end
+
+	def shortcuts
+		@shortcuts
+	end
+
+	def add_shortcut(shortcut)
+		@shortcuts << shortcut
+		shortcut.operating_system = self
+	end
+
+	def sort_alphabetically
+		@shortcuts = shortcuts.collect.sort_by {|obj| obj.name}
+	end
 
 	def self.find_by_name(name)
 		@@all.detect {|os| os.name == name}
@@ -28,25 +44,7 @@ class OperatingSystem
 		os
 	end
 
-	def add_shortcut(shortcut)
-		@shortcuts << shortcut
-		shortcut.operating_system = self
-	end
-
 	def self.all
 		@@all
 	end
-
-	def save
-		@@all << self
-	end
-
-	def shortcuts
-		@shortcuts
-	end
-
-	def sort_alphabetically
-		@shortcuts = shortcuts.collect.sort_by {|obj| obj.name}
-	end
-
 end
