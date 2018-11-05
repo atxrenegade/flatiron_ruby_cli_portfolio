@@ -134,16 +134,12 @@ class CLIInterface
 		elsif details_input == 'X'
 			exit_method
 		elsif is_integer?(details_input)
-			display_details(details_input)
+			@os.search_by_number(details_input)
 		else
 			CLIInterface.not_found
 		end
 		puts "\n"
 		details_menu
-	end
-
-	def display_details(number)
-		@os.search_by_number(number)
 	end
 
 	def self.detail_view(key)
