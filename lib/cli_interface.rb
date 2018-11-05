@@ -158,7 +158,7 @@ class CLIInterface
 
 	def self.detail_view(key)
 		puts "\n\n   Shortcut Key Sequence: #{key.key_seq}\n"
-		puts "   Shortcut Name: #{key.name}\n"
+		puts "   Shortcut Name: #{key.name.capitalize}\n"
 		puts "   Operating System: #{key.operating_system.name}\n"
 		puts "   Shortcut Description: #{key.description}\n\n"
 	end
