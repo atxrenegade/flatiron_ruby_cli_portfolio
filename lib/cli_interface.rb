@@ -108,7 +108,6 @@ class CLIInterface
 			end
 			puts "  #{index + 1}.  #{shortcut.name}: #{shortcut.key_seq} \n"
 		end
-		binding.pry
 	end
 
 
