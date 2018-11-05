@@ -120,7 +120,6 @@ class CLIInterface
 		puts "Enter the shortcut name you would like to search for: \n"
 		puts "(Use the format 'Find in Project')"
 		name = gets.strip
-		binding.pry
 		@os.search_by_name(name)
 	end
 
@@ -128,13 +127,7 @@ class CLIInterface
 		puts "Enter the key you would like to search for: \n"
 		puts "(Use the format 'ctrl-key')\n"
 		key_to_find = gets.strip
-		if @user_os == "1"
-			MacOSKey.search_by_key(key_to_find)
-		elsif @user_os == "2"
-			WindowsKey.search_by_key(key_to_find)
-		else
-			LinuxKey.search_by_key(key_to_find)
-		end
+		@os.search_by_key(key_to_find)
 	end
 
 	def details_menu

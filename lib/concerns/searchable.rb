@@ -25,7 +25,7 @@ module Searchable
 		end
 
 		def search_by_key(key_to_find)
-			self.all.each do |key|
+			shortcuts.each do |key|
 				if key.key_seq == key_to_find
 					@found_key = key
 				end
