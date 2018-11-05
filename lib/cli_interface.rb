@@ -160,7 +160,7 @@ class CLIInterface
 		puts "\n\n   Shortcut Key Sequence: #{key.key_seq}\n"
 		puts "   Shortcut Name: #{key.name.capitalize}\n"
 		puts "   Operating System: #{key.operating_system.name}\n"
-		puts "   Shortcut Description: #{key.description}\n\n"
+		puts "   Shortcut Description: #{key.description.capitalize}\n\n"
 	end
 
 	def self.not_found
