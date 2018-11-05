@@ -2,7 +2,6 @@ class CLIInterface
 
 	def call
 		Scraper.new.scrape_atom
-		binding.pry
 		welcome
 	end
 
@@ -97,20 +96,19 @@ class CLIInterface
 	end
 
 	def list_shortcuts
-		binding.pry
 		puts "\n*************************************"
 		puts "\n  ATOM SHORTCUTS FOR #{@os.name} OS"
 		puts "\n*************************************\n\n"
-		binding.pry
-		counter = 0
+		#binding.pry
 		#sorted_array = self.sort_alphabetically
-		@os.shortcuts.all.each_with_index do |shortcut|
+		@os.shortcuts.each_with_index do |shortcut, index|
 			if (index)%10 == 0 && (index) != 0
 				puts "\n (Press Enter to Continue)\n\n"
 				gets
 			end
 			puts "  #{index + 1}.  #{shortcut.name}: #{shortcut.key_seq} \n"
 		end
+		binding.pry
 	end
 
 
