@@ -15,11 +15,9 @@ module Searchable
 				end
 			end
 			if @found_key.nil?
-					puts "\nThat name was not found.\n"
-					puts "Please try again or choose a different name."
-				else
-					puts "\n"
-					CLIInterface.detail_view(@found_key)
+				CLIInterface.not_found
+			else
+				CLIInterface.detail_view(@found_key)
 			end
 			@found_key = nil
 		end
@@ -31,11 +29,9 @@ module Searchable
 				end
 			end
 			if @found_key.nil?
-					puts "\nThat key was not found.\n"
-					puts "Please try again or choose a different key."
-				else
-					puts "\n"
-					CLIInterface.detail_view(@found_key)
+				CLIInterface.not_found
+			else	
+				CLIInterface.detail_view(@found_key)
 			end
 			@found_key = nil
 		end
