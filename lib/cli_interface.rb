@@ -109,15 +109,15 @@ class CLIInterface
 
 	def search_by_os_and_name
 		puts "Enter the shortcut name you would like to search for: \n"
-		puts "(Use the format 'Find in Project')"
-		name = gets.strip
+		puts "(Use the format 'find in project')"
+		name = gets.strip.downcase
 		@os.search_by_name(name)
 	end
 
 	def search_by_os_and_key
 		puts "Enter the key you would like to search for: \n"
-		puts "(Use the format 'ctrl-key')\n"
-		key_to_find = gets.strip
+		puts "(Use the format 'CTRL-K')\n"
+		key_to_find = gets.strip.upcase
 		@os.search_by_key(key_to_find)
 	end
 
