@@ -2,7 +2,7 @@ module Searchable
 	module InstanceMethods
 		def search_by_number(number)
 			if number.to_i > shortcuts.count
-				CLIInterface.not_found
+				CLIInterface.error
 			else
 				shortcuts.each_with_index do |key, index|
 					if (index + 1).to_s == number

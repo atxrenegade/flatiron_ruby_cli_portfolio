@@ -43,7 +43,7 @@ class CLIInterface
 			set_os
 			submenu_display
 		else
-			CLIInterface.not_found
+			error
 			main_menu_display
 		end
 	end
@@ -74,7 +74,7 @@ class CLIInterface
 		elsif @user_input == "MM"
 			main_menu_display
 		else
-			CLIInterface.not_found
+			CLIInterface.error
 			submenu_display
 		end
 		puts "\n"
@@ -140,7 +140,7 @@ class CLIInterface
 		elsif is_integer?(details_input)
 			@os.search_by_number(details_input)
 		else
-			CLIInterface.not_found
+			CLIInterface.error
 		end
 		puts "\n"
 		details_menu_display
@@ -163,8 +163,13 @@ class CLIInterface
 		puts "   Shortcut Description: #{key.description.capitalize}\n\n"
 	end
 
-	def self.not_found
-		puts "\nYour response was not found or not understood.\n"
+	def self.error
+		puts "Your response was not understood.\n"
 		puts "Please select a valid option.\n"
+	end
+
+	def self.not_found
+		puts "\nYour selection was not found or not understood.\n"
+		puts "Please try a different search term or adjust your format.\n"
 	end
 end
