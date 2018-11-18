@@ -43,7 +43,7 @@ class CLIInterface
 			set_os
 			submenu_display
 		else
-			error
+			CLIInterface.error
 			main_menu_display
 		end
 	end
