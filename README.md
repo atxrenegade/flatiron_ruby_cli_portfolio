@@ -8,7 +8,12 @@ Harleigh/atxrenegade
 
 ## Usage
 
-To launch this gem 'cd bin' into bin directory and execute the program with 'ruby atom_shortcut'.
+To use this gem:
+
+1. Download appication from the Github Repository or from RubyGems.com
+2. Type 'bundle install' into command line.
+3. To run executable type 'ruby atom_shortcuts' into command line.
+
 
 This GEM upon execution will display a greeting and directions to proceed.  Press the enter key to bring up the main menu.  Here you can select your operating system or exit the program. Once you have selected your operating system you will have a choice to list all commands, search shortcuts by name, or search shortcuts by key sequence.
 
