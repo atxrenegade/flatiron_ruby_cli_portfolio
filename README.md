@@ -2,7 +2,7 @@
 
 Welcome to Atom Shortcuts!
 
-This is a utility gem designed for as a quick reference to a some of the atom shortcuts. Being familiar with shortcuts and important commands speeds up your workflow and increases your productivity as a programmer. This gem includes atom shortcuts for MacOS, Windows, and Linux operating systems.  There is a search by name, and search by key sequence function, and users can select and individual shortcuts for a detailed view.
+This is a utility gem designed for as a quick reference to many of the atom shortcuts. Being familiar with shortcuts and important commands speeds up your workflow and increases your productivity as a programmer. This gem includes atom shortcuts for MacOS, Windows, and Linux operating systems.  There is a search by name, and search by key sequence function, and users can select and individual shortcuts for a detailed view.
 
 Harleigh/atxrenegade
 
