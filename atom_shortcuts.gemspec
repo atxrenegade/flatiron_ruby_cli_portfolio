@@ -11,16 +11,16 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "A Cli gem for quick reference to Atom Shortcuts"
   spec.description   = "A quick CLI reference to Atom shortcuts for Mac, Windows and Linux, with search function"
-  spec.homepage      = "http://mygemserver.com'/api/v1/api_key"
+  spec.homepage      = "https://github.com/atxrenegade/flatiron_ruby_cli_portfolio"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   #if spec.respond_to?(:metadata)
-  #  spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+  # spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
   #else
   #  raise "RubyGems 2.0 or newer is required to protect against " \
-  #    "public gem pushes."
+  #   "public gem pushes."
   #end
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
@@ -31,7 +31,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.16"
-  spec.add_development_dependency "rake", "~> 13.0"
+  spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "nokogiri", "~> 1.8"
   spec.add_development_dependency 'pry', '~> 0.11.3'
